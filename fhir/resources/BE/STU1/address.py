@@ -12,7 +12,7 @@ from pydantic.v1 import Field
 
 from fhir.resources.R4B import backboneelement, fhirtypes
 from fhir.resources.R4B.address import Address
-from . import befhirtypes
+from . import fhirtypes
 
 class BeAddress(Address):
 

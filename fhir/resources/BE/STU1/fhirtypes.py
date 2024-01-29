@@ -36,6 +36,32 @@ if TYPE_CHECKING:
 
 __author__ = "Olivier Latignies<olatignies@gmail.com>"
 
+class AbstractType(dict):
+    """ """
+
+    __fhir_release__: str = "2.0.1"
+    __resource_type__: str = ...  # type: ignore
+
+    @classmethod
+    def __modify_schema__(cls, field_schema: Dict[str, Any]) -> None:
+        field_schema.update(type=cls.__resource_type__)
+
+    @classmethod
+    def __get_validators__(cls) -> "CallableGenerator":
+        from . import fhirtypesvalidators
+
+        yield getattr(fhirtypesvalidators, cls.__resource_type__.lower() + "_validator")
+
+    @classmethod
+    def is_primitive(cls) -> bool:
+        """ """
+        return False
+
+    @classmethod
+    def fhir_type_name(cls) -> str:
+        """ """
+        return cls.__resource_type__
+
 def get_fhir_type_class(model_name):
     try:
         return globals()[model_name + "Type"]
@@ -57,7 +83,7 @@ class EHPType(IdentifierType):
 class CDHCPARTYType(CodeableConceptType):
     __resource_type__ = "CD-HCPARTY"
 
-class BeAddressType(AddressType):
+class BeAddressType(AbstractType):
     __resource_type__ = "BeAddress"
 
 __all__ = [

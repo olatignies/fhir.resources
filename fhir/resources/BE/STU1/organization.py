@@ -12,13 +12,13 @@ from pydantic.v1 import Field
 
 from fhir.resources.R4B import backboneelement, fhirtypes
 from fhir.resources.R4B.organization import Organization
-from . import befhirtypes
+from . import fhirtypes
 
 class BeOrganization(Organization):
 
     resource_type = Field("BeOrganization", const=True)
 
-    address: typing.List[befhirtypes.BeAddressType] = Field(
+    address: typing.List[fhirtypes.BeAddressType] = Field(
         None,
         alias="address",
         title="An address for the organization",
@@ -27,7 +27,7 @@ class BeOrganization(Organization):
         element_property=True,
     )
 
-    identifier: typing.List[typing.Union[befhirtypes.NIHDIType,befhirtypes.CBEType,befhirtypes.SSINType,befhirtypes.EHPType]] = Field(
+    identifier: typing.List[typing.Union[fhirtypes.NIHDIType,fhirtypes.CBEType,fhirtypes.SSINType,fhirtypes.EHPType]] = Field(
         None,
         alias="identifier",
         title="Identifies this organization  across multiple systems",
@@ -39,7 +39,7 @@ class BeOrganization(Organization):
         element_property=True,
     )
 
-    type: typing.List[befhirtypes.CDHCPARTYType] = Field(
+    type: typing.List[fhirtypes.CDHCPARTYType] = Field(
         None,
         alias="type",
         title="Kind of organization",

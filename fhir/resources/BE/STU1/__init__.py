@@ -4,7 +4,7 @@ from typing import Any, Dict, Union
 
 from fhir.resources.core.fhirabstractmodel import FHIRAbstractModel
 
-from .befhirtypesvalidators import get_fhir_model_class
+from .fhirtypesvalidators import get_fhir_model_class
 
 __fhir_version__ = "2.0.1"
 
