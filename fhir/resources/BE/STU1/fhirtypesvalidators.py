@@ -872,6 +872,27 @@ def fhir_model_validator(
         )
     return v
 
+# BE/STU1 Validators
+
+def beaddress_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
+    return fhir_model_validator("BeAddress", v)
+
+def nihdi_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
+    return fhir_model_validator("NIHDI", v)
+
+def cbe_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
+    return fhir_model_validator("CBE", v)
+
+def ssin_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
+    return fhir_model_validator("SSIN", v)
+
+def ehp_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
+    return fhir_model_validator("EHP", v)
+
+def cdhcparty_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
+    return fhir_model_validator("CD-HCPARTY", v)
+
+# RB4 Validators
 
 def fhirprimitiveextension_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
     return fhir_model_validator("FHIRPrimitiveExtension", v)
@@ -907,11 +928,6 @@ def activitydefinitionparticipant_validator(
 
 def address_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
     return fhir_model_validator("Address", v)
-
-
-def beaddress_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
-    return fhir_model_validator("BeAddress", v)
-
 
 def administrableproductdefinition_validator(
     v: Union[StrBytes, dict, Path, FHIRAbstractModel]
@@ -4308,6 +4324,11 @@ __all__ = [
     "activitydefinitionparticipant_validator",
     "address_validator",
     "beaddress_validator",
+    "nihdi_validator",
+    "cbe_validator",
+    "ssin_validator",
+    "ehp_validator",
+    "cdhcparty_validator",
     "administrableproductdefinition_validator",
     "administrableproductdefinitionproperty_validator",
     "administrableproductdefinitionrouteofadministration_validator",

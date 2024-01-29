@@ -18,6 +18,28 @@ class BeAddress(Address):
 
     resource_type = Field("BeAddress", const=True)
 
+    country: fhirtypes.String = Field(
+        None,
+        alias="country",
+        title="Country (e.g. can be ISO 3166 2 or 3 letter code)",
+        description="Country - a nation as commonly understood or generally accepted.",
+        # if property is element of this resource.
+        element_property=True,
+    )
+
+    line: typing.List[typing.Optional[fhirtypes.String]] = Field(
+        None,
+        alias="line",
+        title="Street name, number, direction & P.O. Box etc.",
+        description=(
+            "This component contains the house number, apartment number, street "
+            "name, street direction,  P.O. Box number, delivery hints, and similar "
+            "address information."
+        ),
+        # if property is element of this resource.
+        element_property=True,
+    )
+
     type: fhirtypes.Code = Field(
         None,
         alias="type",
