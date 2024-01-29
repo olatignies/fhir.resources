@@ -7,10 +7,6 @@ from typing import TYPE_CHECKING, Any, Dict, Optional, Pattern, Union
 from uuid import UUID
 
 from fhir.resources.core.fhirabstractmodel import FHIRAbstractModel
-from fhir.resources.fhirtypes import (
-    IdentifierType,
-    AddressType
-)
 from pydantic.v1 import AnyUrl
 from pydantic.v1.errors import ConfigError, DateError, DateTimeError, TimeError
 from pydantic.v1.main import load_str_bytes
@@ -87,6 +83,9 @@ class Primitive:
         """ """
         return cls.__visit_name__
 
+class IdentifierType(AbstractType):
+    __resource_type__ = "Identifier"
+
 class String(ConstrainedStr, Primitive):
     """A sequence of Unicode characters
     Note that strings SHALL NOT exceed 1MB (1024*1024 characters) in size.
@@ -153,22 +152,25 @@ class Code(ConstrainedStr, Primitive):
         assert isinstance(value, str)
         return value
 
-class NIHDIType(AbstractType):
+class AddressType(AbstractType):
+    __resource_type__ = "Address"
+
+class NIHDIType(IdentifierType):
     __resource_type__ = "NIHDI"
 
-class CBEType(AbstractType):
+class CBEType(IdentifierType):
     __resource_type__ = "CBE"
 
-class SSINType(AbstractType):
+class SSINType(IdentifierType):
     __resource_type__ = "SSIN"
 
-class EHPType(AbstractType):
+class EHPType(IdentifierType):
     __resource_type__ = "EHP"
 
 class CDHCPARTYType(CodeableConceptType):
     __resource_type__ = "CDHCPARTY"
 
-class BeAddressType(AbstractType):
+class BeAddressType(AddressType):
     __resource_type__ = "BeAddress"
 
 __all__ = [

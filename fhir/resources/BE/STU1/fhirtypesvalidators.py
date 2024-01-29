@@ -26,7 +26,12 @@ MODEL_CLASSES = {
     "ActivityDefinitionDynamicValue": (None, ".activitydefinition"),
     "ActivityDefinitionParticipant": (None, ".activitydefinition"),
     "Address": (None, ".address"),
-    "BeAddress": (None, ".beaddress"),
+    "BeAddress": (None, ".address"),
+    "NIHDI": (None, ".nihdi"),
+    "CBE": (None, ".cbe"),
+    "SSIN": (None, ".ssin"),
+    "EHP": (None, ".ehp"),
+    "CDHCPARTY": (None, ".cdhcparty"),
     "AdministrableProductDefinition": (None, ".administrableproductdefinition"),
     "AdministrableProductDefinitionProperty": (None, ".administrableproductdefinition"),
     "AdministrableProductDefinitionRouteOfAdministration": (
@@ -890,7 +895,7 @@ def ehp_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
     return fhir_model_validator("EHP", v)
 
 def cdhcparty_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
-    return fhir_model_validator("CD-HCPARTY", v)
+    return fhir_model_validator("CDHCPARTY", v)
 
 # RB4 Validators
 
