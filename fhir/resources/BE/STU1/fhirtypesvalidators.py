@@ -27,6 +27,7 @@ MODEL_CLASSES = {
     "ActivityDefinitionParticipant": (None, ".activitydefinition"),
     "Address": (None, ".address"),
     "BeAddress": (None, ".address"),
+    "BePatient": (None, ".patient"),
     "NIHDI": (None, ".nihdi"),
     "CBE": (None, ".cbe"),
     "SSIN": (None, ".ssin"),
@@ -881,6 +882,9 @@ def fhir_model_validator(
 
 def beaddress_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
     return fhir_model_validator("BeAddress", v)
+
+def bepatient_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
+    return fhir_model_validator("BePatient", v)
 
 def nihdi_validator(v: Union[StrBytes, dict, Path, FHIRAbstractModel]):
     return fhir_model_validator("NIHDI", v)

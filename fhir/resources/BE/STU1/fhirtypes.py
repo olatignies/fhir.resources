@@ -24,6 +24,8 @@ from pydantic.v1.validators import (
     parse_time,
 )
 
+from fhir.resources.R4B.fhirtypes import PatientType
+
 if TYPE_CHECKING:
     from pydantic.v1.types import CallableGenerator
     from pydantic.v1.fields import ModelField
@@ -152,6 +154,9 @@ class Code(ConstrainedStr, Primitive):
         assert isinstance(value, str)
         return value
 
+class ReferenceType(AbstractType):
+    __resource_type__ = "Reference"
+
 class AddressType(AbstractType):
     __resource_type__ = "Address"
 
@@ -173,6 +178,9 @@ class CDHCPARTYType(CodeableConceptType):
 class BeAddressType(AddressType):
     __resource_type__ = "BeAddress"
 
+class BePatientType(PatientType):
+    __resource_type__ = "BePatient"
+
 __all__ = [
     "NIHDIType",
     "CBEType",
@@ -180,6 +188,7 @@ __all__ = [
     "EHPType",
     "CDHCPARTYType",
     "BeAddressType",
+    "BePatientType",
 ]
 
 
