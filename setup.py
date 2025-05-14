@@ -8,6 +8,7 @@ import platform
 from setuptools import find_namespace_packages, setup
 
 PY_VERSION_TUPLE = platform.python_version_tuple()
+PY_VERSION_9_OR_EARLIER = PY_VERSION_TUPLE[0] == "3" and int(PY_VERSION_TUPLE[1]) <= 9
 PY_VERSION_10_OR_LATER = PY_VERSION_TUPLE[0] == "3" and int(PY_VERSION_TUPLE[1]) >= 10
 PY_VERSION_11_OR_LATER = PY_VERSION_10_OR_LATER and int(PY_VERSION_TUPLE[1]) >= 11
 
@@ -17,7 +18,9 @@ with open("README.rst") as readme_file:
 with open("HISTORY.rst") as history_file:
     history = history_file.read()
 
-requirements = ["fhir-core"]
+requirements = ["fhir-core>=1.0.0"]
+if PY_VERSION_9_OR_EARLIER:
+    requirements.append("eval-type-backport")
 
 setup_requirements = ["pytest-runner"]
 
@@ -61,7 +64,7 @@ setup(
     author_email="email2nazrul@gmail.com",
     # Get more from https://pypi.org/pypi?%3Aaction=list_classifiers
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
         "Natural Language :: English",
@@ -97,7 +100,7 @@ setup(
             "fhir-parser*",
             "fhir.resources.tests",
             "fhir.resources.STU3.tests",
-            "fhir.resources.DSTU2.tests",
+            "fhir.resources.R4B.tests",
         ],
     ),
     package_data={"fhir.resources": ["py.typed"]},
@@ -117,7 +120,7 @@ setup(
         "all": (yaml_requirements + xml_requirements),
     },
     url="https://github.com/nazrulworld/fhir.resources",
-    version="8.0.0b2.dev0",
+    version="8.0.1.dev0",
     zip_safe=False,
     python_requires=">=3.8",
     project_urls={

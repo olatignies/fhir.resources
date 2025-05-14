@@ -2,10 +2,36 @@
 History
 =======
 
-8.0.0b2 (unreleased)
---------------------
+8.0.1 (unreleased)
+------------------
 
 - Nothing changed yet.
+
+
+8.0.0 (2024-12-25)
+------------------
+
+- The minimum required version for ``fhir-core`` is ``1.0.0``, which obviously comes with new features and bug fixes. For example xml serialization/deserialization. `See changes log here <https://github.com/nazrulworld/fhir-core/blob/1.0.0/HISTORY.rst#100-2024-12-25>`_
+
+- Issue #168 https://github.com/nazrulworld/fhir.resources/issues/166
+
+8.0.0b4 (2024-10-24)
+--------------------
+
+-  `PR#160 <https://github.com/nazrulworld/fhir.resources/pull/160>`_ switch the type of Element.id from id to string for R4B [cybernop]
+
+
+8.0.0b3 (2024-10-10)
+--------------------
+
+- Minimum version of ``fhir-core`` package have been updated.
+- All of fhir resources are regenerated for to comply with the optionality of fhir model's field. Issue https://github.com/nazrulworld/fhir.resources/issues/164
+
+
+8.0.0b2 (2024-10-02)
+--------------------
+
+- `Issue #164 <https://github.com/nazrulworld/fhir.resources/issues/164>`_ ``get_fhir_model_class`` is now available and can be imported from base package. For example ``from fhir.resources import get_fhir_model_class`` or ``from fhir.resources.STU3 import get_fhir_model_class``
 
 
 8.0.0b1 (2024-08-05)
