@@ -10,7 +10,7 @@ import typing
 
 from pydantic.v1 import Field
 
-from fhir.resources.R4B import backboneelement, fhirtypes
+from fhir.resources.R4B import fhirtypes
 from fhir.resources.R4B.patient import Patient
 from . import fhirtypes
 

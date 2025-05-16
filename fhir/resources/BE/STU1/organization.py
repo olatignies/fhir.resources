@@ -8,26 +8,27 @@ Last updated: 2022-05-28T12:47:40.239+10:00
 """
 import typing
 
-from pydantic.v1 import Field
+from pydantic import Field
 
-from fhir.resources.R4B import backboneelement, fhirtypes
+from fhir.resources.R4B.fhirtypes import IdentifierType
 from fhir.resources.R4B.organization import Organization
 from . import fhirtypes
 
 class BeOrganization(Organization):
 
-    resource_type = Field("BeOrganization", const=True)
+    __resource_type__ = "Organization"
 
     address: typing.List[fhirtypes.BeAddressType] = Field(
         None,
         alias="address",
-        title="An address for the organization",
+        title="A belgian address for the organization",
         description=None,
-        # if property is element of this resource.
-        element_property=True,
+        json_schema_extra={
+            "element_property": True,
+        },
     )
 
-    identifier: typing.List[typing.Union[fhirtypes.NIHDIType,fhirtypes.CBEType,fhirtypes.SSINType,fhirtypes.EHPType]] = Field(
+    identifier: typing.List[IdentifierType] | None = Field(
         None,
         alias="identifier",
         title="Identifies this organization  across multiple systems",
@@ -35,8 +36,9 @@ class BeOrganization(Organization):
             "Identifier for the organization that is used to identify the "
             "organization across multiple disparate systems."
         ),
-        # if property is element of this resource.
-        element_property=True,
+        json_schema_extra={
+            "element_property": True,
+        },
     )
 
     type: typing.List[fhirtypes.CDHCPARTYType] = Field(
@@ -44,8 +46,9 @@ class BeOrganization(Organization):
         alias="type",
         title="Kind of organization",
         description="The kind(s) of organization that this is.",
-        # if property is element of this resource.
-        element_property=True,
+        json_schema_extra={
+            "element_property": True,
+        },
     )
 
     @classmethod

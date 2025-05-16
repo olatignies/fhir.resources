@@ -8,17 +8,16 @@ Last updated: 2022-05-28T12:47:40.239+10:00
 """
 import typing
 
-from pydantic.v1 import Field
+from pydantic import Field
 
-from fhir.resources.R4B import backboneelement, fhirtypes
+from fhir.resources.R4B import fhirtypes
 from fhir.resources.R4B.address import Address
-from . import fhirtypes
 
 class BeAddress(Address):
 
-    resource_type = Field("BeAddress", const=True)
+    __resource_type__ = "Address"
 
-    country: fhirtypes.String = Field(
+    country: fhirtypes.StringType = Field(
         None,
         alias="country",
         title="Country (e.g. can be ISO 3166 2 or 3 letter code)",
@@ -27,7 +26,7 @@ class BeAddress(Address):
         element_property=True,
     )
 
-    line: typing.List[typing.Optional[fhirtypes.String]] = Field(
+    line: typing.List[typing.Optional[fhirtypes.StringType]] = Field(
         None,
         alias="line",
         title="Street name, number, direction & P.O. Box etc.",
@@ -40,7 +39,7 @@ class BeAddress(Address):
         element_property=True,
     )
 
-    type: fhirtypes.Code = Field(
+    type: fhirtypes.CodeType = Field(
         None,
         alias="type",
         title="postal | physical | both",
@@ -56,7 +55,7 @@ class BeAddress(Address):
         # enum_values=["postal", "physical", "both"],
     )
 
-    use: fhirtypes.Code = Field(
+    use: fhirtypes.CodeType = Field(
         None,
         alias="use",
         title="home | work | temp | old | billing - purpose of this address",

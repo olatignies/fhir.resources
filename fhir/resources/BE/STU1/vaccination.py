@@ -10,7 +10,7 @@ Last updated: 2022-05-28T12:47:40.239+10:00
 from pydantic.v1 import Field
 
 from fhir.resources.R4B.immunization import Immunization
-from fhir.resources.R4B.fhirtypes import ReferenceType, IdentifierType
+from fhir.resources.R4B.fhirtypes import ReferenceType
 
 class BeVaccination(Immunization):
 
