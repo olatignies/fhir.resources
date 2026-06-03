@@ -1,11 +1,11 @@
 import typing
-from pydantic.v1 import Field
+from pydantic import Field
 from fhir.resources import fhirtypes
 from fhir.resources.codeableconcept import CodeableConcept
 
 class CDHCPARTY(CodeableConcept):
 
-    resource_type = Field("CDHCPARTY", const=True)
+    __resource_type__ = "CDHCPARTY"
 
     coding: typing.List[fhirtypes.CodingType] = Field(
         None,

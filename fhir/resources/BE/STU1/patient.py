@@ -8,22 +8,20 @@ Last updated: 2022-05-28T12:47:40.239+10:00
 """
 import typing
 
-from pydantic.v1 import Field
+from pydantic import Field
 
-from fhir.resources.R4B import fhirtypes
 from fhir.resources.R4B.patient import Patient
 from . import fhirtypes
 
 class BePatient(Patient):
 
-    resource_type = Field("BePatient", const=True)
+    __resource_type__ = "BePatient"
 
     address: typing.List[fhirtypes.BeAddressType] = Field(
         None,
         alias="address",
         title="An address for the individual in BE",
         description=None,
-        # if property is element of this resource.
-        element_property=True,
+        json_schema_extra={"element_property": True},
     )
 
