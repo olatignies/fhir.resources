@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/DocumentManifest
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class DocumentManifest(domainresource.DomainResource):
 
     __resource_type__ = "DocumentManifest"
 
-    author: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    author: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="author",
         title="Who and/or what authored the manifest",
         description=(
@@ -36,6 +37,7 @@ class DocumentManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -47,18 +49,19 @@ class DocumentManifest(domainresource.DomainResource):
         },
     )
 
-    content: typing.List[fhirtypes.DocumentManifestContentType] = Field(  # type: ignore
-        ...,
+    content: typing.List[fhirtypes.DocumentManifestContentType] = Field(
+        default=...,
         alias="content",
         title="The items included",
         description="The list of Documents included in the manifest.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    created: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    created: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="created",
         title="When this document manifest created",
         description=(
@@ -68,14 +71,15 @@ class DocumentManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    created__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_created", title="Extension field for ``created``."
+    created__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_created", title="Extension field for ``created``."
     )
 
-    description: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.StringType | None = Field(
+        default=None,
         alias="description",
         title="Human-readable description (title)",
         description=(
@@ -84,14 +88,15 @@ class DocumentManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Other identifiers for the manifest",
         description=(
@@ -100,11 +105,12 @@ class DocumentManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    masterIdentifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    masterIdentifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="masterIdentifier",
         title="Unique Identifier for the set of documents",
         description=(
@@ -113,11 +119,12 @@ class DocumentManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    recipient: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    recipient: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="recipient",
         title="Intended to get notified about this set of documents",
         description=(
@@ -126,6 +133,7 @@ class DocumentManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Patient",
@@ -136,18 +144,19 @@ class DocumentManifest(domainresource.DomainResource):
         },
     )
 
-    related: typing.List[fhirtypes.DocumentManifestRelatedType] | None = Field(  # type: ignore
-        None,
+    related: typing.List[fhirtypes.DocumentManifestRelatedType] | None = Field(
+        default=None,
         alias="related",
         title="Related things",
         description="Related identifiers or resources associated with the DocumentManifest.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    source: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    source: fhirtypes.UriType | None = Field(
+        default=None,
         alias="source",
         title="The source system/application/software",
         description=(
@@ -156,31 +165,33 @@ class DocumentManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    source__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_source", title="Extension field for ``source``."
+    source__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_source", title="Extension field for ``source``."
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="current | superseded | entered-in-error",
         description="The status of this document manifest.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["current", "superseded", "entered-in-error"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    subject: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="subject",
         title="The subject of the set of documents",
         description=(
@@ -193,13 +204,14 @@ class DocumentManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Practitioner", "Group", "Device"],
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Kind of document set",
         description=(
@@ -210,14 +222,15 @@ class DocumentManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DocumentManifest`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DocumentManifest`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -228,6 +241,29 @@ class DocumentManifest(domainresource.DomainResource):
             "contained",
             "extension",
             "modifierExtension",
+            "masterIdentifier",
+            "identifier",
+            "status",
+            "type",
+            "subject",
+            "created",
+            "author",
+            "recipient",
+            "source",
+            "description",
+            "content",
+            "related",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DocumentManifest`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
             "masterIdentifier",
             "identifier",
             "status",
@@ -265,8 +301,8 @@ class DocumentManifestContent(backboneelement.BackboneElement):
 
     __resource_type__ = "DocumentManifestContent"
 
-    pAttachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    pAttachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="pAttachment",
         title="Contents of this set of documents",
         description=(
@@ -277,14 +313,15 @@ class DocumentManifestContent(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e p[x]
             "one_of_many": "p",
             "one_of_many_required": True,
         },
     )
 
-    pReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    pReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="pReference",
         title="Contents of this set of documents",
         description=(
@@ -295,6 +332,7 @@ class DocumentManifestContent(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e p[x]
             "one_of_many": "p",
             "one_of_many_required": True,
@@ -304,12 +342,19 @@ class DocumentManifestContent(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DocumentManifestContent`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DocumentManifestContent`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "pAttachment", "pReference"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DocumentManifestContent`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "pAttachment", "pReference"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -339,8 +384,8 @@ class DocumentManifestRelated(backboneelement.BackboneElement):
 
     __resource_type__ = "DocumentManifestRelated"
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Identifiers of things that are related",
         description=(
@@ -349,11 +394,12 @@ class DocumentManifestRelated(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    ref: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    ref: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="ref",
         title="Related Resource",
         description=(
@@ -362,15 +408,23 @@ class DocumentManifestRelated(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DocumentManifestRelated`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DocumentManifestRelated`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "identifier", "ref"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DocumentManifestRelated`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "identifier", "ref"]

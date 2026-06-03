@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Parameters
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -27,23 +28,31 @@ class Parameters(resource.Resource):
 
     __resource_type__ = "Parameters"
 
-    parameter: typing.List[fhirtypes.ParametersParameterType] | None = Field(  # type: ignore
-        None,
+    parameter: typing.List[fhirtypes.ParametersParameterType] | None = Field(
+        default=None,
         alias="parameter",
         title="Operation Parameter",
         description="A parameter passed to or received from the operation.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Parameters`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Parameters`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "meta", "implicitRules", "language", "parameter"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Parameters`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "meta", "implicitRules", "parameter"]
 
 
 class ParametersParameter(backboneelement.BackboneElement):
@@ -57,597 +66,700 @@ class ParametersParameter(backboneelement.BackboneElement):
 
     __resource_type__ = "ParametersParameter"
 
-    name: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    name: fhirtypes.StringType | None = Field(
+        default=None,
         alias="name",
         title="Name from the definition",
         description="The name of the parameter (reference to the operation definition).",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_name", title="Extension field for ``name``."
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_name", title="Extension field for ``name``."
     )
 
-    part: typing.List[fhirtypes.ParametersParameterType] | None = Field(  # type: ignore
-        None,
+    part: typing.List[fhirtypes.ParametersParameterType] | None = Field(
+        default=None,
         alias="part",
         title="Named part of a multi-part parameter",
         description="A named part of a multi-part parameter.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    resource: fhirtypes.ResourceType | None = Field(  # type: ignore
-        None,
+    resource: fhirtypes.ResourceType | None = Field(
+        default=None,
         alias="resource",
         title="If parameter is a whole resource",
         description="If the parameter is a whole resource.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    valueAddress: fhirtypes.AddressType | None = Field(  # type: ignore
-        None,
+    valueAddress: fhirtypes.AddressType | None = Field(
+        default=None,
         alias="valueAddress",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueAge: fhirtypes.AgeType | None = Field(  # type: ignore
-        None,
+    valueAge: fhirtypes.AgeType | None = Field(
+        default=None,
         alias="valueAge",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueAnnotation: fhirtypes.AnnotationType | None = Field(  # type: ignore
-        None,
+    valueAnnotation: fhirtypes.AnnotationType | None = Field(
+        default=None,
         alias="valueAnnotation",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueAttachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    valueAttachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="valueAttachment",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueBase64Binary: fhirtypes.Base64BinaryType | None = Field(  # type: ignore
-        None,
+    valueBase64Binary: fhirtypes.Base64BinaryType | None = Field(
+        default=None,
         alias="valueBase64Binary",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueBase64Binary__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    valueBase64Binary__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_valueBase64Binary",
         title="Extension field for ``valueBase64Binary``.",
     )
 
-    valueBoolean: bool | None = Field(  # type: ignore
-        None,
+    valueBoolean: bool | None = Field(
+        default=None,
         alias="valueBoolean",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueBoolean__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueBoolean", title="Extension field for ``valueBoolean``."
+    valueBoolean__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueBoolean",
+        title="Extension field for ``valueBoolean``.",
     )
 
-    valueCode: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    valueCode: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="valueCode",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueCode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueCode", title="Extension field for ``valueCode``."
+    valueCode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueCode", title="Extension field for ``valueCode``."
     )
 
-    valueCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    valueCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="valueCodeableConcept",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueCoding: fhirtypes.CodingType | None = Field(  # type: ignore
-        None,
+    valueCoding: fhirtypes.CodingType | None = Field(
+        default=None,
         alias="valueCoding",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueContactPoint: fhirtypes.ContactPointType | None = Field(  # type: ignore
-        None,
+    valueContactPoint: fhirtypes.ContactPointType | None = Field(
+        default=None,
         alias="valueContactPoint",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueCount: fhirtypes.CountType | None = Field(  # type: ignore
-        None,
+    valueCount: fhirtypes.CountType | None = Field(
+        default=None,
         alias="valueCount",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueDate: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    valueDate: fhirtypes.DateType | None = Field(
+        default=None,
         alias="valueDate",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDate", title="Extension field for ``valueDate``."
+    valueDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueDate", title="Extension field for ``valueDate``."
     )
 
-    valueDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    valueDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="valueDateTime",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDateTime", title="Extension field for ``valueDateTime``."
+    valueDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueDateTime",
+        title="Extension field for ``valueDateTime``.",
     )
 
-    valueDecimal: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    valueDecimal: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="valueDecimal",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueDecimal__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDecimal", title="Extension field for ``valueDecimal``."
+    valueDecimal__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueDecimal",
+        title="Extension field for ``valueDecimal``.",
     )
 
-    valueDistance: fhirtypes.DistanceType | None = Field(  # type: ignore
-        None,
+    valueDistance: fhirtypes.DistanceType | None = Field(
+        default=None,
         alias="valueDistance",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueDuration: fhirtypes.DurationType | None = Field(  # type: ignore
-        None,
+    valueDuration: fhirtypes.DurationType | None = Field(
+        default=None,
         alias="valueDuration",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueHumanName: fhirtypes.HumanNameType | None = Field(  # type: ignore
-        None,
+    valueHumanName: fhirtypes.HumanNameType | None = Field(
+        default=None,
         alias="valueHumanName",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueId: fhirtypes.IdType | None = Field(  # type: ignore
-        None,
+    valueId: fhirtypes.IdType | None = Field(
+        default=None,
         alias="valueId",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueId", title="Extension field for ``valueId``."
+    valueId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueId", title="Extension field for ``valueId``."
     )
 
-    valueIdentifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    valueIdentifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="valueIdentifier",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueInstant: fhirtypes.InstantType | None = Field(  # type: ignore
-        None,
+    valueInstant: fhirtypes.InstantType | None = Field(
+        default=None,
         alias="valueInstant",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueInstant__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueInstant", title="Extension field for ``valueInstant``."
+    valueInstant__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueInstant",
+        title="Extension field for ``valueInstant``.",
     )
 
-    valueInteger: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    valueInteger: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="valueInteger",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueInteger__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueInteger", title="Extension field for ``valueInteger``."
+    valueInteger__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueInteger",
+        title="Extension field for ``valueInteger``.",
     )
 
-    valueMarkdown: fhirtypes.MarkdownType | None = Field(  # type: ignore
-        None,
+    valueMarkdown: fhirtypes.MarkdownType | None = Field(
+        default=None,
         alias="valueMarkdown",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueMarkdown__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueMarkdown", title="Extension field for ``valueMarkdown``."
+    valueMarkdown__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueMarkdown",
+        title="Extension field for ``valueMarkdown``.",
     )
 
-    valueMeta: fhirtypes.MetaType | None = Field(  # type: ignore
-        None,
+    valueMeta: fhirtypes.MetaType | None = Field(
+        default=None,
         alias="valueMeta",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueMoney: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    valueMoney: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="valueMoney",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueOid: fhirtypes.OidType | None = Field(  # type: ignore
-        None,
+    valueOid: fhirtypes.OidType | None = Field(
+        default=None,
         alias="valueOid",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueOid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueOid", title="Extension field for ``valueOid``."
+    valueOid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueOid", title="Extension field for ``valueOid``."
     )
 
-    valuePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    valuePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="valuePeriod",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valuePositiveInt: fhirtypes.PositiveIntType | None = Field(  # type: ignore
-        None,
+    valuePositiveInt: fhirtypes.PositiveIntType | None = Field(
+        default=None,
         alias="valuePositiveInt",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valuePositiveInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    valuePositiveInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_valuePositiveInt",
         title="Extension field for ``valuePositiveInt``.",
     )
 
-    valueQuantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    valueQuantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="valueQuantity",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueRange: fhirtypes.RangeType | None = Field(  # type: ignore
-        None,
+    valueRange: fhirtypes.RangeType | None = Field(
+        default=None,
         alias="valueRange",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueRatio: fhirtypes.RatioType | None = Field(  # type: ignore
-        None,
+    valueRatio: fhirtypes.RatioType | None = Field(
+        default=None,
         alias="valueRatio",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    valueReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="valueReference",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueSampledData: fhirtypes.SampledDataType | None = Field(  # type: ignore
-        None,
+    valueSampledData: fhirtypes.SampledDataType | None = Field(
+        default=None,
         alias="valueSampledData",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueSignature: fhirtypes.SignatureType | None = Field(  # type: ignore
-        None,
+    valueSignature: fhirtypes.SignatureType | None = Field(
+        default=None,
         alias="valueSignature",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueString: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    valueString: fhirtypes.StringType | None = Field(
+        default=None,
         alias="valueString",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueString", title="Extension field for ``valueString``."
+    valueString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueString", title="Extension field for ``valueString``."
     )
 
-    valueTime: fhirtypes.TimeType | None = Field(  # type: ignore
-        None,
+    valueTime: fhirtypes.TimeType | None = Field(
+        default=None,
         alias="valueTime",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueTime", title="Extension field for ``valueTime``."
+    valueTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueTime", title="Extension field for ``valueTime``."
     )
 
-    valueTiming: fhirtypes.TimingType | None = Field(  # type: ignore
-        None,
+    valueTiming: fhirtypes.TimingType | None = Field(
+        default=None,
         alias="valueTiming",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valueUnsignedInt: fhirtypes.UnsignedIntType | None = Field(  # type: ignore
-        None,
+    valueUnsignedInt: fhirtypes.UnsignedIntType | None = Field(
+        default=None,
         alias="valueUnsignedInt",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueUnsignedInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    valueUnsignedInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_valueUnsignedInt",
         title="Extension field for ``valueUnsignedInt``.",
     )
 
-    valueUri: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    valueUri: fhirtypes.UriType | None = Field(
+        default=None,
         alias="valueUri",
         title="If parameter is a data type",
         description="If the parameter is a data type.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueUri", title="Extension field for ``valueUri``."
+    valueUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueUri", title="Extension field for ``valueUri``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ParametersParameter`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ParametersParameter`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "name",
+            "valueBase64Binary",
+            "valueBoolean",
+            "valueCode",
+            "valueDate",
+            "valueDateTime",
+            "valueDecimal",
+            "valueId",
+            "valueInstant",
+            "valueInteger",
+            "valueMarkdown",
+            "valueOid",
+            "valuePositiveInt",
+            "valueString",
+            "valueTime",
+            "valueUnsignedInt",
+            "valueUri",
+            "valueAddress",
+            "valueAge",
+            "valueAnnotation",
+            "valueAttachment",
+            "valueCodeableConcept",
+            "valueCoding",
+            "valueContactPoint",
+            "valueCount",
+            "valueDistance",
+            "valueDuration",
+            "valueHumanName",
+            "valueIdentifier",
+            "valueMoney",
+            "valuePeriod",
+            "valueQuantity",
+            "valueRange",
+            "valueRatio",
+            "valueReference",
+            "valueSampledData",
+            "valueSignature",
+            "valueTiming",
+            "valueMeta",
+            "resource",
+            "part",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ParametersParameter`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "name",
             "valueBase64Binary",

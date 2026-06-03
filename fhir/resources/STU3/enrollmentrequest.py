@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/EnrollmentRequest
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class EnrollmentRequest(domainresource.DomainResource):
 
     __resource_type__ = "EnrollmentRequest"
 
-    coverage: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    coverage: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="coverage",
         title="Insurance information",
         description="Reference to the program or plan identification, underwriter or payor.",
@@ -38,8 +39,8 @@ class EnrollmentRequest(domainresource.DomainResource):
         },
     )
 
-    created: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    created: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="created",
         title="Creation date",
         description="The date when this resource was created.",
@@ -47,12 +48,12 @@ class EnrollmentRequest(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    created__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_created", title="Extension field for ``created``."
+    created__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_created", title="Extension field for ``created``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business Identifier",
         description="The Response business identifier.",
@@ -61,8 +62,8 @@ class EnrollmentRequest(domainresource.DomainResource):
         },
     )
 
-    insurer: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    insurer: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="insurer",
         title="Target",
         description="The Insurer who is target  of the request.",
@@ -73,8 +74,8 @@ class EnrollmentRequest(domainresource.DomainResource):
         },
     )
 
-    organization: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    organization: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="organization",
         title="Responsible organization",
         description=(
@@ -88,8 +89,8 @@ class EnrollmentRequest(domainresource.DomainResource):
         },
     )
 
-    provider: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    provider: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="provider",
         title="Responsible practitioner",
         description=(
@@ -103,24 +104,25 @@ class EnrollmentRequest(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="active | cancelled | draft | entered-in-error",
         description="The status of the resource instance.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["active", "cancelled", "draft", "entered-in-error"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    subject: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="subject",
         title="The subject of the Products and Services",
         description="Patient Resource.",
@@ -132,10 +134,10 @@ class EnrollmentRequest(domainresource.DomainResource):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``EnrollmentRequest`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``EnrollmentRequest`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -155,3 +157,10 @@ class EnrollmentRequest(domainresource.DomainResource):
             "subject",
             "coverage",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``EnrollmentRequest`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "meta", "implicitRules", "status"]

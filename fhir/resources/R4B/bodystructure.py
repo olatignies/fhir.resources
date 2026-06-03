@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/BodyStructure
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -27,44 +28,47 @@ class BodyStructure(domainresource.DomainResource):
 
     __resource_type__ = "BodyStructure"
 
-    active: bool | None = Field(  # type: ignore
-        None,
+    active: bool | None = Field(
+        default=None,
         alias="active",
         title="Whether this record is in active use",
         description="Whether this body site is in active use.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    active__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_active", title="Extension field for ``active``."
+    active__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_active", title="Extension field for ``active``."
     )
 
-    description: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.StringType | None = Field(
+        default=None,
         alias="description",
         title="Text description",
         description="A summary, characterization or explanation of the body structure.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Bodystructure identifier",
         description="Identifier for this instance of the anatomical structure.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    image: typing.List[fhirtypes.AttachmentType] | None = Field(  # type: ignore
-        None,
+    image: typing.List[fhirtypes.AttachmentType] | None = Field(
+        default=None,
         alias="image",
         title="Attached images",
         description="Image or images used to identify a location.",
@@ -73,8 +77,8 @@ class BodyStructure(domainresource.DomainResource):
         },
     )
 
-    location: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    location: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="location",
         title="Body site",
         description=(
@@ -83,11 +87,12 @@ class BodyStructure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    locationQualifier: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    locationQualifier: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="locationQualifier",
         title="Body site modifier",
         description=(
@@ -99,8 +104,8 @@ class BodyStructure(domainresource.DomainResource):
         },
     )
 
-    morphology: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    morphology: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="morphology",
         title="Kind of Structure",
         description=(
@@ -110,26 +115,28 @@ class BodyStructure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    patient: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    patient: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="patient",
         title="Who this is about",
         description="The person to which the body site belongs.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``BodyStructure`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``BodyStructure`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -147,5 +154,22 @@ class BodyStructure(domainresource.DomainResource):
             "locationQualifier",
             "description",
             "image",
+            "patient",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``BodyStructure`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "active",
+            "morphology",
+            "location",
+            "description",
             "patient",
         ]

@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/RelatedArtifact
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class RelatedArtifact(datatype.DataType):
 
     __resource_type__ = "RelatedArtifact"
 
-    citation: fhirtypes.MarkdownType | None = Field(  # type: ignore
-        None,
+    citation: fhirtypes.MarkdownType | None = Field(
+        default=None,
         alias="citation",
         title="Bibliographic citation for the artifact",
         description=(
@@ -36,24 +37,26 @@ class RelatedArtifact(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    citation__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_citation", title="Extension field for ``citation``."
+    citation__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_citation", title="Extension field for ``citation``."
     )
 
-    classifier: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    classifier: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="classifier",
         title="Additional classifiers",
         description="Provides additional classifiers of the related artifact.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    display: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    display: fhirtypes.StringType | None = Field(
+        default=None,
         alias="display",
         title="Brief description of the related artifact",
         description=(
@@ -62,14 +65,15 @@ class RelatedArtifact(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    display__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_display", title="Extension field for ``display``."
+    display__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_display", title="Extension field for ``display``."
     )
 
-    document: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    document: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="document",
         title="What document is being referenced",
         description=(
@@ -78,11 +82,12 @@ class RelatedArtifact(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    label: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    label: fhirtypes.StringType | None = Field(
+        default=None,
         alias="label",
         title="Short label",
         description=(
@@ -91,45 +96,50 @@ class RelatedArtifact(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    label__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_label", title="Extension field for ``label``."
+    label__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_label", title="Extension field for ``label``."
     )
 
-    publicationDate: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    publicationDate: fhirtypes.DateType | None = Field(
+        default=None,
         alias="publicationDate",
         title="Date of publication of the artifact being referred to",
         description="The date of publication of the artifact being referred to.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    publicationDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_publicationDate", title="Extension field for ``publicationDate``."
+    publicationDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_publicationDate",
+        title="Extension field for ``publicationDate``.",
     )
 
-    publicationStatus: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    publicationStatus: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="publicationStatus",
         title="draft | active | retired | unknown",
         description="The publication status of the artifact being referred to.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["draft", "active", "retired", "unknown"],
         },
     )
-    publicationStatus__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    publicationStatus__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_publicationStatus",
         title="Extension field for ``publicationStatus``.",
     )
 
-    resource: fhirtypes.CanonicalType | None = Field(  # type: ignore
-        None,
+    resource: fhirtypes.CanonicalType | None = Field(
+        default=None,
         alias="resource",
         title="What artifact is being referenced",
         description=(
@@ -138,16 +148,17 @@ class RelatedArtifact(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
-    resource__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_resource", title="Extension field for ``resource``."
+    resource__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_resource", title="Extension field for ``resource``."
     )
 
-    resourceReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    resourceReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="resourceReference",
         title="What artifact, if not a conformance resource",
         description=(
@@ -156,13 +167,14 @@ class RelatedArtifact(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title=(
             "documentation | justification | citation | predecessor | successor | "
@@ -177,6 +189,7 @@ class RelatedArtifact(datatype.DataType):
         description="The type of relationship to the related artifact.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -220,19 +233,37 @@ class RelatedArtifact(datatype.DataType):
             ],
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``RelatedArtifact`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``RelatedArtifact`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "type",
+            "classifier",
+            "label",
+            "display",
+            "citation",
+            "document",
+            "resource",
+            "resourceReference",
+            "publicationStatus",
+            "publicationDate",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``RelatedArtifact`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "type",
             "classifier",
             "label",

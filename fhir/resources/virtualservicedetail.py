@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/VirtualServiceDetail
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -24,21 +25,26 @@ class VirtualServiceDetail(datatype.DataType):
 
     __resource_type__ = "VirtualServiceDetail"
 
-    additionalInfo: typing.List[fhirtypes.UrlType | None] | None = Field(  # type: ignore
-        None,
+    additionalInfo: typing.List[fhirtypes.UrlType | None] | None = Field(
+        default=None,
         alias="additionalInfo",
         title="Address to see alternative connection details",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    additionalInfo__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_additionalInfo", title="Extension field for ``additionalInfo``."
+    additionalInfo__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None,
+        alias="_additionalInfo",
+        title="Extension field for ``additionalInfo``.",
     )
 
-    addressContactPoint: fhirtypes.ContactPointType | None = Field(  # type: ignore
-        None,
+    addressContactPoint: fhirtypes.ContactPointType | None = Field(
+        default=None,
         alias="addressContactPoint",
         title="Contact address/number",
         description=(
@@ -48,14 +54,15 @@ class VirtualServiceDetail(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e address[x]
             "one_of_many": "address",
             "one_of_many_required": False,
         },
     )
 
-    addressExtendedContactDetail: fhirtypes.ExtendedContactDetailType | None = Field(  # type: ignore
-        None,
+    addressExtendedContactDetail: fhirtypes.ExtendedContactDetailType | None = Field(
+        default=None,
         alias="addressExtendedContactDetail",
         title="Contact address/number",
         description=(
@@ -65,14 +72,15 @@ class VirtualServiceDetail(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e address[x]
             "one_of_many": "address",
             "one_of_many_required": False,
         },
     )
 
-    addressString: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    addressString: fhirtypes.StringType | None = Field(
+        default=None,
         alias="addressString",
         title="Contact address/number",
         description=(
@@ -82,17 +90,20 @@ class VirtualServiceDetail(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e address[x]
             "one_of_many": "address",
             "one_of_many_required": False,
         },
     )
-    addressString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_addressString", title="Extension field for ``addressString``."
+    addressString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_addressString",
+        title="Extension field for ``addressString``.",
     )
 
-    addressUrl: fhirtypes.UrlType | None = Field(  # type: ignore
-        None,
+    addressUrl: fhirtypes.UrlType | None = Field(
+        default=None,
         alias="addressUrl",
         title="Contact address/number",
         description=(
@@ -102,17 +113,18 @@ class VirtualServiceDetail(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e address[x]
             "one_of_many": "address",
             "one_of_many_required": False,
         },
     )
-    addressUrl__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_addressUrl", title="Extension field for ``addressUrl``."
+    addressUrl__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_addressUrl", title="Extension field for ``addressUrl``."
     )
 
-    channelType: fhirtypes.CodingType | None = Field(  # type: ignore
-        None,
+    channelType: fhirtypes.CodingType | None = Field(
+        default=None,
         alias="channelType",
         title="Channel Type",
         description=(
@@ -121,44 +133,65 @@ class VirtualServiceDetail(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    maxParticipants: fhirtypes.PositiveIntType | None = Field(  # type: ignore
-        None,
+    maxParticipants: fhirtypes.PositiveIntType | None = Field(
+        default=None,
         alias="maxParticipants",
         title="Maximum number of participants supported by the virtual service",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    maxParticipants__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_maxParticipants", title="Extension field for ``maxParticipants``."
+    maxParticipants__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_maxParticipants",
+        title="Extension field for ``maxParticipants``.",
     )
 
-    sessionKey: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    sessionKey: fhirtypes.StringType | None = Field(
+        default=None,
         alias="sessionKey",
         title="Session Key required by the virtual service",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    sessionKey__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_sessionKey", title="Extension field for ``sessionKey``."
+    sessionKey__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_sessionKey", title="Extension field for ``sessionKey``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``VirtualServiceDetail`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``VirtualServiceDetail`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "channelType",
+            "addressUrl",
+            "addressString",
+            "addressContactPoint",
+            "addressExtendedContactDetail",
+            "additionalInfo",
+            "maxParticipants",
+            "sessionKey",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``VirtualServiceDetail`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "channelType",
             "addressUrl",
             "addressString",

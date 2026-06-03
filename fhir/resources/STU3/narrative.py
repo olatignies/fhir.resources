@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Narrative
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -24,8 +25,8 @@ class Narrative(element.Element):
 
     __resource_type__ = "Narrative"
 
-    div: fhirtypes.XhtmlType | None = Field(  # type: ignore
-        None,
+    div: fhirtypes.XhtmlType | None = Field(
+        default=None,
         alias="div",
         title="Limited xhtml content",
         description="The actual narrative content, a stripped down version of XHTML.",
@@ -34,12 +35,12 @@ class Narrative(element.Element):
             "element_required": True,
         },
     )
-    div__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_div", title="Extension field for ``div``."
+    div__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_div", title="Extension field for ``div``."
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="generated | extensions | additional | empty",
         description=(
@@ -55,17 +56,24 @@ class Narrative(element.Element):
             "enum_values": ["generated", "extensions", "additional", "empty"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Narrative`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Narrative`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "status", "div"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Narrative`` according to specification,
+        with preserving the original sequence order.
+        """
+        return []
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case

@@ -2,11 +2,31 @@
 History
 =======
 
-8.0.1 (unreleased)
+8.2.1 (unreleased)
 ------------------
 
 - Nothing changed yet.
 
+
+8.2.0 (2026-02-02)
+------------------
+
+- Type aliases are added for all types during type checking. [mschoettle]
+- Minimum requirement for ``fhir-core`` version is now ``1.1.5`` which naturally comes with some bug fixes. See here https://github.com/nazrulworld/fhir-core/blob/main/HISTORY.rst#115-2026-01-29
+
+
+8.1.0 (2025-07-10)
+------------------
+
+New features
+
+- Issue #181 ``summary`` (https://www.hl7.org/fhir/search.html#_summary) mode feature added.
+
+Fixes
+
+- Issue #184 pyright struggles with default position args.
+- Issue #186 missing py.typed marker, causing mypy import errors.
+- Issue #183 Pydantic 2.11+ Deprecation Warnings: model_fields Should Be Accessed on Class, Not Instance.
 
 8.0.0 (2024-12-25)
 ------------------

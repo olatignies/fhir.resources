@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Composition
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -34,8 +35,8 @@ class Composition(domainresource.DomainResource):
 
     __resource_type__ = "Composition"
 
-    attester: typing.List[fhirtypes.CompositionAttesterType] | None = Field(  # type: ignore
-        None,
+    attester: typing.List[fhirtypes.CompositionAttesterType] | None = Field(
+        default=None,
         alias="attester",
         title="Attests to accuracy of composition",
         description=(
@@ -47,8 +48,8 @@ class Composition(domainresource.DomainResource):
         },
     )
 
-    author: typing.List[fhirtypes.ReferenceType] = Field(  # type: ignore
-        ...,
+    author: typing.List[fhirtypes.ReferenceType] = Field(
+        default=...,
         alias="author",
         title="Who and/or what authored the composition",
         description=(
@@ -57,6 +58,7 @@ class Composition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -69,8 +71,8 @@ class Composition(domainresource.DomainResource):
         },
     )
 
-    category: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    category: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="category",
         title="Categorization of Composition",
         description=(
@@ -80,24 +82,28 @@ class Composition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    confidentiality: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    confidentiality: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="confidentiality",
         title="As defined by affinity domain",
         description="The code specifying the level of confidentiality of the Composition.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    confidentiality__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_confidentiality", title="Extension field for ``confidentiality``."
+    confidentiality__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_confidentiality",
+        title="Extension field for ``confidentiality``.",
     )
 
-    custodian: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    custodian: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="custodian",
         title="Organization which maintains the composition",
         description=(
@@ -106,13 +112,14 @@ class Composition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    date: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    date: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="date",
         title="Composition editing time",
         description=(
@@ -121,15 +128,16 @@ class Composition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_date", title="Extension field for ``date``."
+    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_date", title="Extension field for ``date``."
     )
 
-    encounter: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    encounter: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="encounter",
         title="Context of the Composition",
         description=(
@@ -138,13 +146,14 @@ class Composition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Encounter"],
         },
     )
 
-    event: typing.List[fhirtypes.CompositionEventType] | None = Field(  # type: ignore
-        None,
+    event: typing.List[fhirtypes.CompositionEventType] | None = Field(
+        default=None,
         alias="event",
         title="The clinical service(s) being documented",
         description=(
@@ -153,11 +162,12 @@ class Composition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Version-independent identifier for the Composition",
         description=(
@@ -166,11 +176,12 @@ class Composition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    relatesTo: typing.List[fhirtypes.CompositionRelatesToType] | None = Field(  # type: ignore
-        None,
+    relatesTo: typing.List[fhirtypes.CompositionRelatesToType] | None = Field(
+        default=None,
         alias="relatesTo",
         title="Relationships to other compositions/documents",
         description=(
@@ -182,8 +193,8 @@ class Composition(domainresource.DomainResource):
         },
     )
 
-    section: typing.List[fhirtypes.CompositionSectionType] | None = Field(  # type: ignore
-        None,
+    section: typing.List[fhirtypes.CompositionSectionType] | None = Field(
+        default=None,
         alias="section",
         title="Composition is broken into sections",
         description="The root of the sections that make up the composition.",
@@ -192,8 +203,8 @@ class Composition(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="preliminary | final | amended | entered-in-error",
         description=(
@@ -202,18 +213,19 @@ class Composition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["preliminary", "final", "amended", "entered-in-error"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    subject: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="subject",
         title="Who and/or what the composition is about",
         description=(
@@ -224,27 +236,29 @@ class Composition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    title: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    title: fhirtypes.StringType | None = Field(
+        default=None,
         alias="title",
         title="Human Readable name/title",
         description="Official human-readable label for the composition.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    title__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_title", title="Extension field for ``title``."
+    title__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_title", title="Extension field for ``title``."
     )
 
-    type: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="type",
         title="Kind of composition (LOINC if possible)",
         description=(
@@ -254,14 +268,15 @@ class Composition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Composition`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Composition`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -287,6 +302,29 @@ class Composition(domainresource.DomainResource):
             "relatesTo",
             "event",
             "section",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Composition`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "status",
+            "type",
+            "category",
+            "subject",
+            "encounter",
+            "date",
+            "author",
+            "title",
+            "confidentiality",
+            "custodian",
+            "event",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
@@ -316,8 +354,8 @@ class CompositionAttester(backboneelement.BackboneElement):
 
     __resource_type__ = "CompositionAttester"
 
-    mode: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    mode: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="mode",
         title="personal | professional | legal | official",
         description="The type of attestation the authenticator offers.",
@@ -329,12 +367,12 @@ class CompositionAttester(backboneelement.BackboneElement):
             "enum_values": ["personal", "professional", "legal", "official"],
         },
     )
-    mode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_mode", title="Extension field for ``mode``."
+    mode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_mode", title="Extension field for ``mode``."
     )
 
-    party: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    party: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="party",
         title="Who attested the composition",
         description="Who attested the composition in the specified way.",
@@ -351,8 +389,8 @@ class CompositionAttester(backboneelement.BackboneElement):
         },
     )
 
-    time: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    time: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="time",
         title="When the composition was attested",
         description="When the composition was attested by the party.",
@@ -360,17 +398,24 @@ class CompositionAttester(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    time__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_time", title="Extension field for ``time``."
+    time__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_time", title="Extension field for ``time``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``CompositionAttester`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``CompositionAttester`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "mode", "time", "party"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``CompositionAttester`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
@@ -396,8 +441,8 @@ class CompositionEvent(backboneelement.BackboneElement):
 
     __resource_type__ = "CompositionEvent"
 
-    code: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    code: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="code",
         title="Code(s) that apply to the event being documented",
         description=(
@@ -409,11 +454,12 @@ class CompositionEvent(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    detail: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    detail: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="detail",
         title="The event(s) being documented",
         description=(
@@ -423,13 +469,14 @@ class CompositionEvent(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="The period covered by the documentation",
         description=(
@@ -439,16 +486,24 @@ class CompositionEvent(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``CompositionEvent`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``CompositionEvent`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "code", "period", "detail"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``CompositionEvent`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "code", "period", "detail"]
 
 
 class CompositionRelatesTo(backboneelement.BackboneElement):
@@ -463,8 +518,8 @@ class CompositionRelatesTo(backboneelement.BackboneElement):
 
     __resource_type__ = "CompositionRelatesTo"
 
-    code: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="code",
         title="replaces | transforms | signs | appends",
         description=(
@@ -479,12 +534,12 @@ class CompositionRelatesTo(backboneelement.BackboneElement):
             "enum_values": ["replaces", "transforms", "signs", "appends"],
         },
     )
-    code__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_code", title="Extension field for ``code``."
+    code__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_code", title="Extension field for ``code``."
     )
 
-    targetIdentifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    targetIdentifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="targetIdentifier",
         title="Target of the relationship",
         description="The target composition/document of this relationship.",
@@ -496,8 +551,8 @@ class CompositionRelatesTo(backboneelement.BackboneElement):
         },
     )
 
-    targetReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    targetReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="targetReference",
         title="Target of the relationship",
         description="The target composition/document of this relationship.",
@@ -512,10 +567,10 @@ class CompositionRelatesTo(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``CompositionRelatesTo`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``CompositionRelatesTo`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -525,6 +580,13 @@ class CompositionRelatesTo(backboneelement.BackboneElement):
             "targetIdentifier",
             "targetReference",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``CompositionRelatesTo`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
@@ -565,8 +627,8 @@ class CompositionSection(backboneelement.BackboneElement):
 
     __resource_type__ = "CompositionSection"
 
-    author: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    author: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="author",
         title="Who and/or what authored the section",
         description=(
@@ -587,8 +649,8 @@ class CompositionSection(backboneelement.BackboneElement):
         },
     )
 
-    code: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="code",
         title="Classification of section (recommended)",
         description=(
@@ -600,8 +662,8 @@ class CompositionSection(backboneelement.BackboneElement):
         },
     )
 
-    emptyReason: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    emptyReason: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="emptyReason",
         title="Why the section is empty",
         description=(
@@ -613,8 +675,8 @@ class CompositionSection(backboneelement.BackboneElement):
         },
     )
 
-    entry: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    entry: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="entry",
         title="A reference to data that supports this section",
         description=(
@@ -628,8 +690,8 @@ class CompositionSection(backboneelement.BackboneElement):
         },
     )
 
-    focus: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    focus: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="focus",
         title=(
             "Who/what the section is about, when it is not about the subject of "
@@ -653,8 +715,8 @@ class CompositionSection(backboneelement.BackboneElement):
         },
     )
 
-    mode: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    mode: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="mode",
         title="working | snapshot | changes",
         description=(
@@ -671,12 +733,12 @@ class CompositionSection(backboneelement.BackboneElement):
             "enum_values": ["working", "snapshot", "changes"],
         },
     )
-    mode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_mode", title="Extension field for ``mode``."
+    mode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_mode", title="Extension field for ``mode``."
     )
 
-    orderedBy: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    orderedBy: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="orderedBy",
         title="Order of section entries",
         description="Specifies the order applied to the items in the section entries.",
@@ -685,8 +747,8 @@ class CompositionSection(backboneelement.BackboneElement):
         },
     )
 
-    section: typing.List[fhirtypes.CompositionSectionType] | None = Field(  # type: ignore
-        None,
+    section: typing.List[fhirtypes.CompositionSectionType] | None = Field(
+        default=None,
         alias="section",
         title="Nested Section",
         description="A nested sub-section within this section.",
@@ -695,8 +757,8 @@ class CompositionSection(backboneelement.BackboneElement):
         },
     )
 
-    text: fhirtypes.NarrativeType | None = Field(  # type: ignore
-        None,
+    text: fhirtypes.NarrativeType | None = Field(
+        default=None,
         alias="text",
         title="Text summary of the section, for human interpretation",
         description=(
@@ -711,8 +773,8 @@ class CompositionSection(backboneelement.BackboneElement):
         },
     )
 
-    title: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    title: fhirtypes.StringType | None = Field(
+        default=None,
         alias="title",
         title="Label for section (e.g. for ToC)",
         description=(
@@ -724,15 +786,15 @@ class CompositionSection(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    title__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_title", title="Extension field for ``title``."
+    title__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_title", title="Extension field for ``title``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``CompositionSection`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``CompositionSection`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -749,3 +811,10 @@ class CompositionSection(backboneelement.BackboneElement):
             "emptyReason",
             "section",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``CompositionSection`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

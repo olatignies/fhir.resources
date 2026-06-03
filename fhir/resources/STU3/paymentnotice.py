@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/PaymentNotice
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class PaymentNotice(domainresource.DomainResource):
 
     __resource_type__ = "PaymentNotice"
 
-    created: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    created: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="created",
         title="Creation date",
         description="The date when this resource was created.",
@@ -35,12 +36,12 @@ class PaymentNotice(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    created__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_created", title="Extension field for ``created``."
+    created__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_created", title="Extension field for ``created``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business Identifier",
         description="The notice business identifier.",
@@ -49,8 +50,8 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    organization: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    organization: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="organization",
         title="Responsible organization",
         description=(
@@ -64,8 +65,8 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    paymentStatus: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    paymentStatus: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="paymentStatus",
         title="Whether payment has been sent or cleared",
         description=(
@@ -77,8 +78,8 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    provider: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    provider: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="provider",
         title="Responsible practitioner",
         description=(
@@ -92,8 +93,8 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    request: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    request: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="request",
         title="Request reference",
         description="Reference of resource for which payment is being made.",
@@ -104,8 +105,8 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    response: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    response: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="response",
         title="Response reference",
         description="Reference of response to resource for which payment is being made.",
@@ -116,24 +117,25 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="active | cancelled | draft | entered-in-error",
         description="The status of the resource instance.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["active", "cancelled", "draft", "entered-in-error"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    statusDate: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    statusDate: fhirtypes.DateType | None = Field(
+        default=None,
         alias="statusDate",
         title="Payment or clearing date",
         description="The date when the above payment action occurrred.",
@@ -141,12 +143,12 @@ class PaymentNotice(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    statusDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_statusDate", title="Extension field for ``statusDate``."
+    statusDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_statusDate", title="Extension field for ``statusDate``."
     )
 
-    target: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    target: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="target",
         title="Insurer or Regulatory body",
         description="The Insurer who is target  of the request.",
@@ -158,10 +160,10 @@ class PaymentNotice(domainresource.DomainResource):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``PaymentNotice`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``PaymentNotice`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -183,3 +185,10 @@ class PaymentNotice(domainresource.DomainResource):
             "organization",
             "paymentStatus",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``PaymentNotice`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "meta", "implicitRules", "status"]

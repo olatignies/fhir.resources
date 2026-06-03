@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/ParameterDefinition
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -28,8 +29,8 @@ class ParameterDefinition(element.Element):
 
     __resource_type__ = "ParameterDefinition"
 
-    documentation: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    documentation: fhirtypes.StringType | None = Field(
+        default=None,
         alias="documentation",
         title="A brief description of the parameter",
         description=(
@@ -38,14 +39,17 @@ class ParameterDefinition(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    documentation__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_documentation", title="Extension field for ``documentation``."
+    documentation__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_documentation",
+        title="Extension field for ``documentation``.",
     )
 
-    max: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    max: fhirtypes.StringType | None = Field(
+        default=None,
         alias="max",
         title="Maximum cardinality (a number of *)",
         description=(
@@ -54,14 +58,15 @@ class ParameterDefinition(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    max__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_max", title="Extension field for ``max``."
+    max__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_max", title="Extension field for ``max``."
     )
 
-    min: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    min: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="min",
         title="Minimum cardinality",
         description=(
@@ -70,14 +75,15 @@ class ParameterDefinition(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    min__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_min", title="Extension field for ``min``."
+    min__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_min", title="Extension field for ``min``."
     )
 
-    name: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    name: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="name",
         title="Name used to access the parameter value",
         description=(
@@ -86,14 +92,15 @@ class ParameterDefinition(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_name", title="Extension field for ``name``."
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_name", title="Extension field for ``name``."
     )
 
-    profile: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    profile: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="profile",
         title="What profile the value is expected to be",
         description=(
@@ -102,47 +109,50 @@ class ParameterDefinition(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["StructureDefinition"],
         },
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title="What type of value",
         description="The type of the parameter.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
-    use: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    use: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="use",
         title="in | out",
         description="Whether the parameter is input or output for the module.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["in", "out"],
         },
     )
-    use__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_use", title="Extension field for ``use``."
+    use__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_use", title="Extension field for ``use``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ParameterDefinition`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ParameterDefinition`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -155,6 +165,13 @@ class ParameterDefinition(element.Element):
             "type",
             "profile",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ParameterDefinition`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["name", "use", "min", "max", "documentation", "type", "profile"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case

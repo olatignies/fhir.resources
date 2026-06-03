@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Linkage
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class Linkage(domainresource.DomainResource):
 
     __resource_type__ = "Linkage"
 
-    active: bool | None = Field(  # type: ignore
-        None,
+    active: bool | None = Field(
+        default=None,
         alias="active",
         title="Whether this linkage assertion is active or not",
         description=(
@@ -36,14 +37,15 @@ class Linkage(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    active__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_active", title="Extension field for ``active``."
+    active__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_active", title="Extension field for ``active``."
     )
 
-    author: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    author: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="author",
         title="Who is responsible for linkages",
         description=(
@@ -53,6 +55,7 @@ class Linkage(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -62,8 +65,8 @@ class Linkage(domainresource.DomainResource):
         },
     )
 
-    item: typing.List[fhirtypes.LinkageItemType] = Field(  # type: ignore
-        ...,
+    item: typing.List[fhirtypes.LinkageItemType] = Field(
+        default=...,
         alias="item",
         title="Item to be linked",
         description=(
@@ -73,14 +76,15 @@ class Linkage(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Linkage`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Linkage`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -96,6 +100,13 @@ class Linkage(domainresource.DomainResource):
             "item",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Linkage`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "meta", "implicitRules", "active", "author", "item"]
+
 
 class LinkageItem(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -110,20 +121,21 @@ class LinkageItem(backboneelement.BackboneElement):
 
     __resource_type__ = "LinkageItem"
 
-    resource: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    resource: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="resource",
         title="Resource being linked",
         description="The resource instance being linked as part of the group.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title="source | alternate | historical",
         description=(
@@ -132,23 +144,31 @@ class LinkageItem(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["source", "alternate", "historical"],
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``LinkageItem`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``LinkageItem`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "type", "resource"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``LinkageItem`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "type", "resource"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case

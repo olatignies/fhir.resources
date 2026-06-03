@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Ratio
 Release: R5
@@ -7,6 +5,11 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
+import typing
+
 from pydantic import Field
 
 from . import datatype, fhirtypes
@@ -24,30 +27,39 @@ class Ratio(datatype.DataType):
 
     __resource_type__ = "Ratio"
 
-    denominator: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    denominator: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="denominator",
         title="Denominator value",
         description="The value of the denominator.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    numerator: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    numerator: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="numerator",
         title="Numerator value",
         description="The value of the numerator.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Ratio`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Ratio`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "numerator", "denominator"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Ratio`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["numerator", "denominator"]

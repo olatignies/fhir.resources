@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/CodeableConcept
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,18 +27,19 @@ class CodeableConcept(element.Element):
 
     __resource_type__ = "CodeableConcept"
 
-    coding: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    coding: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="coding",
         title="Code defined by a terminology system",
         description="A reference to a code defined by a terminology system.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    text: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    text: fhirtypes.StringType | None = Field(
+        default=None,
         alias="text",
         title="Plain text representation of the concept",
         description=(
@@ -47,16 +49,24 @@ class CodeableConcept(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    text__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_text", title="Extension field for ``text``."
+    text__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_text", title="Extension field for ``text``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``CodeableConcept`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``CodeableConcept`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "coding", "text"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``CodeableConcept`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["coding", "text"]

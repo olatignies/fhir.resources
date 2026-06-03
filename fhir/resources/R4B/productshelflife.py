@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/ProductShelfLife
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -25,18 +26,19 @@ class ProductShelfLife(backboneelement.BackboneElement):
 
     __resource_type__ = "ProductShelfLife"
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Unique identifier for the packaged Medicinal Product",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    period: fhirtypes.QuantityType = Field(  # type: ignore
-        ...,
+    period: fhirtypes.QuantityType = Field(
+        default=...,
         alias="period",
         title=(
             "The shelf life time period can be specified using a numerical value "
@@ -48,11 +50,14 @@ class ProductShelfLife(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    specialPrecautionsForStorage: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    specialPrecautionsForStorage: typing.List[
+        fhirtypes.CodeableConceptType
+    ] | None = Field(
+        default=None,
         alias="specialPrecautionsForStorage",
         title=(
             "Special precautions for storage, if any, can be specified using an "
@@ -62,11 +67,12 @@ class ProductShelfLife(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    type: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="type",
         title=(
             "This describes the shelf life, taking into account various scenarios "
@@ -79,18 +85,32 @@ class ProductShelfLife(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ProductShelfLife`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ProductShelfLife`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "identifier",
+            "type",
+            "period",
+            "specialPrecautionsForStorage",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ProductShelfLife`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "identifier",
             "type",

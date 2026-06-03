@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/CareTeam
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -27,8 +28,8 @@ class CareTeam(domainresource.DomainResource):
 
     __resource_type__ = "CareTeam"
 
-    category: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    category: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="category",
         title="Type of team",
         description=(
@@ -38,11 +39,12 @@ class CareTeam(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    context: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    context: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="context",
         title="Encounter or episode associated with CareTeam",
         description=(
@@ -51,13 +53,14 @@ class CareTeam(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Encounter", "EpisodeOfCare"],
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="External Ids for this team",
         description=(
@@ -67,23 +70,25 @@ class CareTeam(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    managingOrganization: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    managingOrganization: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="managingOrganization",
         title="Organization responsible for the care team",
         description="The organization responsible for the care team.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    name: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    name: fhirtypes.StringType | None = Field(
+        default=None,
         alias="name",
         title="Name of the team, such as crisis assessment team",
         description=(
@@ -92,14 +97,15 @@ class CareTeam(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_name", title="Extension field for ``name``."
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_name", title="Extension field for ``name``."
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Comments made about the CareTeam",
         description=None,
@@ -108,8 +114,8 @@ class CareTeam(domainresource.DomainResource):
         },
     )
 
-    participant: typing.List[fhirtypes.CareTeamParticipantType] | None = Field(  # type: ignore
-        None,
+    participant: typing.List[fhirtypes.CareTeamParticipantType] | None = Field(
+        default=None,
         alias="participant",
         title="Members of the team",
         description=(
@@ -121,8 +127,8 @@ class CareTeam(domainresource.DomainResource):
         },
     )
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="Time period team covers",
         description=(
@@ -131,11 +137,12 @@ class CareTeam(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    reasonCode: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    reasonCode: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="reasonCode",
         title="Why the care team exists",
         description="Describes why the care team exists.",
@@ -144,8 +151,8 @@ class CareTeam(domainresource.DomainResource):
         },
     )
 
-    reasonReference: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    reasonReference: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="reasonReference",
         title="Why the care team exists",
         description="Condition(s) that this care team addresses.",
@@ -156,13 +163,14 @@ class CareTeam(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="proposed | active | suspended | inactive | entered-in-error",
         description="Indicates the current state of the care team.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": [
@@ -174,12 +182,12 @@ class CareTeam(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    subject: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="subject",
         title="Who care team is for",
         description=(
@@ -188,16 +196,17 @@ class CareTeam(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Group"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``CareTeam`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``CareTeam`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -222,6 +231,25 @@ class CareTeam(domainresource.DomainResource):
             "note",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``CareTeam`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "status",
+            "category",
+            "name",
+            "subject",
+            "context",
+            "period",
+            "managingOrganization",
+        ]
+
 
 class CareTeamParticipant(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -235,8 +263,8 @@ class CareTeamParticipant(backboneelement.BackboneElement):
 
     __resource_type__ = "CareTeamParticipant"
 
-    member: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    member: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="member",
         title="Who is involved",
         description=(
@@ -245,6 +273,7 @@ class CareTeamParticipant(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -256,20 +285,21 @@ class CareTeamParticipant(backboneelement.BackboneElement):
         },
     )
 
-    onBehalfOf: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    onBehalfOf: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="onBehalfOf",
         title="Organization of the practitioner",
         description="The organization of the practitioner.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="Time period of participant",
         description=(
@@ -281,8 +311,8 @@ class CareTeamParticipant(backboneelement.BackboneElement):
         },
     )
 
-    role: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    role: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="role",
         title="Type of involvement",
         description=(
@@ -292,14 +322,15 @@ class CareTeamParticipant(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``CareTeamParticipant`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``CareTeamParticipant`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -310,3 +341,10 @@ class CareTeamParticipant(backboneelement.BackboneElement):
             "onBehalfOf",
             "period",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``CareTeamParticipant`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "role", "member", "onBehalfOf"]

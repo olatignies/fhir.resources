@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/InsurancePlan
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -24,8 +25,8 @@ class InsurancePlan(domainresource.DomainResource):
 
     __resource_type__ = "InsurancePlan"
 
-    administeredBy: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    administeredBy: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="administeredBy",
         title="Product administrator",
         description=(
@@ -35,13 +36,14 @@ class InsurancePlan(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    alias: typing.List[fhirtypes.StringType | None] | None = Field(  # type: ignore
-        None,
+    alias: typing.List[fhirtypes.StringType | None] | None = Field(
+        default=None,
         alias="alias",
         title="Alternate names",
         description=(
@@ -52,12 +54,12 @@ class InsurancePlan(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    alias__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_alias", title="Extension field for ``alias``."
+    alias__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(
+        default=None, alias="_alias", title="Extension field for ``alias``."
     )
 
-    contact: typing.List[fhirtypes.ExtendedContactDetailType] | None = Field(  # type: ignore
-        None,
+    contact: typing.List[fhirtypes.ExtendedContactDetailType] | None = Field(
+        default=None,
         alias="contact",
         title="Official contact details relevant to the health insurance plan/product",
         description=(
@@ -70,8 +72,8 @@ class InsurancePlan(domainresource.DomainResource):
         },
     )
 
-    coverage: typing.List[fhirtypes.InsurancePlanCoverageType] | None = Field(  # type: ignore
-        None,
+    coverage: typing.List[fhirtypes.InsurancePlanCoverageType] | None = Field(
+        default=None,
         alias="coverage",
         title="Coverage details",
         description="Details about the coverage offered by the insurance product.",
@@ -80,8 +82,8 @@ class InsurancePlan(domainresource.DomainResource):
         },
     )
 
-    coverageArea: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    coverageArea: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="coverageArea",
         title="Where product applies",
         description=(
@@ -90,13 +92,14 @@ class InsurancePlan(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Location"],
         },
     )
 
-    endpoint: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    endpoint: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="endpoint",
         title="Technical endpoint",
         description=(
@@ -110,8 +113,8 @@ class InsurancePlan(domainresource.DomainResource):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business Identifier for Product",
         description=(
@@ -121,11 +124,12 @@ class InsurancePlan(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    name: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    name: fhirtypes.StringType | None = Field(
+        default=None,
         alias="name",
         title="Official name",
         description=(
@@ -134,14 +138,15 @@ class InsurancePlan(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_name", title="Extension field for ``name``."
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_name", title="Extension field for ``name``."
     )
 
-    network: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    network: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="network",
         title="What networks are Included",
         description="Reference to the network included in the health insurance product.",
@@ -152,8 +157,8 @@ class InsurancePlan(domainresource.DomainResource):
         },
     )
 
-    ownedBy: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    ownedBy: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="ownedBy",
         title="Product issuer",
         description=(
@@ -164,13 +169,14 @@ class InsurancePlan(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="When the product is available",
         description="The period of time that the health insurance product is available.",
@@ -179,8 +185,8 @@ class InsurancePlan(domainresource.DomainResource):
         },
     )
 
-    plan: typing.List[fhirtypes.InsurancePlanPlanType] | None = Field(  # type: ignore
-        None,
+    plan: typing.List[fhirtypes.InsurancePlanPlanType] | None = Field(
+        default=None,
         alias="plan",
         title="Plan details",
         description="Details about an insurance plan.",
@@ -189,37 +195,39 @@ class InsurancePlan(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="draft | active | retired | unknown",
         description="The current state of the health insurance product.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["draft", "active", "retired", "unknown"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    type: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    type: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="type",
         title="Kind of product",
         description="The kind of health insurance product.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InsurancePlan`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InsurancePlan`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -246,6 +254,25 @@ class InsurancePlan(domainresource.DomainResource):
             "plan",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InsurancePlan`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "modifierExtension",
+            "identifier",
+            "status",
+            "type",
+            "name",
+            "ownedBy",
+            "administeredBy",
+            "coverageArea",
+        ]
+
 
 class InsurancePlanCoverage(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -258,8 +285,8 @@ class InsurancePlanCoverage(backboneelement.BackboneElement):
 
     __resource_type__ = "InsurancePlanCoverage"
 
-    benefit: typing.List[fhirtypes.InsurancePlanCoverageBenefitType] = Field(  # type: ignore
-        ...,
+    benefit: typing.List[fhirtypes.InsurancePlanCoverageBenefitType] = Field(
+        default=...,
         alias="benefit",
         title="List of benefits",
         description="Specific benefits under this type of coverage.",
@@ -268,8 +295,8 @@ class InsurancePlanCoverage(backboneelement.BackboneElement):
         },
     )
 
-    network: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    network: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="network",
         title="What networks provide coverage",
         description="Reference to the network that providing the type of coverage.",
@@ -280,8 +307,8 @@ class InsurancePlanCoverage(backboneelement.BackboneElement):
         },
     )
 
-    type: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="type",
         title="Type of coverage",
         description=(
@@ -294,12 +321,19 @@ class InsurancePlanCoverage(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InsurancePlanCoverage`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InsurancePlanCoverage`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "type", "network", "benefit"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InsurancePlanCoverage`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class InsurancePlanCoverageBenefit(backboneelement.BackboneElement):
@@ -313,8 +347,8 @@ class InsurancePlanCoverageBenefit(backboneelement.BackboneElement):
 
     __resource_type__ = "InsurancePlanCoverageBenefit"
 
-    limit: typing.List[fhirtypes.InsurancePlanCoverageBenefitLimitType] | None = Field(  # type: ignore
-        None,
+    limit: typing.List[fhirtypes.InsurancePlanCoverageBenefitLimitType] | None = Field(
+        default=None,
         alias="limit",
         title="Benefit limits",
         description="The specific limits on the benefit.",
@@ -323,8 +357,8 @@ class InsurancePlanCoverageBenefit(backboneelement.BackboneElement):
         },
     )
 
-    requirement: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    requirement: fhirtypes.StringType | None = Field(
+        default=None,
         alias="requirement",
         title="Referral requirements",
         description="The referral requirements to have access/coverage for this benefit.",
@@ -332,12 +366,12 @@ class InsurancePlanCoverageBenefit(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    requirement__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_requirement", title="Extension field for ``requirement``."
+    requirement__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_requirement", title="Extension field for ``requirement``."
     )
 
-    type: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="type",
         title="Type of benefit",
         description=(
@@ -349,12 +383,19 @@ class InsurancePlanCoverageBenefit(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InsurancePlanCoverageBenefit`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InsurancePlanCoverageBenefit`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "type", "requirement", "limit"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InsurancePlanCoverageBenefit`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class InsurancePlanCoverageBenefitLimit(backboneelement.BackboneElement):
@@ -368,8 +409,8 @@ class InsurancePlanCoverageBenefitLimit(backboneelement.BackboneElement):
 
     __resource_type__ = "InsurancePlanCoverageBenefitLimit"
 
-    code: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="code",
         title="Benefit limit details",
         description="The specific limit on the benefit.",
@@ -378,8 +419,8 @@ class InsurancePlanCoverageBenefitLimit(backboneelement.BackboneElement):
         },
     )
 
-    value: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    value: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="value",
         title="Maximum value allowed",
         description=(
@@ -392,12 +433,19 @@ class InsurancePlanCoverageBenefitLimit(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InsurancePlanCoverageBenefitLimit`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InsurancePlanCoverageBenefitLimit`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "value", "code"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InsurancePlanCoverageBenefitLimit`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class InsurancePlanPlan(backboneelement.BackboneElement):
@@ -411,8 +459,8 @@ class InsurancePlanPlan(backboneelement.BackboneElement):
 
     __resource_type__ = "InsurancePlanPlan"
 
-    coverageArea: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    coverageArea: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="coverageArea",
         title="Where product applies",
         description=(
@@ -421,13 +469,14 @@ class InsurancePlanPlan(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Location"],
         },
     )
 
-    generalCost: typing.List[fhirtypes.InsurancePlanPlanGeneralCostType] | None = Field(  # type: ignore
-        None,
+    generalCost: typing.List[fhirtypes.InsurancePlanPlanGeneralCostType] | None = Field(
+        default=None,
         alias="generalCost",
         title="Overall costs",
         description="Overall costs associated with the plan.",
@@ -436,8 +485,8 @@ class InsurancePlanPlan(backboneelement.BackboneElement):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business Identifier for Product",
         description=(
@@ -447,11 +496,12 @@ class InsurancePlanPlan(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    network: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    network: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="network",
         title="What networks provide coverage",
         description="Reference to the network that providing the type of coverage.",
@@ -462,8 +512,10 @@ class InsurancePlanPlan(backboneelement.BackboneElement):
         },
     )
 
-    specificCost: typing.List[fhirtypes.InsurancePlanPlanSpecificCostType] | None = Field(  # type: ignore
-        None,
+    specificCost: typing.List[
+        fhirtypes.InsurancePlanPlanSpecificCostType
+    ] | None = Field(
+        default=None,
         alias="specificCost",
         title="Specific costs",
         description="Costs associated with the coverage provided by the product.",
@@ -472,8 +524,8 @@ class InsurancePlanPlan(backboneelement.BackboneElement):
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Type of plan",
         description='Type of plan. For example, "Platinum" or "High Deductable".',
@@ -483,10 +535,10 @@ class InsurancePlanPlan(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InsurancePlanPlan`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InsurancePlanPlan`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -500,6 +552,13 @@ class InsurancePlanPlan(backboneelement.BackboneElement):
             "specificCost",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InsurancePlanPlan`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "identifier", "coverageArea"]
+
 
 class InsurancePlanPlanGeneralCost(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -512,8 +571,8 @@ class InsurancePlanPlanGeneralCost(backboneelement.BackboneElement):
 
     __resource_type__ = "InsurancePlanPlanGeneralCost"
 
-    comment: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    comment: fhirtypes.StringType | None = Field(
+        default=None,
         alias="comment",
         title="Additional cost information",
         description=(
@@ -524,12 +583,12 @@ class InsurancePlanPlanGeneralCost(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    comment__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_comment", title="Extension field for ``comment``."
+    comment__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_comment", title="Extension field for ``comment``."
     )
 
-    cost: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    cost: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="cost",
         title="Cost value",
         description="Value of the cost.",
@@ -538,8 +597,8 @@ class InsurancePlanPlanGeneralCost(backboneelement.BackboneElement):
         },
     )
 
-    groupSize: fhirtypes.PositiveIntType | None = Field(  # type: ignore
-        None,
+    groupSize: fhirtypes.PositiveIntType | None = Field(
+        default=None,
         alias="groupSize",
         title="Number of enrollees",
         description="Number of participants enrolled in the plan.",
@@ -547,12 +606,12 @@ class InsurancePlanPlanGeneralCost(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    groupSize__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_groupSize", title="Extension field for ``groupSize``."
+    groupSize__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_groupSize", title="Extension field for ``groupSize``."
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Type of cost",
         description=None,
@@ -562,10 +621,10 @@ class InsurancePlanPlanGeneralCost(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InsurancePlanPlanGeneralCost`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InsurancePlanPlanGeneralCost`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -576,6 +635,13 @@ class InsurancePlanPlanGeneralCost(backboneelement.BackboneElement):
             "cost",
             "comment",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InsurancePlanPlanGeneralCost`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class InsurancePlanPlanSpecificCost(backboneelement.BackboneElement):
@@ -589,8 +655,10 @@ class InsurancePlanPlanSpecificCost(backboneelement.BackboneElement):
 
     __resource_type__ = "InsurancePlanPlanSpecificCost"
 
-    benefit: typing.List[fhirtypes.InsurancePlanPlanSpecificCostBenefitType] | None = Field(  # type: ignore
-        None,
+    benefit: typing.List[
+        fhirtypes.InsurancePlanPlanSpecificCostBenefitType
+    ] | None = Field(
+        default=None,
         alias="benefit",
         title="Benefits list",
         description="List of the specific benefits under this category of benefit.",
@@ -599,8 +667,8 @@ class InsurancePlanPlanSpecificCost(backboneelement.BackboneElement):
         },
     )
 
-    category: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    category: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="category",
         title="General category of benefit",
         description=(
@@ -613,12 +681,19 @@ class InsurancePlanPlanSpecificCost(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InsurancePlanPlanSpecificCost`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InsurancePlanPlanSpecificCost`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "category", "benefit"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InsurancePlanPlanSpecificCost`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class InsurancePlanPlanSpecificCostBenefit(backboneelement.BackboneElement):
@@ -632,8 +707,10 @@ class InsurancePlanPlanSpecificCostBenefit(backboneelement.BackboneElement):
 
     __resource_type__ = "InsurancePlanPlanSpecificCostBenefit"
 
-    cost: typing.List[fhirtypes.InsurancePlanPlanSpecificCostBenefitCostType] | None = Field(  # type: ignore
-        None,
+    cost: typing.List[
+        fhirtypes.InsurancePlanPlanSpecificCostBenefitCostType
+    ] | None = Field(
+        default=None,
         alias="cost",
         title="List of the costs",
         description="List of the costs associated with a specific benefit.",
@@ -642,8 +719,8 @@ class InsurancePlanPlanSpecificCostBenefit(backboneelement.BackboneElement):
         },
     )
 
-    type: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="type",
         title="Type of specific benefit",
         description=(
@@ -657,12 +734,19 @@ class InsurancePlanPlanSpecificCostBenefit(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InsurancePlanPlanSpecificCostBenefit`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InsurancePlanPlanSpecificCostBenefit`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "type", "cost"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InsurancePlanPlanSpecificCostBenefit`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class InsurancePlanPlanSpecificCostBenefitCost(backboneelement.BackboneElement):
@@ -676,8 +760,8 @@ class InsurancePlanPlanSpecificCostBenefitCost(backboneelement.BackboneElement):
 
     __resource_type__ = "InsurancePlanPlanSpecificCostBenefitCost"
 
-    applicability: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    applicability: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="applicability",
         title="in-network | out-of-network | other",
         description=(
@@ -689,8 +773,8 @@ class InsurancePlanPlanSpecificCostBenefitCost(backboneelement.BackboneElement):
         },
     )
 
-    qualifiers: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    qualifiers: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="qualifiers",
         title="Additional information about the cost",
         description=(
@@ -702,8 +786,8 @@ class InsurancePlanPlanSpecificCostBenefitCost(backboneelement.BackboneElement):
         },
     )
 
-    type: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="type",
         title="Type of cost",
         description=(
@@ -715,8 +799,8 @@ class InsurancePlanPlanSpecificCostBenefitCost(backboneelement.BackboneElement):
         },
     )
 
-    value: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    value: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="value",
         title="The actual cost value",
         description=(
@@ -729,10 +813,10 @@ class InsurancePlanPlanSpecificCostBenefitCost(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InsurancePlanPlanSpecificCostBenefitCost`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InsurancePlanPlanSpecificCostBenefitCost`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -743,3 +827,10 @@ class InsurancePlanPlanSpecificCostBenefitCost(backboneelement.BackboneElement):
             "qualifiers",
             "value",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InsurancePlanPlanSpecificCostBenefitCost`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

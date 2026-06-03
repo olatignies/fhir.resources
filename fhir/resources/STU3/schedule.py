@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Schedule
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -25,8 +26,8 @@ class Schedule(domainresource.DomainResource):
 
     __resource_type__ = "Schedule"
 
-    active: bool | None = Field(  # type: ignore
-        None,
+    active: bool | None = Field(
+        default=None,
         alias="active",
         title="Whether this schedule is in active use",
         description=(
@@ -35,14 +36,15 @@ class Schedule(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    active__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_active", title="Extension field for ``active``."
+    active__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_active", title="Extension field for ``active``."
     )
 
-    actor: typing.List[fhirtypes.ReferenceType] = Field(  # type: ignore
-        ...,
+    actor: typing.List[fhirtypes.ReferenceType] = Field(
+        default=...,
         alias="actor",
         title=(
             "The resource this Schedule resource is providing availability "
@@ -53,6 +55,7 @@ class Schedule(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Patient",
@@ -66,8 +69,8 @@ class Schedule(domainresource.DomainResource):
         },
     )
 
-    comment: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    comment: fhirtypes.StringType | None = Field(
+        default=None,
         alias="comment",
         title=(
             "Comments on the availability to describe any extended information. "
@@ -78,22 +81,23 @@ class Schedule(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    comment__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_comment", title="Extension field for ``comment``."
+    comment__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_comment", title="Extension field for ``comment``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="External Ids for this item",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    planningHorizon: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    planningHorizon: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="planningHorizon",
         title=(
             "The period of time that the slots that are attached to this Schedule "
@@ -105,11 +109,12 @@ class Schedule(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    serviceCategory: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    serviceCategory: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="serviceCategory",
         title=(
             "A broad categorisation of the service that is to be performed during "
@@ -118,21 +123,23 @@ class Schedule(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    serviceType: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    serviceType: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="serviceType",
         title="The specific service that is to be performed during this appointment",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    specialty: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    specialty: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="specialty",
         title=(
             "The specialty of a practitioner that would be required to perform the "
@@ -141,14 +148,15 @@ class Schedule(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Schedule`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Schedule`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -167,4 +175,22 @@ class Schedule(domainresource.DomainResource):
             "actor",
             "planningHorizon",
             "comment",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Schedule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "active",
+            "serviceCategory",
+            "serviceType",
+            "specialty",
+            "actor",
+            "planningHorizon",
         ]

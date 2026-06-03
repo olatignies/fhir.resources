@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/ProductShelfLife
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -25,8 +26,8 @@ class ProductShelfLife(backbonetype.BackboneType):
 
     __resource_type__ = "ProductShelfLife"
 
-    periodDuration: fhirtypes.DurationType | None = Field(  # type: ignore
-        None,
+    periodDuration: fhirtypes.DurationType | None = Field(
+        default=None,
         alias="periodDuration",
         title=(
             "The shelf life time period can be specified using a numerical value "
@@ -38,14 +39,15 @@ class ProductShelfLife(backbonetype.BackboneType):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e period[x]
             "one_of_many": "period",
             "one_of_many_required": False,
         },
     )
 
-    periodString: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    periodString: fhirtypes.StringType | None = Field(
+        default=None,
         alias="periodString",
         title=(
             "The shelf life time period can be specified using a numerical value "
@@ -57,17 +59,22 @@ class ProductShelfLife(backbonetype.BackboneType):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e period[x]
             "one_of_many": "period",
             "one_of_many_required": False,
         },
     )
-    periodString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_periodString", title="Extension field for ``periodString``."
+    periodString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_periodString",
+        title="Extension field for ``periodString``.",
     )
 
-    specialPrecautionsForStorage: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    specialPrecautionsForStorage: typing.List[
+        fhirtypes.CodeableConceptType
+    ] | None = Field(
+        default=None,
         alias="specialPrecautionsForStorage",
         title=(
             "Special precautions for storage, if any, can be specified using an "
@@ -77,11 +84,12 @@ class ProductShelfLife(backbonetype.BackboneType):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title=(
             "This describes the shelf life, taking into account various scenarios "
@@ -94,18 +102,32 @@ class ProductShelfLife(backbonetype.BackboneType):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ProductShelfLife`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ProductShelfLife`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "type",
+            "periodDuration",
+            "periodString",
+            "specialPrecautionsForStorage",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ProductShelfLife`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "type",
             "periodDuration",

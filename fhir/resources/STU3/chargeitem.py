@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/ChargeItem
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -31,40 +32,43 @@ class ChargeItem(domainresource.DomainResource):
 
     __resource_type__ = "ChargeItem"
 
-    account: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    account: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="account",
         title="Account to place this charge",
         description="Account into which this ChargeItems belongs.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Account"],
         },
     )
 
-    bodysite: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    bodysite: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="bodysite",
         title="Anatomical location, if relevant",
         description="The anatomical location where the related service has been applied.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    code: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    code: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="code",
         title="A code that identifies the charge, like a billing code",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    context: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    context: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="context",
         title="Encounter / Episode associated with event",
         description=(
@@ -73,13 +77,14 @@ class ChargeItem(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Encounter", "EpisodeOfCare"],
         },
     )
 
-    definition: typing.List[fhirtypes.UriType | None] | None = Field(  # type: ignore
-        None,
+    definition: typing.List[fhirtypes.UriType | None] | None = Field(
+        default=None,
         alias="definition",
         title="Defining information about the code of this charge item",
         description=(
@@ -90,30 +95,34 @@ class ChargeItem(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    definition__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_definition", title="Extension field for ``definition``."
+    definition__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None, alias="_definition", title="Extension field for ``definition``."
     )
 
-    enteredDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    enteredDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="enteredDate",
         title="Date the charge item was entered",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    enteredDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_enteredDate", title="Extension field for ``enteredDate``."
+    enteredDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_enteredDate", title="Extension field for ``enteredDate``."
     )
 
-    enterer: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    enterer: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="enterer",
         title="Individual who was entering",
         description="The device, practitioner, etc. who entered the charge item.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -125,8 +134,8 @@ class ChargeItem(domainresource.DomainResource):
         },
     )
 
-    factorOverride: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    factorOverride: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="factorOverride",
         title="Factor overriding the associated rules",
         description=(
@@ -137,22 +146,25 @@ class ChargeItem(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    factorOverride__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_factorOverride", title="Extension field for ``factorOverride``."
+    factorOverride__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_factorOverride",
+        title="Extension field for ``factorOverride``.",
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Business Identifier for item",
         description="Identifiers assigned to this event performer or other systems.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Comments made about the ChargeItem",
         description=(
@@ -164,52 +176,55 @@ class ChargeItem(domainresource.DomainResource):
         },
     )
 
-    occurrenceDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    occurrenceDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="occurrenceDateTime",
         title="When the charged service was applied",
         description="Date/time(s) or duration when the charged service was applied.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e occurrence[x]
             "one_of_many": "occurrence",
             "one_of_many_required": False,
         },
     )
-    occurrenceDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    occurrenceDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_occurrenceDateTime",
         title="Extension field for ``occurrenceDateTime``.",
     )
 
-    occurrencePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    occurrencePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="occurrencePeriod",
         title="When the charged service was applied",
         description="Date/time(s) or duration when the charged service was applied.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e occurrence[x]
             "one_of_many": "occurrence",
             "one_of_many_required": False,
         },
     )
 
-    occurrenceTiming: fhirtypes.TimingType | None = Field(  # type: ignore
-        None,
+    occurrenceTiming: fhirtypes.TimingType | None = Field(
+        default=None,
         alias="occurrenceTiming",
         title="When the charged service was applied",
         description="Date/time(s) or duration when the charged service was applied.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e occurrence[x]
             "one_of_many": "occurrence",
             "one_of_many_required": False,
         },
     )
 
-    overrideReason: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    overrideReason: fhirtypes.StringType | None = Field(
+        default=None,
         alias="overrideReason",
         title="Reason for overriding the list price/factor",
         description=(
@@ -221,12 +236,14 @@ class ChargeItem(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    overrideReason__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_overrideReason", title="Extension field for ``overrideReason``."
+    overrideReason__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_overrideReason",
+        title="Extension field for ``overrideReason``.",
     )
 
-    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="partOf",
         title="Part of referenced ChargeItem",
         description=(
@@ -240,8 +257,8 @@ class ChargeItem(domainresource.DomainResource):
         },
     )
 
-    participant: typing.List[fhirtypes.ChargeItemParticipantType] | None = Field(  # type: ignore
-        None,
+    participant: typing.List[fhirtypes.ChargeItemParticipantType] | None = Field(
+        default=None,
         alias="participant",
         title="Who performed charged service",
         description=(
@@ -252,8 +269,8 @@ class ChargeItem(domainresource.DomainResource):
         },
     )
 
-    performingOrganization: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    performingOrganization: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="performingOrganization",
         title="Organization providing the charged sevice",
         description="The organization requesting the service.",
@@ -264,8 +281,8 @@ class ChargeItem(domainresource.DomainResource):
         },
     )
 
-    priceOverride: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    priceOverride: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="priceOverride",
         title="Price overriding the associated rules",
         description=(
@@ -277,18 +294,19 @@ class ChargeItem(domainresource.DomainResource):
         },
     )
 
-    quantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    quantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="quantity",
         title="Quantity of which the charge item has been serviced",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    reason: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    reason: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="reason",
         title="Why was the charged  service rendered?",
         description="Describes why the event occurred in coded or textual form.",
@@ -297,8 +315,8 @@ class ChargeItem(domainresource.DomainResource):
         },
     )
 
-    requestingOrganization: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    requestingOrganization: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="requestingOrganization",
         title="Organization requesting the charged service",
         description="The organization performing the service.",
@@ -309,8 +327,8 @@ class ChargeItem(domainresource.DomainResource):
         },
     )
 
-    service: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    service: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="service",
         title="Which rendered service is being charged?",
         description="Indicated the rendered service that caused this charge.",
@@ -330,8 +348,8 @@ class ChargeItem(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title=(
             "planned | billable | not-billable | aborted | billed | entered-in-"
@@ -340,6 +358,7 @@ class ChargeItem(domainresource.DomainResource):
         description="The current state of the ChargeItem.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -354,12 +373,12 @@ class ChargeItem(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    subject: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="subject",
         title="Individual service was done for/to",
         description=(
@@ -368,13 +387,14 @@ class ChargeItem(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Group"],
         },
     )
 
-    supportingInformation: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    supportingInformation: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="supportingInformation",
         title="Further information supporting the this charge",
         description=None,
@@ -386,10 +406,10 @@ class ChargeItem(domainresource.DomainResource):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ChargeItem`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ChargeItem`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -425,6 +445,30 @@ class ChargeItem(domainresource.DomainResource):
             "account",
             "note",
             "supportingInformation",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ChargeItem`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "status",
+            "code",
+            "subject",
+            "context",
+            "occurrenceDateTime",
+            "occurrencePeriod",
+            "occurrenceTiming",
+            "quantity",
+            "bodysite",
+            "enterer",
+            "enteredDate",
+            "account",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
@@ -468,8 +512,8 @@ class ChargeItemParticipant(backboneelement.BackboneElement):
 
     __resource_type__ = "ChargeItemParticipant"
 
-    actor: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    actor: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="actor",
         title="Individual who was performing",
         description=(
@@ -489,8 +533,8 @@ class ChargeItemParticipant(backboneelement.BackboneElement):
         },
     )
 
-    role: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    role: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="role",
         title="What type of performance was done",
         description=(
@@ -503,9 +547,16 @@ class ChargeItemParticipant(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ChargeItemParticipant`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ChargeItemParticipant`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "role", "actor"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ChargeItemParticipant`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

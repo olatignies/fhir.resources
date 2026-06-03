@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProduct
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -28,8 +29,8 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
 
     __resource_type__ = "BiologicallyDerivedProduct"
 
-    biologicalSourceEvent: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    biologicalSourceEvent: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="biologicalSourceEvent",
         title=(
             "An identifier that supports traceability to the event during which "
@@ -39,11 +40,12 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    collection: fhirtypes.BiologicallyDerivedProductCollectionType | None = Field(  # type: ignore
-        None,
+    collection: fhirtypes.BiologicallyDerivedProductCollectionType | None = Field(
+        default=None,
         alias="collection",
         title="How this product was collected",
         description=None,
@@ -52,8 +54,8 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
         },
     )
 
-    division: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    division: fhirtypes.StringType | None = Field(
+        default=None,
         alias="division",
         title="A unique identifier for an aliquot of a product",
         description=(
@@ -65,12 +67,12 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    division__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_division", title="Extension field for ``division``."
+    division__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_division", title="Extension field for ``division``."
     )
 
-    expirationDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    expirationDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="expirationDate",
         title="Date, and where relevant time, of expiration",
         description=None,
@@ -78,12 +80,14 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    expirationDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_expirationDate", title="Extension field for ``expirationDate``."
+    expirationDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_expirationDate",
+        title="Extension field for ``expirationDate``.",
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Instance identifier",
         description=(
@@ -93,11 +97,12 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    parent: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    parent: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="parent",
         title="The parent biologically-derived product",
         description="Parent product (if any) for this biologically-derived product.",
@@ -108,8 +113,8 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
         },
     )
 
-    processingFacility: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    processingFacility: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="processingFacility",
         title=(
             "Processing facilities responsible for the labeling and distribution of"
@@ -123,8 +128,8 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
         },
     )
 
-    productCategory: fhirtypes.CodingType | None = Field(  # type: ignore
-        None,
+    productCategory: fhirtypes.CodingType | None = Field(
+        default=None,
         alias="productCategory",
         title="organ | tissue | fluid | cells | biologicalAgent",
         description="Broad category of this product.",
@@ -133,8 +138,8 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
         },
     )
 
-    productCode: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    productCode: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="productCode",
         title="A code that identifies the kind of this biologically derived product",
         description=(
@@ -148,8 +153,8 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
         },
     )
 
-    productStatus: fhirtypes.CodingType | None = Field(  # type: ignore
-        None,
+    productStatus: fhirtypes.CodingType | None = Field(
+        default=None,
         alias="productStatus",
         title="available | unavailable",
         description="Whether the product is currently available.",
@@ -158,8 +163,10 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
         },
     )
 
-    property: typing.List[fhirtypes.BiologicallyDerivedProductPropertyType] | None = Field(  # type: ignore
-        None,
+    property: typing.List[
+        fhirtypes.BiologicallyDerivedProductPropertyType
+    ] | None = Field(
+        default=None,
         alias="property",
         title=(
             "A property that is specific to this BiologicallyDerviedProduct " "instance"
@@ -170,8 +177,8 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
         },
     )
 
-    request: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    request: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="request",
         title="Request to obtain and/or infuse this product",
         description="Request to obtain and/or infuse this biologically derived product.",
@@ -182,8 +189,8 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
         },
     )
 
-    storageTempRequirements: fhirtypes.RangeType | None = Field(  # type: ignore
-        None,
+    storageTempRequirements: fhirtypes.RangeType | None = Field(
+        default=None,
         alias="storageTempRequirements",
         title="Product storage temperature requirements",
         description=(
@@ -196,10 +203,10 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``BiologicallyDerivedProduct`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``BiologicallyDerivedProduct`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -225,6 +232,20 @@ class BiologicallyDerivedProduct(domainresource.DomainResource):
             "property",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``BiologicallyDerivedProduct`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "modifierExtension",
+            "identifier",
+            "biologicalSourceEvent",
+        ]
+
 
 class BiologicallyDerivedProductCollection(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -236,8 +257,8 @@ class BiologicallyDerivedProductCollection(backboneelement.BackboneElement):
 
     __resource_type__ = "BiologicallyDerivedProductCollection"
 
-    collectedDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    collectedDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="collectedDateTime",
         title="Time of product collection",
         description=None,
@@ -248,14 +269,14 @@ class BiologicallyDerivedProductCollection(backboneelement.BackboneElement):
             "one_of_many_required": False,
         },
     )
-    collectedDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    collectedDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_collectedDateTime",
         title="Extension field for ``collectedDateTime``.",
     )
 
-    collectedPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    collectedPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="collectedPeriod",
         title="Time of product collection",
         description=None,
@@ -267,8 +288,8 @@ class BiologicallyDerivedProductCollection(backboneelement.BackboneElement):
         },
     )
 
-    collector: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    collector: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="collector",
         title="Individual performing collection",
         description="Healthcare professional who is performing the collection.",
@@ -279,8 +300,8 @@ class BiologicallyDerivedProductCollection(backboneelement.BackboneElement):
         },
     )
 
-    source: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    source: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="source",
         title=(
             "The patient who underwent the medical procedure to collect the product"
@@ -298,10 +319,10 @@ class BiologicallyDerivedProductCollection(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``BiologicallyDerivedProductCollection`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``BiologicallyDerivedProductCollection`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -312,6 +333,13 @@ class BiologicallyDerivedProductCollection(backboneelement.BackboneElement):
             "collectedDateTime",
             "collectedPeriod",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``BiologicallyDerivedProductCollection`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -340,8 +368,8 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
 
     __resource_type__ = "BiologicallyDerivedProductProperty"
 
-    type: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="type",
         title="Code that specifies the property",
         description=(
@@ -353,8 +381,8 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
         },
     )
 
-    valueAttachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    valueAttachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="valueAttachment",
         title="Property values",
         description=None,
@@ -366,8 +394,8 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
         },
     )
 
-    valueBoolean: bool | None = Field(  # type: ignore
-        None,
+    valueBoolean: bool | None = Field(
+        default=None,
         alias="valueBoolean",
         title="Property values",
         description=None,
@@ -378,12 +406,14 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueBoolean__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueBoolean", title="Extension field for ``valueBoolean``."
+    valueBoolean__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueBoolean",
+        title="Extension field for ``valueBoolean``.",
     )
 
-    valueCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    valueCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="valueCodeableConcept",
         title="Property values",
         description=None,
@@ -395,8 +425,8 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
         },
     )
 
-    valueInteger: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    valueInteger: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="valueInteger",
         title="Property values",
         description=None,
@@ -407,12 +437,14 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueInteger__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueInteger", title="Extension field for ``valueInteger``."
+    valueInteger__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueInteger",
+        title="Extension field for ``valueInteger``.",
     )
 
-    valuePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    valuePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="valuePeriod",
         title="Property values",
         description=None,
@@ -424,8 +456,8 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
         },
     )
 
-    valueQuantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    valueQuantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="valueQuantity",
         title="Property values",
         description=None,
@@ -437,8 +469,8 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
         },
     )
 
-    valueRange: fhirtypes.RangeType | None = Field(  # type: ignore
-        None,
+    valueRange: fhirtypes.RangeType | None = Field(
+        default=None,
         alias="valueRange",
         title="Property values",
         description=None,
@@ -450,8 +482,8 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
         },
     )
 
-    valueRatio: fhirtypes.RatioType | None = Field(  # type: ignore
-        None,
+    valueRatio: fhirtypes.RatioType | None = Field(
+        default=None,
         alias="valueRatio",
         title="Property values",
         description=None,
@@ -463,8 +495,8 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
         },
     )
 
-    valueString: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    valueString: fhirtypes.StringType | None = Field(
+        default=None,
         alias="valueString",
         title="Property values",
         description=None,
@@ -475,15 +507,15 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueString", title="Extension field for ``valueString``."
+    valueString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueString", title="Extension field for ``valueString``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``BiologicallyDerivedProductProperty`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``BiologicallyDerivedProductProperty`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -500,6 +532,13 @@ class BiologicallyDerivedProductProperty(backboneelement.BackboneElement):
             "valueString",
             "valueAttachment",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``BiologicallyDerivedProductProperty`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice

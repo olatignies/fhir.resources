@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/MessageHeader
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -29,8 +30,8 @@ class MessageHeader(domainresource.DomainResource):
 
     __resource_type__ = "MessageHeader"
 
-    author: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    author: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="author",
         title="The source of the decision",
         description=(
@@ -41,6 +42,7 @@ class MessageHeader(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -51,33 +53,35 @@ class MessageHeader(domainresource.DomainResource):
         },
     )
 
-    definition: fhirtypes.CanonicalType | None = Field(  # type: ignore
-        None,
+    definition: fhirtypes.CanonicalType | None = Field(
+        default=None,
         alias="definition",
         title="Link to the definition for this message",
         description="Permanent link to the MessageDefinition for this message.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["MessageDefinition"],
         },
     )
-    definition__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_definition", title="Extension field for ``definition``."
+    definition__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_definition", title="Extension field for ``definition``."
     )
 
-    destination: typing.List[fhirtypes.MessageHeaderDestinationType] | None = Field(  # type: ignore
-        None,
+    destination: typing.List[fhirtypes.MessageHeaderDestinationType] | None = Field(
+        default=None,
         alias="destination",
         title="Message destination application(s)",
         description="The destination application which the message is intended for.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    eventCanonical: fhirtypes.CanonicalType | None = Field(  # type: ignore
-        None,
+    eventCanonical: fhirtypes.CanonicalType | None = Field(
+        default=None,
         alias="eventCanonical",
         title="Event code or link to EventDefinition",
         description=(
@@ -88,6 +92,7 @@ class MessageHeader(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e event[x]
             "one_of_many": "event",
             "one_of_many_required": True,
@@ -95,12 +100,14 @@ class MessageHeader(domainresource.DomainResource):
             "enum_reference_types": ["EventDefinition"],
         },
     )
-    eventCanonical__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_eventCanonical", title="Extension field for ``eventCanonical``."
+    eventCanonical__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_eventCanonical",
+        title="Extension field for ``eventCanonical``.",
     )
 
-    eventCoding: fhirtypes.CodingType | None = Field(  # type: ignore
-        None,
+    eventCoding: fhirtypes.CodingType | None = Field(
+        default=None,
         alias="eventCoding",
         title="Event code or link to EventDefinition",
         description=(
@@ -111,14 +118,15 @@ class MessageHeader(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e event[x]
             "one_of_many": "event",
             "one_of_many_required": True,
         },
     )
 
-    focus: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    focus: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="focus",
         title="The actual content of the message",
         description=(
@@ -127,13 +135,14 @@ class MessageHeader(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    reason: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    reason: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="reason",
         title="Cause of event",
         description=(
@@ -142,11 +151,12 @@ class MessageHeader(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    response: fhirtypes.MessageHeaderResponseType | None = Field(  # type: ignore
-        None,
+    response: fhirtypes.MessageHeaderResponseType | None = Field(
+        default=None,
         alias="response",
         title="If this is a reply to prior message",
         description=(
@@ -155,11 +165,12 @@ class MessageHeader(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    responsible: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    responsible: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="responsible",
         title="Final responsibility for event",
         description=(
@@ -169,6 +180,7 @@ class MessageHeader(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -178,8 +190,8 @@ class MessageHeader(domainresource.DomainResource):
         },
     )
 
-    sender: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    sender: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="sender",
         title="Real world sender of the message",
         description=(
@@ -187,6 +199,7 @@ class MessageHeader(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -197,21 +210,22 @@ class MessageHeader(domainresource.DomainResource):
         },
     )
 
-    source: fhirtypes.MessageHeaderSourceType = Field(  # type: ignore
-        ...,
+    source: fhirtypes.MessageHeaderSourceType = Field(
+        default=...,
         alias="source",
         title="Message source application",
         description="The source application from which this message originated.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``MessageHeader`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``MessageHeader`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -221,6 +235,29 @@ class MessageHeader(domainresource.DomainResource):
             "text",
             "contained",
             "extension",
+            "modifierExtension",
+            "eventCoding",
+            "eventCanonical",
+            "destination",
+            "sender",
+            "author",
+            "source",
+            "responsible",
+            "reason",
+            "response",
+            "focus",
+            "definition",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``MessageHeader`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
             "modifierExtension",
             "eventCoding",
             "eventCanonical",
@@ -263,13 +300,14 @@ class MessageHeaderDestination(backboneelement.BackboneElement):
 
     __resource_type__ = "MessageHeaderDestination"
 
-    endpointReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    endpointReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="endpointReference",
         title="Actual destination address or Endpoint resource",
         description="Indicates where the message should be routed.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e endpoint[x]
             "one_of_many": "endpoint",
             "one_of_many_required": False,
@@ -278,37 +316,39 @@ class MessageHeaderDestination(backboneelement.BackboneElement):
         },
     )
 
-    endpointUrl: fhirtypes.UrlType | None = Field(  # type: ignore
-        None,
+    endpointUrl: fhirtypes.UrlType | None = Field(
+        default=None,
         alias="endpointUrl",
         title="Actual destination address or Endpoint resource",
         description="Indicates where the message should be routed.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e endpoint[x]
             "one_of_many": "endpoint",
             "one_of_many_required": False,
         },
     )
-    endpointUrl__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_endpointUrl", title="Extension field for ``endpointUrl``."
+    endpointUrl__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_endpointUrl", title="Extension field for ``endpointUrl``."
     )
 
-    name: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    name: fhirtypes.StringType | None = Field(
+        default=None,
         alias="name",
         title="Name of system",
         description="Human-readable name for the target system.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_name", title="Extension field for ``name``."
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_name", title="Extension field for ``name``."
     )
 
-    receiver: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    receiver: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="receiver",
         title='Intended "real-world" recipient for the data',
         description=(
@@ -318,6 +358,7 @@ class MessageHeaderDestination(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -327,8 +368,8 @@ class MessageHeaderDestination(backboneelement.BackboneElement):
         },
     )
 
-    target: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    target: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="target",
         title="Particular delivery destination within the destination",
         description=(
@@ -337,20 +378,35 @@ class MessageHeaderDestination(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Device"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``MessageHeaderDestination`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``MessageHeaderDestination`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "endpointUrl",
+            "endpointReference",
+            "name",
+            "target",
+            "receiver",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``MessageHeaderDestination`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "endpointUrl",
             "endpointReference",
@@ -388,8 +444,8 @@ class MessageHeaderResponse(backboneelement.BackboneElement):
 
     __resource_type__ = "MessageHeaderResponse"
 
-    code: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="code",
         title="ok | transient-error | fatal-error",
         description=(
@@ -398,30 +454,32 @@ class MessageHeaderResponse(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["ok", "transient-error", "fatal-error"],
         },
     )
-    code__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_code", title="Extension field for ``code``."
+    code__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_code", title="Extension field for ``code``."
     )
 
-    details: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    details: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="details",
         title="Specific list of hints/warnings/errors",
         description="Full details of any issues found in the message.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["OperationOutcome"],
         },
     )
 
-    identifier: fhirtypes.IdentifierType = Field(  # type: ignore
-        ...,
+    identifier: fhirtypes.IdentifierType = Field(
+        default=...,
         alias="identifier",
         title="Bundle.identifier of original message",
         description=(
@@ -430,16 +488,24 @@ class MessageHeaderResponse(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``MessageHeaderResponse`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``MessageHeaderResponse`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "identifier", "code", "details"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``MessageHeaderResponse`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "identifier", "code", "details"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
@@ -464,8 +530,8 @@ class MessageHeaderSource(backboneelement.BackboneElement):
 
     __resource_type__ = "MessageHeaderSource"
 
-    contact: fhirtypes.ContactPointType | None = Field(  # type: ignore
-        None,
+    contact: fhirtypes.ContactPointType | None = Field(
+        default=None,
         alias="contact",
         title="Human contact for problems",
         description=(
@@ -474,16 +540,18 @@ class MessageHeaderSource(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    endpointReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    endpointReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="endpointReference",
         title="Actual source address or Endpoint resource",
         description="Identifies the routing target to send acknowledgements to.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e endpoint[x]
             "one_of_many": "endpoint",
             "one_of_many_required": False,
@@ -492,50 +560,53 @@ class MessageHeaderSource(backboneelement.BackboneElement):
         },
     )
 
-    endpointUrl: fhirtypes.UrlType | None = Field(  # type: ignore
-        None,
+    endpointUrl: fhirtypes.UrlType | None = Field(
+        default=None,
         alias="endpointUrl",
         title="Actual source address or Endpoint resource",
         description="Identifies the routing target to send acknowledgements to.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e endpoint[x]
             "one_of_many": "endpoint",
             "one_of_many_required": False,
         },
     )
-    endpointUrl__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_endpointUrl", title="Extension field for ``endpointUrl``."
+    endpointUrl__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_endpointUrl", title="Extension field for ``endpointUrl``."
     )
 
-    name: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    name: fhirtypes.StringType | None = Field(
+        default=None,
         alias="name",
         title="Name of system",
         description="Human-readable name for the source system.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_name", title="Extension field for ``name``."
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_name", title="Extension field for ``name``."
     )
 
-    software: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    software: fhirtypes.StringType | None = Field(
+        default=None,
         alias="software",
         title="Name of software running the system",
         description="May include configuration or other information useful in debugging.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    software__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_software", title="Extension field for ``software``."
+    software__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_software", title="Extension field for ``software``."
     )
 
-    version: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    version: fhirtypes.StringType | None = Field(
+        default=None,
         alias="version",
         title="Version of software running",
         description=(
@@ -544,21 +615,37 @@ class MessageHeaderSource(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    version__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_version", title="Extension field for ``version``."
+    version__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_version", title="Extension field for ``version``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``MessageHeaderSource`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``MessageHeaderSource`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "endpointUrl",
+            "endpointReference",
+            "name",
+            "software",
+            "version",
+            "contact",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``MessageHeaderSource`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "endpointUrl",
             "endpointReference",

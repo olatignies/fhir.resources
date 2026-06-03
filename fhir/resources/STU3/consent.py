@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Consent
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -28,18 +29,19 @@ class Consent(domainresource.DomainResource):
 
     __resource_type__ = "Consent"
 
-    action: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    action: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="action",
         title="Actions controlled by this consent",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    actor: typing.List[fhirtypes.ConsentActorType] | None = Field(  # type: ignore
-        None,
+    actor: typing.List[fhirtypes.ConsentActorType] | None = Field(
+        default=None,
         alias="actor",
         title="Who|what controlled by this consent (or group, by role)",
         description=(
@@ -48,11 +50,12 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    category: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    category: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="category",
         title="Classification of the consent statement - for indexing/retrieval",
         description=(
@@ -61,11 +64,12 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    consentingParty: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    consentingParty: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="consentingParty",
         title="Who is agreeing to the policy and exceptions",
         description=(
@@ -77,6 +81,7 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Organization",
@@ -87,8 +92,8 @@ class Consent(domainresource.DomainResource):
         },
     )
 
-    data: typing.List[fhirtypes.ConsentDataType] | None = Field(  # type: ignore
-        None,
+    data: typing.List[fhirtypes.ConsentDataType] | None = Field(
+        default=None,
         alias="data",
         title="Data controlled by this consent",
         description=(
@@ -97,11 +102,12 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    dataPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    dataPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="dataPeriod",
         title="Timeframe for data controlled by this consent",
         description=(
@@ -110,24 +116,26 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    dateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    dateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="dateTime",
         title="When this Consent was created or indexed",
         description="When this  Consent was issued / created / indexed.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    dateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_dateTime", title="Extension field for ``dateTime``."
+    dateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_dateTime", title="Extension field for ``dateTime``."
     )
 
-    except_fhir: typing.List[fhirtypes.ConsentExceptType] | None = Field(  # type: ignore
-        None,
+    except_fhir: typing.List[fhirtypes.ConsentExceptType] | None = Field(
+        default=None,
         alias="except",
         title="Additional rule -  addition or removal of permissions",
         description=(
@@ -136,21 +144,23 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Identifier for this record (external references)",
         description="Unique identifier for this copy of the Consent Statement.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    organization: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    organization: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="organization",
         title="Custodian of the consent",
         description=(
@@ -159,35 +169,38 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    patient: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    patient: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="patient",
         title="Who the consent applies to",
         description="The patient/healthcare consumer to whom this consent applies.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient"],
         },
     )
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="Period that this consent applies",
         description="Relevant time or time-period when this Consent is applicable.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    policy: typing.List[fhirtypes.ConsentPolicyType] | None = Field(  # type: ignore
-        None,
+    policy: typing.List[fhirtypes.ConsentPolicyType] | None = Field(
+        default=None,
         alias="policy",
         title="Policies covered by this consent",
         description=(
@@ -200,21 +213,22 @@ class Consent(domainresource.DomainResource):
         },
     )
 
-    policyRule: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    policyRule: fhirtypes.UriType | None = Field(
+        default=None,
         alias="policyRule",
         title="Policy that this consents to",
         description="A referece to the specific computable policy.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    policyRule__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_policyRule", title="Extension field for ``policyRule``."
+    policyRule__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_policyRule", title="Extension field for ``policyRule``."
     )
 
-    purpose: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    purpose: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="purpose",
         title="Context of activities for which the agreement is made",
         description=(
@@ -223,11 +237,12 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    securityLabel: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    securityLabel: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="securityLabel",
         title="Security Labels that define affected resources",
         description=(
@@ -237,11 +252,12 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    sourceAttachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    sourceAttachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="sourceAttachment",
         title="Source from which this consent is taken",
         description=(
@@ -252,14 +268,15 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e source[x]
             "one_of_many": "source",
             "one_of_many_required": False,
         },
     )
 
-    sourceIdentifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    sourceIdentifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="sourceIdentifier",
         title="Source from which this consent is taken",
         description=(
@@ -270,14 +287,15 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e source[x]
             "one_of_many": "source",
             "one_of_many_required": False,
         },
     )
 
-    sourceReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    sourceReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="sourceReference",
         title="Source from which this consent is taken",
         description=(
@@ -288,6 +306,7 @@ class Consent(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e source[x]
             "one_of_many": "source",
             "one_of_many_required": False,
@@ -301,13 +320,14 @@ class Consent(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="draft | proposed | active | rejected | inactive | entered-in-error",
         description="Indicates the current state of this consent.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -321,15 +341,15 @@ class Consent(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Consent`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Consent`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -357,6 +377,39 @@ class Consent(domainresource.DomainResource):
             "sourceReference",
             "sourceReference",
             "policy",
+            "policyRule",
+            "securityLabel",
+            "purpose",
+            "dataPeriod",
+            "data",
+            "except",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Consent`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "status",
+            "category",
+            "patient",
+            "period",
+            "dateTime",
+            "consentingParty",
+            "actor",
+            "action",
+            "organization",
+            "sourceAttachment",
+            "sourceIdentifier",
+            "sourceReference",
+            "sourceReference",
+            "sourceReference",
+            "sourceReference",
             "policyRule",
             "securityLabel",
             "purpose",
@@ -407,8 +460,8 @@ class ConsentActor(backboneelement.BackboneElement):
 
     __resource_type__ = "ConsentActor"
 
-    reference: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    reference: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="reference",
         title="Resource for the actor (or group, by role)",
         description=(
@@ -431,8 +484,8 @@ class ConsentActor(backboneelement.BackboneElement):
         },
     )
 
-    role: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    role: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="role",
         title="How the actor is involved",
         description=(
@@ -445,12 +498,19 @@ class ConsentActor(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ConsentActor`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ConsentActor`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "role", "reference"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ConsentActor`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class ConsentData(backboneelement.BackboneElement):
@@ -465,8 +525,8 @@ class ConsentData(backboneelement.BackboneElement):
 
     __resource_type__ = "ConsentData"
 
-    meaning: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    meaning: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="meaning",
         title="instance | related | dependents | authoredby",
         description=(
@@ -475,18 +535,19 @@ class ConsentData(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["instance", "related", "dependents", "authoredby"],
         },
     )
-    meaning__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_meaning", title="Extension field for ``meaning``."
+    meaning__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_meaning", title="Extension field for ``meaning``."
     )
 
-    reference: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    reference: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="reference",
         title="The actual data reference",
         description=(
@@ -495,18 +556,26 @@ class ConsentData(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ConsentData`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ConsentData`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "meaning", "reference"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ConsentData`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "meaning", "reference"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
@@ -532,18 +601,19 @@ class ConsentExcept(backboneelement.BackboneElement):
 
     __resource_type__ = "ConsentExcept"
 
-    action: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    action: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="action",
         title="Actions controlled by this exception",
         description="Actions controlled by this Exception.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    actor: typing.List[fhirtypes.ConsentExceptActorType] | None = Field(  # type: ignore
-        None,
+    actor: typing.List[fhirtypes.ConsentExceptActorType] | None = Field(
+        default=None,
         alias="actor",
         title="Who|what controlled by this exception (or group, by role)",
         description=(
@@ -552,11 +622,12 @@ class ConsentExcept(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    class_fhir: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    class_fhir: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="class",
         title="e.g. Resource Type, Profile, or CDA etc",
         description=(
@@ -567,21 +638,23 @@ class ConsentExcept(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    code: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    code: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="code",
         title="e.g. LOINC or SNOMED CT code, etc in the content",
         description="If this code is found in an instance, then the exception applies.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    data: typing.List[fhirtypes.ConsentExceptDataType] | None = Field(  # type: ignore
-        None,
+    data: typing.List[fhirtypes.ConsentExceptDataType] | None = Field(
+        default=None,
         alias="data",
         title="Data controlled by this exception",
         description=(
@@ -590,11 +663,12 @@ class ConsentExcept(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    dataPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    dataPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="dataPeriod",
         title="Timeframe for data controlled by this exception",
         description=(
@@ -603,21 +677,23 @@ class ConsentExcept(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="Timeframe for this exception",
         description="The timeframe in this exception is valid.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    purpose: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    purpose: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="purpose",
         title="Context of activities covered by this exception",
         description=(
@@ -626,11 +702,12 @@ class ConsentExcept(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    securityLabel: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    securityLabel: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="securityLabel",
         title="Security Labels that define affected resources",
         description=(
@@ -640,11 +717,12 @@ class ConsentExcept(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title="deny | permit",
         description=(
@@ -653,25 +731,45 @@ class ConsentExcept(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["deny", "permit"],
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ConsentExcept`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ConsentExcept`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "type",
+            "period",
+            "actor",
+            "action",
+            "securityLabel",
+            "purpose",
+            "class",
+            "code",
+            "dataPeriod",
+            "data",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ConsentExcept`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "type",
             "period",
@@ -709,8 +807,8 @@ class ConsentExceptActor(backboneelement.BackboneElement):
 
     __resource_type__ = "ConsentExceptActor"
 
-    reference: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    reference: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="reference",
         title="Resource for the actor (or group, by role)",
         description=(
@@ -733,8 +831,8 @@ class ConsentExceptActor(backboneelement.BackboneElement):
         },
     )
 
-    role: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    role: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="role",
         title="How the actor is involved",
         description=(
@@ -747,12 +845,19 @@ class ConsentExceptActor(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ConsentExceptActor`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ConsentExceptActor`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "role", "reference"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ConsentExceptActor`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class ConsentExceptData(backboneelement.BackboneElement):
@@ -767,8 +872,8 @@ class ConsentExceptData(backboneelement.BackboneElement):
 
     __resource_type__ = "ConsentExceptData"
 
-    meaning: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    meaning: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="meaning",
         title="instance | related | dependents | authoredby",
         description=(
@@ -777,18 +882,19 @@ class ConsentExceptData(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["instance", "related", "dependents", "authoredby"],
         },
     )
-    meaning__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_meaning", title="Extension field for ``meaning``."
+    meaning__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_meaning", title="Extension field for ``meaning``."
     )
 
-    reference: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    reference: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="reference",
         title="The actual data reference",
         description=(
@@ -797,18 +903,26 @@ class ConsentExceptData(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ConsentExceptData`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ConsentExceptData`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "meaning", "reference"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ConsentExceptData`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "meaning", "reference"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
@@ -835,8 +949,8 @@ class ConsentPolicy(backboneelement.BackboneElement):
 
     __resource_type__ = "ConsentPolicy"
 
-    authority: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    authority: fhirtypes.UriType | None = Field(
+        default=None,
         alias="authority",
         title="Enforcement source for policy",
         description=(
@@ -848,12 +962,12 @@ class ConsentPolicy(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    authority__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_authority", title="Extension field for ``authority``."
+    authority__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_authority", title="Extension field for ``authority``."
     )
 
-    uri: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    uri: fhirtypes.UriType | None = Field(
+        default=None,
         alias="uri",
         title="Specific policy covered by this consent",
         description=(
@@ -865,14 +979,21 @@ class ConsentPolicy(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    uri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_uri", title="Extension field for ``uri``."
+    uri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_uri", title="Extension field for ``uri``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ConsentPolicy`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ConsentPolicy`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "authority", "uri"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ConsentPolicy`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

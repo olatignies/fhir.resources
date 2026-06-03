@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/VisionPrescription
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class VisionPrescription(domainresource.DomainResource):
 
     __resource_type__ = "VisionPrescription"
 
-    dateWritten: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    dateWritten: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="dateWritten",
         title="When prescription was authorized",
         description="The date (and perhaps time) when the prescription was written.",
@@ -35,12 +36,12 @@ class VisionPrescription(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    dateWritten__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_dateWritten", title="Extension field for ``dateWritten``."
+    dateWritten__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_dateWritten", title="Extension field for ``dateWritten``."
     )
 
-    dispense: typing.List[fhirtypes.VisionPrescriptionDispenseType] | None = Field(  # type: ignore
-        None,
+    dispense: typing.List[fhirtypes.VisionPrescriptionDispenseType] | None = Field(
+        default=None,
         alias="dispense",
         title="Vision supply authorization",
         description="Deals with details of the dispense part of the supply specification.",
@@ -49,8 +50,8 @@ class VisionPrescription(domainresource.DomainResource):
         },
     )
 
-    encounter: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    encounter: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="encounter",
         title="Created during encounter / admission / stay",
         description=(
@@ -64,8 +65,8 @@ class VisionPrescription(domainresource.DomainResource):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business identifier",
         description=(
@@ -77,8 +78,8 @@ class VisionPrescription(domainresource.DomainResource):
         },
     )
 
-    patient: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    patient: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="patient",
         title="Who prescription is for",
         description=(
@@ -92,8 +93,8 @@ class VisionPrescription(domainresource.DomainResource):
         },
     )
 
-    prescriber: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    prescriber: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="prescriber",
         title="Who authorizes the vision product",
         description=(
@@ -107,8 +108,8 @@ class VisionPrescription(domainresource.DomainResource):
         },
     )
 
-    reasonCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    reasonCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="reasonCodeableConcept",
         title="Reason or indication for writing the prescription",
         description="Can be the reason or the indication for writing the prescription.",
@@ -120,8 +121,8 @@ class VisionPrescription(domainresource.DomainResource):
         },
     )
 
-    reasonReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    reasonReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="reasonReference",
         title="Reason or indication for writing the prescription",
         description="Can be the reason or the indication for writing the prescription.",
@@ -135,27 +136,28 @@ class VisionPrescription(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="active | cancelled | draft | entered-in-error",
         description="The status of the resource instance.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["active", "cancelled", "draft", "entered-in-error"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``VisionPrescription`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``VisionPrescription`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -176,6 +178,13 @@ class VisionPrescription(domainresource.DomainResource):
             "reasonReference",
             "dispense",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``VisionPrescription`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "meta", "implicitRules", "status"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -205,8 +214,8 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
 
     __resource_type__ = "VisionPrescriptionDispense"
 
-    add: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    add: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="add",
         title="Lens add",
         description=(
@@ -217,12 +226,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    add__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_add", title="Extension field for ``add``."
+    add__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_add", title="Extension field for ``add``."
     )
 
-    axis: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    axis: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="axis",
         title="Lens axis",
         description="Adjustment for astigmatism measured in integer degrees.",
@@ -230,12 +239,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    axis__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_axis", title="Extension field for ``axis``."
+    axis__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_axis", title="Extension field for ``axis``."
     )
 
-    backCurve: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    backCurve: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="backCurve",
         title="Contact lens back curvature",
         description="Back curvature measured in millimeters.",
@@ -243,12 +252,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    backCurve__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_backCurve", title="Extension field for ``backCurve``."
+    backCurve__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_backCurve", title="Extension field for ``backCurve``."
     )
 
-    base: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    base: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="base",
         title="up | down | in | out",
         description="The relative base, or reference lens edge, for the prism.",
@@ -259,12 +268,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "enum_values": ["up", "down", "in", "out"],
         },
     )
-    base__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_base", title="Extension field for ``base``."
+    base__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_base", title="Extension field for ``base``."
     )
 
-    brand: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    brand: fhirtypes.StringType | None = Field(
+        default=None,
         alias="brand",
         title="Brand required",
         description="Brand recommendations or restrictions.",
@@ -272,12 +281,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    brand__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_brand", title="Extension field for ``brand``."
+    brand__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_brand", title="Extension field for ``brand``."
     )
 
-    color: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    color: fhirtypes.StringType | None = Field(
+        default=None,
         alias="color",
         title="Color required",
         description="Special color or pattern.",
@@ -285,12 +294,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    color__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_color", title="Extension field for ``color``."
+    color__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_color", title="Extension field for ``color``."
     )
 
-    cylinder: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    cylinder: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="cylinder",
         title="Lens cylinder",
         description="Power adjustment for astigmatism measured in diopters (0.25 units).",
@@ -298,12 +307,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    cylinder__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_cylinder", title="Extension field for ``cylinder``."
+    cylinder__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_cylinder", title="Extension field for ``cylinder``."
     )
 
-    diameter: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    diameter: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="diameter",
         title="Contact lens diameter",
         description="Contact lens diameter measured in millimeters.",
@@ -311,12 +320,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    diameter__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_diameter", title="Extension field for ``diameter``."
+    diameter__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_diameter", title="Extension field for ``diameter``."
     )
 
-    duration: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    duration: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="duration",
         title="Lens wear duration",
         description="The recommended maximum wear period for the lens.",
@@ -325,8 +334,8 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
         },
     )
 
-    eye: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    eye: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="eye",
         title="right | left",
         description="The eye for which the lens applies.",
@@ -337,12 +346,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "enum_values": ["right", "left"],
         },
     )
-    eye__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_eye", title="Extension field for ``eye``."
+    eye__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_eye", title="Extension field for ``eye``."
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Notes for coatings",
         description="Notes for special requirements such as coatings and lens materials.",
@@ -351,8 +360,8 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
         },
     )
 
-    power: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    power: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="power",
         title="Contact lens power",
         description="Contact lens power measured in diopters (0.25 units).",
@@ -360,12 +369,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    power__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_power", title="Extension field for ``power``."
+    power__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_power", title="Extension field for ``power``."
     )
 
-    prism: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    prism: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="prism",
         title="Lens prism",
         description="Amount of prism to compensate for eye alignment in fractional units.",
@@ -373,12 +382,12 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    prism__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_prism", title="Extension field for ``prism``."
+    prism__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_prism", title="Extension field for ``prism``."
     )
 
-    product: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    product: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="product",
         title="Product to be supplied",
         description=(
@@ -390,8 +399,8 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
         },
     )
 
-    sphere: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    sphere: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="sphere",
         title="Lens sphere",
         description="Lens power measured in diopters (0.25 units).",
@@ -399,15 +408,15 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    sphere__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_sphere", title="Extension field for ``sphere``."
+    sphere__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_sphere", title="Extension field for ``sphere``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``VisionPrescriptionDispense`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``VisionPrescriptionDispense`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -429,3 +438,10 @@ class VisionPrescriptionDispense(backboneelement.BackboneElement):
             "brand",
             "note",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``VisionPrescriptionDispense`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

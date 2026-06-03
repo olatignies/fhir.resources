@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProductDispense
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -28,8 +29,8 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
 
     __resource_type__ = "BiologicallyDerivedProductDispense"
 
-    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="basedOn",
         title="The order or request that this dispense is fulfilling",
         description=(
@@ -38,13 +39,14 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["ServiceRequest"],
         },
     )
 
-    destination: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    destination: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="destination",
         title="Where the product was dispatched to",
         description=(
@@ -53,13 +55,14 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Location"],
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business identifier for this dispense",
         description=(
@@ -69,43 +72,47 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    location: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    location: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="location",
         title="Where the dispense occurred",
         description="The physical location where the dispense was performed.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Location"],
         },
     )
 
-    matchStatus: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    matchStatus: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="matchStatus",
         title="Indicates the type of matching associated with the dispense",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Additional notes",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    originRelationshipType: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    originRelationshipType: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="originRelationshipType",
         title="Relationship between the donor and intended recipient",
         description=(
@@ -114,23 +121,25 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="partOf",
         title="Short description",
         description="A larger event of which this particular event is a component.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["BiologicallyDerivedProductDispense"],
         },
     )
 
-    patient: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    patient: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="patient",
         title="The intended recipient of the dispensed product",
         description=(
@@ -139,36 +148,43 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient"],
         },
     )
 
-    performer: typing.List[fhirtypes.BiologicallyDerivedProductDispensePerformerType] | None = Field(  # type: ignore
-        None,
+    performer: typing.List[
+        fhirtypes.BiologicallyDerivedProductDispensePerformerType
+    ] | None = Field(
+        default=None,
         alias="performer",
         title="Indicates who or what performed an action",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    preparedDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    preparedDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="preparedDate",
         title="When product was selected/matched",
         description="When the product was selected/ matched.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    preparedDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_preparedDate", title="Extension field for ``preparedDate``."
+    preparedDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_preparedDate",
+        title="Extension field for ``preparedDate``.",
     )
 
-    product: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    product: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="product",
         title="The BiologicallyDerivedProduct that is dispensed",
         description=(
@@ -177,13 +193,14 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["BiologicallyDerivedProduct"],
         },
     )
 
-    quantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    quantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="quantity",
         title="Amount dispensed",
         description=(
@@ -193,11 +210,12 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title=(
             "preparation | in-progress | allocated | issued | unfulfilled | "
@@ -206,6 +224,7 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
         description="A code specifying the state of the dispense event.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -221,43 +240,47 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    usageInstruction: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    usageInstruction: fhirtypes.StringType | None = Field(
+        default=None,
         alias="usageInstruction",
         title="Specific instructions for use",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    usageInstruction__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    usageInstruction__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_usageInstruction",
         title="Extension field for ``usageInstruction``.",
     )
 
-    whenHandedOver: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    whenHandedOver: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="whenHandedOver",
         title="When the product was dispatched",
         description="When the product was dispatched for clinical use.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    whenHandedOver__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_whenHandedOver", title="Extension field for ``whenHandedOver``."
+    whenHandedOver__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_whenHandedOver",
+        title="Extension field for ``whenHandedOver``.",
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``BiologicallyDerivedProductDispense`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``BiologicallyDerivedProductDispense`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -267,6 +290,34 @@ class BiologicallyDerivedProductDispense(domainresource.DomainResource):
             "text",
             "contained",
             "extension",
+            "modifierExtension",
+            "identifier",
+            "basedOn",
+            "partOf",
+            "status",
+            "originRelationshipType",
+            "product",
+            "patient",
+            "matchStatus",
+            "performer",
+            "location",
+            "quantity",
+            "preparedDate",
+            "whenHandedOver",
+            "destination",
+            "note",
+            "usageInstruction",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``BiologicallyDerivedProductDispense`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
             "modifierExtension",
             "identifier",
             "basedOn",
@@ -308,32 +359,41 @@ class BiologicallyDerivedProductDispensePerformer(backboneelement.BackboneElemen
 
     __resource_type__ = "BiologicallyDerivedProductDispensePerformer"
 
-    actor: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    actor: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="actor",
         title="Who performed the action",
         description="Identifies the person responsible for the action.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Practitioner"],
         },
     )
 
-    function: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    function: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="function",
         title="Identifies the function of the performer during the dispense",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``BiologicallyDerivedProductDispensePerformer`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``BiologicallyDerivedProductDispensePerformer`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "function", "actor"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``BiologicallyDerivedProductDispensePerformer`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "function", "actor"]

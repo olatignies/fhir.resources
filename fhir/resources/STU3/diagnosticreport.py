@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/DiagnosticReport
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -30,8 +31,8 @@ class DiagnosticReport(domainresource.DomainResource):
 
     __resource_type__ = "DiagnosticReport"
 
-    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="basedOn",
         title="What was requested",
         description="Details concerning a test or procedure requested.",
@@ -49,8 +50,8 @@ class DiagnosticReport(domainresource.DomainResource):
         },
     )
 
-    category: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    category: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="category",
         title="Service category",
         description=(
@@ -61,21 +62,23 @@ class DiagnosticReport(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    code: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    code: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="code",
         title="Name/Code for this diagnostic report",
         description="A code or name that describes this diagnostic report.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    codedDiagnosis: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    codedDiagnosis: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="codedDiagnosis",
         title="Codes for the conclusion",
         description=None,
@@ -84,8 +87,8 @@ class DiagnosticReport(domainresource.DomainResource):
         },
     )
 
-    conclusion: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    conclusion: fhirtypes.StringType | None = Field(
+        default=None,
         alias="conclusion",
         title="Clinical Interpretation of test results",
         description=(
@@ -96,12 +99,12 @@ class DiagnosticReport(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    conclusion__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_conclusion", title="Extension field for ``conclusion``."
+    conclusion__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_conclusion", title="Extension field for ``conclusion``."
     )
 
-    context: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    context: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="context",
         title="Health care event when test ordered",
         description=(
@@ -110,13 +113,14 @@ class DiagnosticReport(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Encounter", "EpisodeOfCare"],
         },
     )
 
-    effectiveDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    effectiveDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="effectiveDateTime",
         title="Clinically relevant time/time-period for report",
         description=(
@@ -127,19 +131,20 @@ class DiagnosticReport(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e effective[x]
             "one_of_many": "effective",
             "one_of_many_required": False,
         },
     )
-    effectiveDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    effectiveDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_effectiveDateTime",
         title="Extension field for ``effectiveDateTime``.",
     )
 
-    effectivePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    effectivePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="effectivePeriod",
         title="Clinically relevant time/time-period for report",
         description=(
@@ -150,24 +155,26 @@ class DiagnosticReport(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e effective[x]
             "one_of_many": "effective",
             "one_of_many_required": False,
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business identifier for report",
         description="Identifiers assigned to this report by the performer or other systems.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    image: typing.List[fhirtypes.DiagnosticReportImageType] | None = Field(  # type: ignore
-        None,
+    image: typing.List[fhirtypes.DiagnosticReportImageType] | None = Field(
+        default=None,
         alias="image",
         title="Key images associated with this report",
         description=(
@@ -177,11 +184,12 @@ class DiagnosticReport(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    imagingStudy: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    imagingStudy: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="imagingStudy",
         title=(
             "Reference to full details of imaging associated with the diagnostic "
@@ -201,8 +209,8 @@ class DiagnosticReport(domainresource.DomainResource):
         },
     )
 
-    issued: fhirtypes.InstantType | None = Field(  # type: ignore
-        None,
+    issued: fhirtypes.InstantType | None = Field(
+        default=None,
         alias="issued",
         title="DateTime this version was released",
         description=(
@@ -211,24 +219,26 @@ class DiagnosticReport(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    issued__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_issued", title="Extension field for ``issued``."
+    issued__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_issued", title="Extension field for ``issued``."
     )
 
-    performer: typing.List[fhirtypes.DiagnosticReportPerformerType] | None = Field(  # type: ignore
-        None,
+    performer: typing.List[fhirtypes.DiagnosticReportPerformerType] | None = Field(
+        default=None,
         alias="performer",
         title="Participants in producing the report",
         description="Indicates who or what participated in producing the report.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    presentedForm: typing.List[fhirtypes.AttachmentType] | None = Field(  # type: ignore
-        None,
+    presentedForm: typing.List[fhirtypes.AttachmentType] | None = Field(
+        default=None,
         alias="presentedForm",
         title="Entire report as issued",
         description=(
@@ -241,8 +251,8 @@ class DiagnosticReport(domainresource.DomainResource):
         },
     )
 
-    result: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    result: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="result",
         title="Observations - simple, or complex nested groups",
         description=(
@@ -258,8 +268,8 @@ class DiagnosticReport(domainresource.DomainResource):
         },
     )
 
-    specimen: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    specimen: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="specimen",
         title="Specimens this report is based on",
         description="Details about the specimens on which this diagnostic report is based.",
@@ -270,25 +280,26 @@ class DiagnosticReport(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="registered | partial | preliminary | final +",
         description="The status of the diagnostic report as a whole.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["registered", "partial", "preliminary", "final", "+"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    subject: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="subject",
         title="The subject of the report - usually, but not always, the patient",
         description=(
@@ -298,16 +309,17 @@ class DiagnosticReport(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Group", "Device", "Location"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DiagnosticReport`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DiagnosticReport`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -336,6 +348,28 @@ class DiagnosticReport(domainresource.DomainResource):
             "conclusion",
             "codedDiagnosis",
             "presentedForm",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DiagnosticReport`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "status",
+            "category",
+            "code",
+            "subject",
+            "context",
+            "effectiveDateTime",
+            "effectivePeriod",
+            "issued",
+            "performer",
+            "image",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
@@ -379,8 +413,8 @@ class DiagnosticReportImage(backboneelement.BackboneElement):
 
     __resource_type__ = "DiagnosticReportImage"
 
-    comment: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    comment: fhirtypes.StringType | None = Field(
+        default=None,
         alias="comment",
         title="Comment about the image (e.g. explanation)",
         description=(
@@ -392,29 +426,37 @@ class DiagnosticReportImage(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    comment__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_comment", title="Extension field for ``comment``."
+    comment__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_comment", title="Extension field for ``comment``."
     )
 
-    link: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    link: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="link",
         title="Reference to the image source",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Media"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DiagnosticReportImage`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DiagnosticReportImage`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "comment", "link"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DiagnosticReportImage`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "link"]
 
 
 class DiagnosticReportPerformer(backboneelement.BackboneElement):
@@ -428,8 +470,8 @@ class DiagnosticReportPerformer(backboneelement.BackboneElement):
 
     __resource_type__ = "DiagnosticReportPerformer"
 
-    actor: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    actor: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="actor",
         title="Practitioner or Organization  participant",
         description=(
@@ -439,13 +481,14 @@ class DiagnosticReportPerformer(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Practitioner", "Organization"],
         },
     )
 
-    role: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    role: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="role",
         title="Type of performer",
         description=(
@@ -454,13 +497,21 @@ class DiagnosticReportPerformer(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DiagnosticReportPerformer`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DiagnosticReportPerformer`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "role", "actor"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DiagnosticReportPerformer`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "role", "actor"]

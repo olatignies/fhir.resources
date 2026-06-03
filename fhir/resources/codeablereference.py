@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/CodeableReference
 Release: R5
@@ -7,6 +5,11 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
+import typing
+
 from pydantic import Field
 
 from . import datatype, fhirtypes
@@ -24,8 +27,8 @@ class CodeableReference(datatype.DataType):
 
     __resource_type__ = "CodeableReference"
 
-    concept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    concept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="concept",
         title="Reference to a concept (by class)",
         description=(
@@ -34,11 +37,12 @@ class CodeableReference(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    reference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    reference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="reference",
         title="Reference to a resource (by instance)",
         description=(
@@ -47,13 +51,21 @@ class CodeableReference(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``CodeableReference`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``CodeableReference`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "concept", "reference"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``CodeableReference`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["concept", "reference"]

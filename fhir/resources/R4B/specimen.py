@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Specimen
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -25,8 +26,8 @@ class Specimen(domainresource.DomainResource):
 
     __resource_type__ = "Specimen"
 
-    accessionIdentifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    accessionIdentifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="accessionIdentifier",
         title="Identifier assigned by the lab",
         description=(
@@ -36,11 +37,12 @@ class Specimen(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    collection: fhirtypes.SpecimenCollectionType | None = Field(  # type: ignore
-        None,
+    collection: fhirtypes.SpecimenCollectionType | None = Field(
+        default=None,
         alias="collection",
         title="Collection details",
         description="Details concerning the specimen collection.",
@@ -49,18 +51,19 @@ class Specimen(domainresource.DomainResource):
         },
     )
 
-    condition: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    condition: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="condition",
         title="State of the specimen",
         description="A mode or state of being that describes the nature of the specimen.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    container: typing.List[fhirtypes.SpecimenContainerType] | None = Field(  # type: ignore
-        None,
+    container: typing.List[fhirtypes.SpecimenContainerType] | None = Field(
+        default=None,
         alias="container",
         title="Direct container of specimen (tube/slide, etc.)",
         description=(
@@ -72,18 +75,19 @@ class Specimen(domainresource.DomainResource):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="External Identifier",
         description="Id for specimen.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Comments",
         description=(
@@ -96,8 +100,8 @@ class Specimen(domainresource.DomainResource):
         },
     )
 
-    parent: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    parent: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="parent",
         title="Specimen from which this specimen originated",
         description=(
@@ -111,8 +115,8 @@ class Specimen(domainresource.DomainResource):
         },
     )
 
-    processing: typing.List[fhirtypes.SpecimenProcessingType] | None = Field(  # type: ignore
-        None,
+    processing: typing.List[fhirtypes.SpecimenProcessingType] | None = Field(
+        default=None,
         alias="processing",
         title="Processing and processing step details",
         description="Details concerning processing and processing steps for the specimen.",
@@ -121,21 +125,24 @@ class Specimen(domainresource.DomainResource):
         },
     )
 
-    receivedTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    receivedTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="receivedTime",
         title="The time when specimen was received for processing",
         description="Time when specimen was received for processing or testing.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    receivedTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_receivedTime", title="Extension field for ``receivedTime``."
+    receivedTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_receivedTime",
+        title="Extension field for ``receivedTime``.",
     )
 
-    request: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    request: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="request",
         title="Why the specimen was collected",
         description=(
@@ -149,13 +156,14 @@ class Specimen(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="available | unavailable | unsatisfactory | entered-in-error",
         description="The availability of the specimen.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": [
@@ -166,12 +174,12 @@ class Specimen(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    subject: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="subject",
         title=(
             "Where the specimen came from. This may be from patient(s), from a "
@@ -181,6 +189,7 @@ class Specimen(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Patient",
@@ -192,21 +201,22 @@ class Specimen(domainresource.DomainResource):
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Kind of material that forms the specimen",
         description="The kind of material that forms the specimen.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Specimen`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Specimen`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -232,6 +242,24 @@ class Specimen(domainresource.DomainResource):
             "note",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Specimen`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "accessionIdentifier",
+            "status",
+            "type",
+            "subject",
+            "receivedTime",
+            "condition",
+        ]
+
 
 class SpecimenCollection(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -244,8 +272,8 @@ class SpecimenCollection(backboneelement.BackboneElement):
 
     __resource_type__ = "SpecimenCollection"
 
-    bodySite: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    bodySite: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="bodySite",
         title="Anatomical collection site",
         description=(
@@ -258,8 +286,8 @@ class SpecimenCollection(backboneelement.BackboneElement):
         },
     )
 
-    collectedDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    collectedDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="collectedDateTime",
         title="Collection time",
         description=(
@@ -268,19 +296,20 @@ class SpecimenCollection(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e collected[x]
             "one_of_many": "collected",
             "one_of_many_required": False,
         },
     )
-    collectedDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    collectedDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_collectedDateTime",
         title="Extension field for ``collectedDateTime``.",
     )
 
-    collectedPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    collectedPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="collectedPeriod",
         title="Collection time",
         description=(
@@ -289,36 +318,39 @@ class SpecimenCollection(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e collected[x]
             "one_of_many": "collected",
             "one_of_many_required": False,
         },
     )
 
-    collector: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    collector: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="collector",
         title="Who collected the specimen",
         description="Person who collected the specimen.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Practitioner", "PractitionerRole"],
         },
     )
 
-    duration: fhirtypes.DurationType | None = Field(  # type: ignore
-        None,
+    duration: fhirtypes.DurationType | None = Field(
+        default=None,
         alias="duration",
         title="How long it took to collect specimen",
         description="The span of time over which the collection of a specimen occurred.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    fastingStatusCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    fastingStatusCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="fastingStatusCodeableConcept",
         title="Whether or how long patient abstained from food and/or drink",
         description=(
@@ -327,14 +359,15 @@ class SpecimenCollection(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e fastingStatus[x]
             "one_of_many": "fastingStatus",
             "one_of_many_required": False,
         },
     )
 
-    fastingStatusDuration: fhirtypes.DurationType | None = Field(  # type: ignore
-        None,
+    fastingStatusDuration: fhirtypes.DurationType | None = Field(
+        default=None,
         alias="fastingStatusDuration",
         title="Whether or how long patient abstained from food and/or drink",
         description=(
@@ -343,14 +376,15 @@ class SpecimenCollection(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e fastingStatus[x]
             "one_of_many": "fastingStatus",
             "one_of_many_required": False,
         },
     )
 
-    method: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    method: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="method",
         title="Technique used to perform collection",
         description=(
@@ -362,8 +396,8 @@ class SpecimenCollection(backboneelement.BackboneElement):
         },
     )
 
-    quantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    quantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="quantity",
         title="The quantity of specimen collected",
         description=(
@@ -376,10 +410,10 @@ class SpecimenCollection(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SpecimenCollection`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SpecimenCollection`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -392,6 +426,21 @@ class SpecimenCollection(backboneelement.BackboneElement):
             "quantity",
             "method",
             "bodySite",
+            "fastingStatusCodeableConcept",
+            "fastingStatusDuration",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SpecimenCollection`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "modifierExtension",
+            "collector",
+            "collectedDateTime",
+            "collectedPeriod",
+            "duration",
             "fastingStatusCodeableConcept",
             "fastingStatusDuration",
         ]
@@ -428,8 +477,8 @@ class SpecimenContainer(backboneelement.BackboneElement):
 
     __resource_type__ = "SpecimenContainer"
 
-    additiveCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    additiveCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="additiveCodeableConcept",
         title="Additive associated with container",
         description=(
@@ -444,8 +493,8 @@ class SpecimenContainer(backboneelement.BackboneElement):
         },
     )
 
-    additiveReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    additiveReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="additiveReference",
         title="Additive associated with container",
         description=(
@@ -462,8 +511,8 @@ class SpecimenContainer(backboneelement.BackboneElement):
         },
     )
 
-    capacity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    capacity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="capacity",
         title="Container volume or size",
         description="The capacity (volume or other measure) the container may contain.",
@@ -472,8 +521,8 @@ class SpecimenContainer(backboneelement.BackboneElement):
         },
     )
 
-    description: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.StringType | None = Field(
+        default=None,
         alias="description",
         title="Textual description of the container",
         description=None,
@@ -481,12 +530,12 @@ class SpecimenContainer(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Id for the container",
         description=(
@@ -496,11 +545,12 @@ class SpecimenContainer(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    specimenQuantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    specimenQuantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="specimenQuantity",
         title="Quantity of specimen within container",
         description=(
@@ -512,8 +562,8 @@ class SpecimenContainer(backboneelement.BackboneElement):
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Kind of container directly associated with specimen",
         description=(
@@ -526,10 +576,10 @@ class SpecimenContainer(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SpecimenContainer`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SpecimenContainer`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -543,6 +593,13 @@ class SpecimenContainer(backboneelement.BackboneElement):
             "additiveCodeableConcept",
             "additiveReference",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SpecimenContainer`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "identifier"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -574,8 +631,8 @@ class SpecimenProcessing(backboneelement.BackboneElement):
 
     __resource_type__ = "SpecimenProcessing"
 
-    additive: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    additive: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="additive",
         title="Material used in the processing step",
         description=None,
@@ -586,8 +643,8 @@ class SpecimenProcessing(backboneelement.BackboneElement):
         },
     )
 
-    description: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.StringType | None = Field(
+        default=None,
         alias="description",
         title="Textual description of procedure",
         description=None,
@@ -595,12 +652,12 @@ class SpecimenProcessing(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    procedure: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    procedure: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="procedure",
         title="Indicates the treatment step  applied to the specimen",
         description="A coded value specifying the procedure used to process the specimen.",
@@ -609,8 +666,8 @@ class SpecimenProcessing(backboneelement.BackboneElement):
         },
     )
 
-    timeDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    timeDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="timeDateTime",
         title="Date and time of specimen processing",
         description=(
@@ -625,12 +682,14 @@ class SpecimenProcessing(backboneelement.BackboneElement):
             "one_of_many_required": False,
         },
     )
-    timeDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_timeDateTime", title="Extension field for ``timeDateTime``."
+    timeDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_timeDateTime",
+        title="Extension field for ``timeDateTime``.",
     )
 
-    timePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    timePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="timePeriod",
         title="Date and time of specimen processing",
         description=(
@@ -647,10 +706,10 @@ class SpecimenProcessing(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SpecimenProcessing`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SpecimenProcessing`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -662,6 +721,13 @@ class SpecimenProcessing(backboneelement.BackboneElement):
             "timeDateTime",
             "timePeriod",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SpecimenProcessing`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice

@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/SupplyRequest
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,21 +27,22 @@ class SupplyRequest(domainresource.DomainResource):
 
     __resource_type__ = "SupplyRequest"
 
-    authoredOn: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    authoredOn: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="authoredOn",
         title="When the request was made",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    authoredOn__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_authoredOn", title="Extension field for ``authoredOn``."
+    authoredOn__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_authoredOn", title="Extension field for ``authoredOn``."
     )
 
-    category: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    category: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="category",
         title="The kind of supply (central, non-stock, etc.)",
         description=(
@@ -49,11 +51,12 @@ class SupplyRequest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    deliverFrom: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    deliverFrom: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="deliverFrom",
         title="The origin of the supply",
         description="Where the supply is expected to come from.",
@@ -64,8 +67,8 @@ class SupplyRequest(domainresource.DomainResource):
         },
     )
 
-    deliverTo: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    deliverTo: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="deliverTo",
         title="The destination of the supply",
         description="Where the supply is destined to go.",
@@ -76,72 +79,77 @@ class SupplyRequest(domainresource.DomainResource):
         },
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Unique identifier",
         description="Unique identifier for this supply request.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    occurrenceDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    occurrenceDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="occurrenceDateTime",
         title="When the request should be fulfilled",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e occurrence[x]
             "one_of_many": "occurrence",
             "one_of_many_required": False,
         },
     )
-    occurrenceDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    occurrenceDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_occurrenceDateTime",
         title="Extension field for ``occurrenceDateTime``.",
     )
 
-    occurrencePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    occurrencePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="occurrencePeriod",
         title="When the request should be fulfilled",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e occurrence[x]
             "one_of_many": "occurrence",
             "one_of_many_required": False,
         },
     )
 
-    occurrenceTiming: fhirtypes.TimingType | None = Field(  # type: ignore
-        None,
+    occurrenceTiming: fhirtypes.TimingType | None = Field(
+        default=None,
         alias="occurrenceTiming",
         title="When the request should be fulfilled",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e occurrence[x]
             "one_of_many": "occurrence",
             "one_of_many_required": False,
         },
     )
 
-    orderedItem: fhirtypes.SupplyRequestOrderedItemType | None = Field(  # type: ignore
-        None,
+    orderedItem: fhirtypes.SupplyRequestOrderedItemType | None = Field(
+        default=None,
         alias="orderedItem",
         title="The item being requested",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    priority: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    priority: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="priority",
         title="routine | urgent | asap | stat",
         description=(
@@ -150,17 +158,18 @@ class SupplyRequest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["routine", "urgent", "asap", "stat"],
         },
     )
-    priority__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_priority", title="Extension field for ``priority``."
+    priority__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_priority", title="Extension field for ``priority``."
     )
 
-    reasonCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    reasonCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="reasonCodeableConcept",
         title="Why the supply item was requested",
         description=None,
@@ -172,8 +181,8 @@ class SupplyRequest(domainresource.DomainResource):
         },
     )
 
-    reasonReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    reasonReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="reasonReference",
         title="Why the supply item was requested",
         description=None,
@@ -187,8 +196,8 @@ class SupplyRequest(domainresource.DomainResource):
         },
     )
 
-    requester: fhirtypes.SupplyRequestRequesterType | None = Field(  # type: ignore
-        None,
+    requester: fhirtypes.SupplyRequestRequesterType | None = Field(
+        default=None,
         alias="requester",
         title="Who/what is requesting service",
         description=(
@@ -197,42 +206,45 @@ class SupplyRequest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="draft | active | suspended +",
         description="Status of the supply request.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["draft", "active", "suspended", "+"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    supplier: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    supplier: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="supplier",
         title="Who is intended to fulfill the request",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SupplyRequest`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SupplyRequest`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -258,6 +270,28 @@ class SupplyRequest(domainresource.DomainResource):
             "reasonReference",
             "deliverFrom",
             "deliverTo",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SupplyRequest`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "status",
+            "category",
+            "priority",
+            "orderedItem",
+            "occurrenceDateTime",
+            "occurrencePeriod",
+            "occurrenceTiming",
+            "authoredOn",
+            "requester",
+            "supplier",
         ]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
@@ -294,8 +328,8 @@ class SupplyRequestOrderedItem(backboneelement.BackboneElement):
 
     __resource_type__ = "SupplyRequestOrderedItem"
 
-    itemCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    itemCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="itemCodeableConcept",
         title="Medication, Substance, or Device requested to be supplied",
         description=(
@@ -305,14 +339,15 @@ class SupplyRequestOrderedItem(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e item[x]
             "one_of_many": "item",
             "one_of_many_required": False,
         },
     )
 
-    itemReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    itemReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="itemReference",
         title="Medication, Substance, or Device requested to be supplied",
         description=(
@@ -322,6 +357,7 @@ class SupplyRequestOrderedItem(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e item[x]
             "one_of_many": "item",
             "one_of_many_required": False,
@@ -330,25 +366,40 @@ class SupplyRequestOrderedItem(backboneelement.BackboneElement):
         },
     )
 
-    quantity: fhirtypes.QuantityType = Field(  # type: ignore
-        ...,
+    quantity: fhirtypes.QuantityType = Field(
+        default=...,
         alias="quantity",
         title="The requested amount of the item indicated",
         description="The amount that is being ordered of the indicated item.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SupplyRequestOrderedItem`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SupplyRequestOrderedItem`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "quantity",
+            "itemCodeableConcept",
+            "itemReference",
+            "itemReference",
+            "itemReference",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SupplyRequestOrderedItem`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "quantity",
             "itemCodeableConcept",
@@ -386,13 +437,14 @@ class SupplyRequestRequester(backboneelement.BackboneElement):
 
     __resource_type__ = "SupplyRequestRequester"
 
-    agent: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    agent: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="agent",
         title="Individual making the request",
         description="The device, practitioner, etc. who initiated the request.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -404,8 +456,8 @@ class SupplyRequestRequester(backboneelement.BackboneElement):
         },
     )
 
-    onBehalfOf: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    onBehalfOf: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="onBehalfOf",
         title="Organization agent is acting for",
         description="The organization the device or practitioner was acting on behalf of.",
@@ -417,9 +469,16 @@ class SupplyRequestRequester(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SupplyRequestRequester`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SupplyRequestRequester`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "agent", "onBehalfOf"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SupplyRequestRequester`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "agent"]

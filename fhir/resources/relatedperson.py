@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/RelatedPerson
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -28,44 +29,47 @@ class RelatedPerson(domainresource.DomainResource):
 
     __resource_type__ = "RelatedPerson"
 
-    active: bool | None = Field(  # type: ignore
-        None,
+    active: bool | None = Field(
+        default=None,
         alias="active",
         title="Whether this related person's record is in active use",
         description="Whether this related person record is in active use.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    active__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_active", title="Extension field for ``active``."
+    active__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_active", title="Extension field for ``active``."
     )
 
-    address: typing.List[fhirtypes.AddressType] | None = Field(  # type: ignore
-        None,
+    address: typing.List[fhirtypes.AddressType] | None = Field(
+        default=None,
         alias="address",
         title="Address where the related person can be contacted or visited",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    birthDate: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    birthDate: fhirtypes.DateType | None = Field(
+        default=None,
         alias="birthDate",
         title="The date on which the related person was born",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    birthDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_birthDate", title="Extension field for ``birthDate``."
+    birthDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_birthDate", title="Extension field for ``birthDate``."
     )
 
-    communication: typing.List[fhirtypes.RelatedPersonCommunicationType] | None = Field(  # type: ignore
-        None,
+    communication: typing.List[fhirtypes.RelatedPersonCommunicationType] | None = Field(
+        default=None,
         alias="communication",
         title=(
             "A language which may be used to communicate with the related person "
@@ -77,8 +81,8 @@ class RelatedPerson(domainresource.DomainResource):
         },
     )
 
-    gender: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    gender: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="gender",
         title="male | female | other | unknown",
         description=(
@@ -87,49 +91,53 @@ class RelatedPerson(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["male", "female", "other", "unknown"],
         },
     )
-    gender__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_gender", title="Extension field for ``gender``."
+    gender__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_gender", title="Extension field for ``gender``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="A human identifier for this person",
         description="Identifier for a person within a particular scope.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    name: typing.List[fhirtypes.HumanNameType] | None = Field(  # type: ignore
-        None,
+    name: typing.List[fhirtypes.HumanNameType] | None = Field(
+        default=None,
         alias="name",
         title="A name associated with the person",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    patient: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    patient: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="patient",
         title="The patient this person is related to",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient"],
         },
     )
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="Period of time that this relationship is considered valid",
         description=(
@@ -141,8 +149,8 @@ class RelatedPerson(domainresource.DomainResource):
         },
     )
 
-    photo: typing.List[fhirtypes.AttachmentType] | None = Field(  # type: ignore
-        None,
+    photo: typing.List[fhirtypes.AttachmentType] | None = Field(
+        default=None,
         alias="photo",
         title="Image of the person",
         description=None,
@@ -151,8 +159,8 @@ class RelatedPerson(domainresource.DomainResource):
         },
     )
 
-    relationship: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    relationship: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="relationship",
         title="The relationship of the related person to the patient",
         description=(
@@ -161,11 +169,12 @@ class RelatedPerson(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    telecom: typing.List[fhirtypes.ContactPointType] | None = Field(  # type: ignore
-        None,
+    telecom: typing.List[fhirtypes.ContactPointType] | None = Field(
+        default=None,
         alias="telecom",
         title="A contact detail for the person",
         description=(
@@ -174,14 +183,15 @@ class RelatedPerson(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``RelatedPerson`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``RelatedPerson`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -206,6 +216,27 @@ class RelatedPerson(domainresource.DomainResource):
             "communication",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``RelatedPerson`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "modifierExtension",
+            "identifier",
+            "active",
+            "patient",
+            "relationship",
+            "name",
+            "telecom",
+            "gender",
+            "birthDate",
+            "address",
+        ]
+
 
 class RelatedPersonCommunication(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -218,8 +249,8 @@ class RelatedPersonCommunication(backboneelement.BackboneElement):
 
     __resource_type__ = "RelatedPersonCommunication"
 
-    language: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    language: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="language",
         title=(
             "The language which can be used to communicate with the related person "
@@ -236,8 +267,8 @@ class RelatedPersonCommunication(backboneelement.BackboneElement):
         },
     )
 
-    preferred: bool | None = Field(  # type: ignore
-        None,
+    preferred: bool | None = Field(
+        default=None,
         alias="preferred",
         title="Language preference indicator",
         description=(
@@ -248,14 +279,21 @@ class RelatedPersonCommunication(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    preferred__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_preferred", title="Extension field for ``preferred``."
+    preferred__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_preferred", title="Extension field for ``preferred``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``RelatedPersonCommunication`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``RelatedPersonCommunication`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "language", "preferred"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``RelatedPersonCommunication`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

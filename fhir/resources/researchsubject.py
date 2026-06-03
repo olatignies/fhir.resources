@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/ResearchSubject
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -27,8 +28,8 @@ class ResearchSubject(domainresource.DomainResource):
 
     __resource_type__ = "ResearchSubject"
 
-    actualComparisonGroup: fhirtypes.IdType | None = Field(  # type: ignore
-        None,
+    actualComparisonGroup: fhirtypes.IdType | None = Field(
+        default=None,
         alias="actualComparisonGroup",
         title="What path was followed",
         description=(
@@ -39,14 +40,14 @@ class ResearchSubject(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    actualComparisonGroup__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    actualComparisonGroup__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_actualComparisonGroup",
         title="Extension field for ``actualComparisonGroup``.",
     )
 
-    assignedComparisonGroup: fhirtypes.IdType | None = Field(  # type: ignore
-        None,
+    assignedComparisonGroup: fhirtypes.IdType | None = Field(
+        default=None,
         alias="assignedComparisonGroup",
         title="What path should be followed",
         description=(
@@ -57,14 +58,14 @@ class ResearchSubject(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    assignedComparisonGroup__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    assignedComparisonGroup__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_assignedComparisonGroup",
         title="Extension field for ``assignedComparisonGroup``.",
     )
 
-    consent: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    consent: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="consent",
         title="Agreement to participate in study",
         description=(
@@ -78,18 +79,19 @@ class ResearchSubject(domainresource.DomainResource):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business Identifier for research subject in a study",
         description="Identifiers assigned to this research subject for a study.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="Start and end of participation",
         description=(
@@ -97,11 +99,12 @@ class ResearchSubject(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    progress: typing.List[fhirtypes.ResearchSubjectProgressType] | None = Field(  # type: ignore
-        None,
+    progress: typing.List[fhirtypes.ResearchSubjectProgressType] | None = Field(
+        default=None,
         alias="progress",
         title="Subject status",
         description=(
@@ -113,37 +116,39 @@ class ResearchSubject(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="draft | active | retired | unknown",
         description="The publication state of the resource (not of the subject).",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["draft", "active", "retired", "unknown"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    study: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    study: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="study",
         title="Study subject is part of",
         description="Reference to the study the subject is participating in.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["ResearchStudy"],
         },
     )
 
-    subject: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    subject: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="subject",
         title="Who or what is part of study",
         description=(
@@ -151,6 +156,7 @@ class ResearchSubject(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Patient",
@@ -165,10 +171,10 @@ class ResearchSubject(domainresource.DomainResource):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ResearchSubject`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ResearchSubject`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -188,6 +194,23 @@ class ResearchSubject(domainresource.DomainResource):
             "assignedComparisonGroup",
             "actualComparisonGroup",
             "consent",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ResearchSubject`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "modifierExtension",
+            "identifier",
+            "status",
+            "period",
+            "study",
+            "subject",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
@@ -214,8 +237,8 @@ class ResearchSubjectProgress(backboneelement.BackboneElement):
 
     __resource_type__ = "ResearchSubjectProgress"
 
-    endDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    endDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="endDate",
         title="State change date",
         description="The date when the state ended.",
@@ -223,12 +246,12 @@ class ResearchSubjectProgress(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    endDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_endDate", title="Extension field for ``endDate``."
+    endDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_endDate", title="Extension field for ``endDate``."
     )
 
-    milestone: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    milestone: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="milestone",
         title="SignedUp | Screened | Randomized",
         description="The milestones the subject has passed through.",
@@ -237,8 +260,8 @@ class ResearchSubjectProgress(backboneelement.BackboneElement):
         },
     )
 
-    reason: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    reason: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="reason",
         title="State change reason",
         description=(
@@ -250,8 +273,8 @@ class ResearchSubjectProgress(backboneelement.BackboneElement):
         },
     )
 
-    startDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    startDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="startDate",
         title="State change date",
         description="The date when the new status started.",
@@ -259,12 +282,12 @@ class ResearchSubjectProgress(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    startDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_startDate", title="Extension field for ``startDate``."
+    startDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_startDate", title="Extension field for ``startDate``."
     )
 
-    subjectState: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    subjectState: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="subjectState",
         title=(
             "candidate | eligible | follow-up | ineligible | not-registered | off-"
@@ -277,8 +300,8 @@ class ResearchSubjectProgress(backboneelement.BackboneElement):
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="state | milestone",
         description=(
@@ -291,10 +314,10 @@ class ResearchSubjectProgress(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ResearchSubjectProgress`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ResearchSubjectProgress`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -307,3 +330,10 @@ class ResearchSubjectProgress(backboneelement.BackboneElement):
             "startDate",
             "endDate",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ResearchSubjectProgress`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Invoice
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class Invoice(domainresource.DomainResource):
 
     __resource_type__ = "Invoice"
 
-    account: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    account: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="account",
         title="Account that is being balanced",
         description="Account which is supposed to be balanced with this Invoice.",
@@ -38,8 +39,8 @@ class Invoice(domainresource.DomainResource):
         },
     )
 
-    cancelledReason: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    cancelledReason: fhirtypes.StringType | None = Field(
+        default=None,
         alias="cancelledReason",
         title="Reason for cancellation of this Invoice",
         description=(
@@ -50,25 +51,28 @@ class Invoice(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    cancelledReason__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_cancelledReason", title="Extension field for ``cancelledReason``."
+    cancelledReason__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_cancelledReason",
+        title="Extension field for ``cancelledReason``.",
     )
 
-    creation: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    creation: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="creation",
         title="When posted",
         description="Date/time(s) of when this Invoice was posted.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    creation__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_creation", title="Extension field for ``creation``."
+    creation__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_creation", title="Extension field for ``creation``."
     )
 
-    date: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    date: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="date",
         title="DEPRICATED",
         description="Depricared by the element below.",
@@ -76,12 +80,12 @@ class Invoice(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_date", title="Extension field for ``date``."
+    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_date", title="Extension field for ``date``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business Identifier for item",
         description=(
@@ -90,11 +94,12 @@ class Invoice(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    issuer: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    issuer: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="issuer",
         title="Issuing Organization of Invoice",
         description="The organizationissuing the Invoice.",
@@ -105,8 +110,8 @@ class Invoice(domainresource.DomainResource):
         },
     )
 
-    lineItem: typing.List[fhirtypes.InvoiceLineItemType] | None = Field(  # type: ignore
-        None,
+    lineItem: typing.List[fhirtypes.InvoiceLineItemType] | None = Field(
+        default=None,
         alias="lineItem",
         title="Line items of this Invoice",
         description=(
@@ -119,8 +124,8 @@ class Invoice(domainresource.DomainResource):
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Comments made about the invoice",
         description=(
@@ -132,8 +137,8 @@ class Invoice(domainresource.DomainResource):
         },
     )
 
-    participant: typing.List[fhirtypes.InvoiceParticipantType] | None = Field(  # type: ignore
-        None,
+    participant: typing.List[fhirtypes.InvoiceParticipantType] | None = Field(
+        default=None,
         alias="participant",
         title="Participant in creation of this Invoice",
         description=(
@@ -144,8 +149,8 @@ class Invoice(domainresource.DomainResource):
         },
     )
 
-    paymentTerms: fhirtypes.MarkdownType | None = Field(  # type: ignore
-        None,
+    paymentTerms: fhirtypes.MarkdownType | None = Field(
+        default=None,
         alias="paymentTerms",
         title="Payment details",
         description=(
@@ -156,41 +161,45 @@ class Invoice(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    paymentTerms__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_paymentTerms", title="Extension field for ``paymentTerms``."
+    paymentTerms__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_paymentTerms",
+        title="Extension field for ``paymentTerms``.",
     )
 
-    periodDate: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    periodDate: fhirtypes.DateType | None = Field(
+        default=None,
         alias="periodDate",
         title="Billing date or period",
         description="Date/time(s) range of services included in this invoice.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e period[x]
             "one_of_many": "period",
             "one_of_many_required": False,
         },
     )
-    periodDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_periodDate", title="Extension field for ``periodDate``."
+    periodDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_periodDate", title="Extension field for ``periodDate``."
     )
 
-    periodPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    periodPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="periodPeriod",
         title="Billing date or period",
         description="Date/time(s) range of services included in this invoice.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e period[x]
             "one_of_many": "period",
             "one_of_many_required": False,
         },
     )
 
-    recipient: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    recipient: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="recipient",
         title="Recipient of this invoice",
         description=(
@@ -199,18 +208,20 @@ class Invoice(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization", "Patient", "RelatedPerson"],
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="draft | issued | balanced | cancelled | entered-in-error",
         description="The current state of the Invoice.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -223,12 +234,12 @@ class Invoice(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    subject: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="subject",
         title="Recipient(s) of goods and services",
         description=(
@@ -237,33 +248,36 @@ class Invoice(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Group"],
         },
     )
 
-    totalGross: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    totalGross: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="totalGross",
         title="Gross total of this Invoice",
         description="Invoice total, tax included.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    totalNet: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    totalNet: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="totalNet",
         title="Net total of this Invoice",
         description="Invoice total , taxes excluded.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    totalPriceComponent: typing.List[fhirtypes.MonetaryComponentType] | None = Field(  # type: ignore
-        None,
+    totalPriceComponent: typing.List[fhirtypes.MonetaryComponentType] | None = Field(
+        default=None,
         alias="totalPriceComponent",
         title="Components of Invoice total",
         description=(
@@ -278,8 +292,8 @@ class Invoice(domainresource.DomainResource):
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Type of Invoice",
         description=(
@@ -288,14 +302,15 @@ class Invoice(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Invoice`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Invoice`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -325,6 +340,28 @@ class Invoice(domainresource.DomainResource):
             "totalGross",
             "paymentTerms",
             "note",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Invoice`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "modifierExtension",
+            "identifier",
+            "status",
+            "type",
+            "subject",
+            "recipient",
+            "creation",
+            "periodDate",
+            "periodPeriod",
+            "totalNet",
+            "totalGross",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
@@ -368,8 +405,8 @@ class InvoiceLineItem(backboneelement.BackboneElement):
 
     __resource_type__ = "InvoiceLineItem"
 
-    chargeItemCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    chargeItemCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="chargeItemCodeableConcept",
         title=(
             "Reference to ChargeItem containing details of this line item or an "
@@ -389,8 +426,8 @@ class InvoiceLineItem(backboneelement.BackboneElement):
         },
     )
 
-    chargeItemReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    chargeItemReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="chargeItemReference",
         title=(
             "Reference to ChargeItem containing details of this line item or an "
@@ -412,8 +449,8 @@ class InvoiceLineItem(backboneelement.BackboneElement):
         },
     )
 
-    priceComponent: typing.List[fhirtypes.MonetaryComponentType] | None = Field(  # type: ignore
-        None,
+    priceComponent: typing.List[fhirtypes.MonetaryComponentType] | None = Field(
+        default=None,
         alias="priceComponent",
         title="Components of total line item price",
         description=(
@@ -430,8 +467,8 @@ class InvoiceLineItem(backboneelement.BackboneElement):
         },
     )
 
-    sequence: fhirtypes.PositiveIntType | None = Field(  # type: ignore
-        None,
+    sequence: fhirtypes.PositiveIntType | None = Field(
+        default=None,
         alias="sequence",
         title="Sequence number of line item",
         description="Sequence in which the items appear on the invoice.",
@@ -439,12 +476,12 @@ class InvoiceLineItem(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    sequence__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_sequence", title="Extension field for ``sequence``."
+    sequence__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_sequence", title="Extension field for ``sequence``."
     )
 
-    servicedDate: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    servicedDate: fhirtypes.DateType | None = Field(
+        default=None,
         alias="servicedDate",
         title="Service data or period",
         description="Date/time(s) range when this service was delivered or completed.",
@@ -455,12 +492,14 @@ class InvoiceLineItem(backboneelement.BackboneElement):
             "one_of_many_required": False,
         },
     )
-    servicedDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_servicedDate", title="Extension field for ``servicedDate``."
+    servicedDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_servicedDate",
+        title="Extension field for ``servicedDate``.",
     )
 
-    servicedPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    servicedPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="servicedPeriod",
         title="Service data or period",
         description="Date/time(s) range when this service was delivered or completed.",
@@ -473,10 +512,10 @@ class InvoiceLineItem(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InvoiceLineItem`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InvoiceLineItem`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -489,6 +528,13 @@ class InvoiceLineItem(backboneelement.BackboneElement):
             "chargeItemCodeableConcept",
             "priceComponent",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InvoiceLineItem`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -521,8 +567,8 @@ class InvoiceParticipant(backboneelement.BackboneElement):
 
     __resource_type__ = "InvoiceParticipant"
 
-    actor: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    actor: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="actor",
         title="Individual who was involved",
         description=(
@@ -543,8 +589,8 @@ class InvoiceParticipant(backboneelement.BackboneElement):
         },
     )
 
-    role: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    role: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="role",
         title="Type of involvement in creation of this Invoice",
         description=(
@@ -558,9 +604,16 @@ class InvoiceParticipant(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``InvoiceParticipant`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``InvoiceParticipant`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "role", "actor"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``InvoiceParticipant`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

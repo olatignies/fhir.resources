@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/GenomicStudy
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class GenomicStudy(domainresource.DomainResource):
 
     __resource_type__ = "GenomicStudy"
 
-    analysis: typing.List[fhirtypes.GenomicStudyAnalysisType] | None = Field(  # type: ignore
-        None,
+    analysis: typing.List[fhirtypes.GenomicStudyAnalysisType] | None = Field(
+        default=None,
         alias="analysis",
         title="Genomic Analysis Event",
         description=(
@@ -39,8 +40,8 @@ class GenomicStudy(domainresource.DomainResource):
         },
     )
 
-    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="basedOn",
         title="Event resources that the genomic study is based on",
         description=None,
@@ -51,8 +52,8 @@ class GenomicStudy(domainresource.DomainResource):
         },
     )
 
-    description: fhirtypes.MarkdownType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.MarkdownType | None = Field(
+        default=None,
         alias="description",
         title="Description of the genomic study",
         description=None,
@@ -60,34 +61,36 @@ class GenomicStudy(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    encounter: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    encounter: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="encounter",
         title="The healthcare event with which this genomics study is associated",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Encounter"],
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Identifiers for this genomic study",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    instantiatesCanonical: fhirtypes.CanonicalType | None = Field(  # type: ignore
-        None,
+    instantiatesCanonical: fhirtypes.CanonicalType | None = Field(
+        default=None,
         alias="instantiatesCanonical",
         title="The defined protocol that describes the study",
         description=None,
@@ -97,14 +100,14 @@ class GenomicStudy(domainresource.DomainResource):
             "enum_reference_types": ["PlanDefinition"],
         },
     )
-    instantiatesCanonical__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    instantiatesCanonical__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_instantiatesCanonical",
         title="Extension field for ``instantiatesCanonical``.",
     )
 
-    instantiatesUri: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    instantiatesUri: fhirtypes.UriType | None = Field(
+        default=None,
         alias="instantiatesUri",
         title=(
             "The URL pointing to an externally maintained protocol that describes "
@@ -115,12 +118,14 @@ class GenomicStudy(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    instantiatesUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_instantiatesUri", title="Extension field for ``instantiatesUri``."
+    instantiatesUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_instantiatesUri",
+        title="Extension field for ``instantiatesUri``.",
     )
 
-    interpreter: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    interpreter: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="interpreter",
         title="Healthcare professionals who interpreted the genomic study",
         description=None,
@@ -131,8 +136,8 @@ class GenomicStudy(domainresource.DomainResource):
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Comments related to the genomic study",
         description=None,
@@ -141,8 +146,8 @@ class GenomicStudy(domainresource.DomainResource):
         },
     )
 
-    reason: typing.List[fhirtypes.CodeableReferenceType] | None = Field(  # type: ignore
-        None,
+    reason: typing.List[fhirtypes.CodeableReferenceType] | None = Field(
+        default=None,
         alias="reason",
         title="Why the genomic study was performed",
         description=None,
@@ -153,8 +158,8 @@ class GenomicStudy(domainresource.DomainResource):
         },
     )
 
-    referrer: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    referrer: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="referrer",
         title="Healthcare professional who requested or referred the genomic study",
         description=None,
@@ -165,8 +170,8 @@ class GenomicStudy(domainresource.DomainResource):
         },
     )
 
-    startDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    startDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="startDate",
         title="When the genomic study was started",
         description=None,
@@ -174,17 +179,18 @@ class GenomicStudy(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    startDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_startDate", title="Extension field for ``startDate``."
+    startDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_startDate", title="Extension field for ``startDate``."
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="registered | available | cancelled | entered-in-error | unknown",
         description="The status of the genomic study.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -197,17 +203,18 @@ class GenomicStudy(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    subject: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="subject",
         title="The primary subject of the genomic study",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Patient",
@@ -219,8 +226,8 @@ class GenomicStudy(domainresource.DomainResource):
         },
     )
 
-    type: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    type: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="type",
         title=(
             "The type of the study (e.g., Familial variant segregation, Functional "
@@ -232,14 +239,15 @@ class GenomicStudy(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``GenomicStudy`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``GenomicStudy`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -267,6 +275,23 @@ class GenomicStudy(domainresource.DomainResource):
             "analysis",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``GenomicStudy`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "modifierExtension",
+            "identifier",
+            "status",
+            "type",
+            "subject",
+            "encounter",
+        ]
+
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
         In some cases, implementers might find that they do not have appropriate data for
@@ -291,8 +316,8 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
 
     __resource_type__ = "GenomicStudyAnalysis"
 
-    changeType: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    changeType: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="changeType",
         title=(
             "Type of the genomic changes studied in the analysis (e.g., DNA, RNA, "
@@ -307,8 +332,8 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         },
     )
 
-    date: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    date: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="date",
         title="The date of the analysis event",
         description=None,
@@ -316,12 +341,12 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_date", title="Extension field for ``date``."
+    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_date", title="Extension field for ``date``."
     )
 
-    device: typing.List[fhirtypes.GenomicStudyAnalysisDeviceType] | None = Field(  # type: ignore
-        None,
+    device: typing.List[fhirtypes.GenomicStudyAnalysisDeviceType] | None = Field(
+        default=None,
         alias="device",
         title=(
             "Devices used for the analysis (e.g., instruments, software), with "
@@ -333,8 +358,8 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         },
     )
 
-    focus: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    focus: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="focus",
         title=(
             "What the genomic analysis is about, when it is not about the subject "
@@ -350,13 +375,14 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    genomeBuild: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    genomeBuild: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="genomeBuild",
         title="Genome build that is used in this analysis",
         description="The reference genome build that is used in this analysis.",
@@ -365,18 +391,19 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Identifiers for the analysis event",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    input: typing.List[fhirtypes.GenomicStudyAnalysisInputType] | None = Field(  # type: ignore
-        None,
+    input: typing.List[fhirtypes.GenomicStudyAnalysisInputType] | None = Field(
+        default=None,
         alias="input",
         title="Inputs for the analysis event",
         description=None,
@@ -385,8 +412,8 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         },
     )
 
-    instantiatesCanonical: fhirtypes.CanonicalType | None = Field(  # type: ignore
-        None,
+    instantiatesCanonical: fhirtypes.CanonicalType | None = Field(
+        default=None,
         alias="instantiatesCanonical",
         title="The defined protocol that describes the analysis",
         description=None,
@@ -396,14 +423,14 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
             "enum_reference_types": ["PlanDefinition", "ActivityDefinition"],
         },
     )
-    instantiatesCanonical__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    instantiatesCanonical__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_instantiatesCanonical",
         title="Extension field for ``instantiatesCanonical``.",
     )
 
-    instantiatesUri: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    instantiatesUri: fhirtypes.UriType | None = Field(
+        default=None,
         alias="instantiatesUri",
         title=(
             "The URL pointing to an externally maintained protocol that describes "
@@ -414,12 +441,14 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    instantiatesUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_instantiatesUri", title="Extension field for ``instantiatesUri``."
+    instantiatesUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_instantiatesUri",
+        title="Extension field for ``instantiatesUri``.",
     )
 
-    methodType: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    methodType: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="methodType",
         title=(
             "Type of the methods used in the analysis (e.g., FISH, Karyotyping, " "MSI)"
@@ -431,11 +460,12 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Any notes capture with the analysis event",
         description=None,
@@ -444,8 +474,8 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         },
     )
 
-    output: typing.List[fhirtypes.GenomicStudyAnalysisOutputType] | None = Field(  # type: ignore
-        None,
+    output: typing.List[fhirtypes.GenomicStudyAnalysisOutputType] | None = Field(
+        default=None,
         alias="output",
         title="Outputs for the analysis event",
         description=None,
@@ -454,8 +484,8 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         },
     )
 
-    performer: typing.List[fhirtypes.GenomicStudyAnalysisPerformerType] | None = Field(  # type: ignore
-        None,
+    performer: typing.List[fhirtypes.GenomicStudyAnalysisPerformerType] | None = Field(
+        default=None,
         alias="performer",
         title="Performer for the analysis event",
         description=None,
@@ -464,8 +494,8 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         },
     )
 
-    protocolPerformed: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    protocolPerformed: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="protocolPerformed",
         title="The protocol that was performed for the analysis event",
         description=None,
@@ -476,8 +506,8 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         },
     )
 
-    regionsCalled: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    regionsCalled: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="regionsCalled",
         title="Genomic regions actually called in the analysis event (BED file)",
         description=None,
@@ -488,8 +518,8 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         },
     )
 
-    regionsStudied: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    regionsStudied: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="regionsStudied",
         title="The genomic regions to be studied in the analysis (BED file)",
         description=None,
@@ -500,36 +530,38 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
         },
     )
 
-    specimen: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    specimen: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="specimen",
         title="The specimen used in the analysis event",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Specimen"],
         },
     )
 
-    title: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    title: fhirtypes.StringType | None = Field(
+        default=None,
         alias="title",
         title="Name of the analysis event (human friendly)",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    title__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_title", title="Extension field for ``title``."
+    title__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_title", title="Extension field for ``title``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``GenomicStudyAnalysis`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``GenomicStudyAnalysis`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -555,6 +587,20 @@ class GenomicStudyAnalysis(backboneelement.BackboneElement):
             "device",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``GenomicStudyAnalysis`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "modifierExtension",
+            "identifier",
+            "methodType",
+            "title",
+            "focus",
+            "specimen",
+        ]
+
 
 class GenomicStudyAnalysisDevice(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -567,8 +613,8 @@ class GenomicStudyAnalysisDevice(backboneelement.BackboneElement):
 
     __resource_type__ = "GenomicStudyAnalysisDevice"
 
-    device: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    device: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="device",
         title="Device used for the analysis",
         description=None,
@@ -579,8 +625,8 @@ class GenomicStudyAnalysisDevice(backboneelement.BackboneElement):
         },
     )
 
-    function: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    function: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="function",
         title="Specific function for the device used for the analysis",
         description=None,
@@ -590,12 +636,19 @@ class GenomicStudyAnalysisDevice(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``GenomicStudyAnalysisDevice`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``GenomicStudyAnalysisDevice`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "device", "function"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``GenomicStudyAnalysisDevice`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class GenomicStudyAnalysisInput(backboneelement.BackboneElement):
@@ -608,20 +661,21 @@ class GenomicStudyAnalysisInput(backboneelement.BackboneElement):
 
     __resource_type__ = "GenomicStudyAnalysisInput"
 
-    file: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    file: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="file",
         title="File containing input data",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["DocumentReference"],
         },
     )
 
-    generatedByIdentifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    generatedByIdentifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="generatedByIdentifier",
         title=(
             "The analysis event or other GenomicStudy that generated this input " "file"
@@ -635,8 +689,8 @@ class GenomicStudyAnalysisInput(backboneelement.BackboneElement):
         },
     )
 
-    generatedByReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    generatedByReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="generatedByReference",
         title=(
             "The analysis event or other GenomicStudy that generated this input " "file"
@@ -652,8 +706,8 @@ class GenomicStudyAnalysisInput(backboneelement.BackboneElement):
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Type of input data (e.g., BAM, CRAM, or FASTA)",
         description="Type of input data, e.g., BAM, CRAM, or FASTA.",
@@ -663,10 +717,10 @@ class GenomicStudyAnalysisInput(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``GenomicStudyAnalysisInput`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``GenomicStudyAnalysisInput`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -677,6 +731,13 @@ class GenomicStudyAnalysisInput(backboneelement.BackboneElement):
             "generatedByIdentifier",
             "generatedByReference",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``GenomicStudyAnalysisInput`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "file"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -707,35 +768,44 @@ class GenomicStudyAnalysisOutput(backboneelement.BackboneElement):
 
     __resource_type__ = "GenomicStudyAnalysisOutput"
 
-    file: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    file: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="file",
         title="File containing output data",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["DocumentReference"],
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Type of output data (e.g., VCF, MAF, or BAM)",
         description="Type of output data, e.g., VCF, MAF, or BAM.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``GenomicStudyAnalysisOutput`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``GenomicStudyAnalysisOutput`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "file", "type"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``GenomicStudyAnalysisOutput`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "file", "type"]
 
 
 class GenomicStudyAnalysisPerformer(backboneelement.BackboneElement):
@@ -748,8 +818,8 @@ class GenomicStudyAnalysisPerformer(backboneelement.BackboneElement):
 
     __resource_type__ = "GenomicStudyAnalysisPerformer"
 
-    actor: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    actor: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="actor",
         title=(
             "The organization, healthcare professional, or others who participated "
@@ -768,8 +838,8 @@ class GenomicStudyAnalysisPerformer(backboneelement.BackboneElement):
         },
     )
 
-    role: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    role: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="role",
         title="Role of the actor for this analysis",
         description=None,
@@ -779,9 +849,16 @@ class GenomicStudyAnalysisPerformer(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``GenomicStudyAnalysisPerformer`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``GenomicStudyAnalysisPerformer`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "actor", "role"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``GenomicStudyAnalysisPerformer`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

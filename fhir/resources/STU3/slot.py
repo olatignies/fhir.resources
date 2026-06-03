@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Slot
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -24,8 +25,8 @@ class Slot(domainresource.DomainResource):
 
     __resource_type__ = "Slot"
 
-    appointmentType: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    appointmentType: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="appointmentType",
         title=(
             "The style of appointment or patient that may be booked in the slot "
@@ -34,11 +35,12 @@ class Slot(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    comment: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    comment: fhirtypes.StringType | None = Field(
+        default=None,
         alias="comment",
         title=(
             "Comments on the slot to describe any extended information. Such as "
@@ -49,36 +51,38 @@ class Slot(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    comment__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_comment", title="Extension field for ``comment``."
+    comment__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_comment", title="Extension field for ``comment``."
     )
 
-    end: fhirtypes.InstantType | None = Field(  # type: ignore
-        None,
+    end: fhirtypes.InstantType | None = Field(
+        default=None,
         alias="end",
         title="Date/Time that the slot is to conclude",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    end__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_end", title="Extension field for ``end``."
+    end__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_end", title="Extension field for ``end``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="External Ids for this item",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    overbooked: bool | None = Field(  # type: ignore
-        None,
+    overbooked: bool | None = Field(
+        default=None,
         alias="overbooked",
         title=(
             "This slot has already been overbooked, appointments are unlikely to be"
@@ -89,12 +93,12 @@ class Slot(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    overbooked__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_overbooked", title="Extension field for ``overbooked``."
+    overbooked__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_overbooked", title="Extension field for ``overbooked``."
     )
 
-    schedule: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    schedule: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="schedule",
         title=(
             "The schedule resource that this slot defines an interval of status "
@@ -103,13 +107,14 @@ class Slot(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Schedule"],
         },
     )
 
-    serviceCategory: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    serviceCategory: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="serviceCategory",
         title=(
             "A broad categorisation of the service that is to be performed during "
@@ -118,11 +123,12 @@ class Slot(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    serviceType: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    serviceType: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="serviceType",
         title=(
             "The type of appointments that can be booked into this slot (ideally "
@@ -133,11 +139,12 @@ class Slot(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    specialty: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    specialty: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="specialty",
         title=(
             "The specialty of a practitioner that would be required to perform the "
@@ -146,30 +153,33 @@ class Slot(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    start: fhirtypes.InstantType | None = Field(  # type: ignore
-        None,
+    start: fhirtypes.InstantType | None = Field(
+        default=None,
         alias="start",
         title="Date/Time that the slot is to begin",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    start__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_start", title="Extension field for ``start``."
+    start__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_start", title="Extension field for ``start``."
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="busy | free | busy-unavailable | busy-tentative | entered-in-error",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -182,15 +192,15 @@ class Slot(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Slot`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Slot`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -212,6 +222,26 @@ class Slot(domainresource.DomainResource):
             "end",
             "overbooked",
             "comment",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Slot`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "serviceCategory",
+            "serviceType",
+            "specialty",
+            "appointmentType",
+            "schedule",
+            "status",
+            "start",
+            "end",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:

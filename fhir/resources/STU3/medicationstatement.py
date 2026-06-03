@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/MedicationStatement
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -48,8 +49,8 @@ class MedicationStatement(domainresource.DomainResource):
 
     __resource_type__ = "MedicationStatement"
 
-    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="basedOn",
         title="Fulfils plan, proposal or order",
         description=(
@@ -58,6 +59,7 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "MedicationRequest",
@@ -68,8 +70,8 @@ class MedicationStatement(domainresource.DomainResource):
         },
     )
 
-    category: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    category: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="category",
         title="Type of medication usage",
         description=(
@@ -78,11 +80,12 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    context: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    context: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="context",
         title="Encounter / Episode associated with MedicationStatement",
         description=(
@@ -91,13 +94,14 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Encounter", "EpisodeOfCare"],
         },
     )
 
-    dateAsserted: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    dateAsserted: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="dateAsserted",
         title="When the statement was asserted?",
         description=(
@@ -106,14 +110,17 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    dateAsserted__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_dateAsserted", title="Extension field for ``dateAsserted``."
+    dateAsserted__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_dateAsserted",
+        title="Extension field for ``dateAsserted``.",
     )
 
-    derivedFrom: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    derivedFrom: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="derivedFrom",
         title="Additional supporting information",
         description=(
@@ -128,8 +135,8 @@ class MedicationStatement(domainresource.DomainResource):
         },
     )
 
-    dosage: typing.List[fhirtypes.DosageType] | None = Field(  # type: ignore
-        None,
+    dosage: typing.List[fhirtypes.DosageType] | None = Field(
+        default=None,
         alias="dosage",
         title="Details of how medication is/was taken or should be taken",
         description="Indicates how the medication is/was or should be taken by the patient.",
@@ -138,8 +145,8 @@ class MedicationStatement(domainresource.DomainResource):
         },
     )
 
-    effectiveDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    effectiveDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="effectiveDateTime",
         title="The date/time or interval when the medication was taken",
         description=(
@@ -149,19 +156,20 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e effective[x]
             "one_of_many": "effective",
             "one_of_many_required": False,
         },
     )
-    effectiveDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    effectiveDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_effectiveDateTime",
         title="Extension field for ``effectiveDateTime``.",
     )
 
-    effectivePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    effectivePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="effectivePeriod",
         title="The date/time or interval when the medication was taken",
         description=(
@@ -171,14 +179,15 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e effective[x]
             "one_of_many": "effective",
             "one_of_many_required": False,
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="External identifier",
         description=(
@@ -193,11 +202,12 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    informationSource: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    informationSource: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="informationSource",
         title=(
             "Person or organization that provided the information about the taking "
@@ -221,8 +231,8 @@ class MedicationStatement(domainresource.DomainResource):
         },
     )
 
-    medicationCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    medicationCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="medicationCodeableConcept",
         title="What medication was taken",
         description=(
@@ -233,14 +243,15 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e medication[x]
             "one_of_many": "medication",
             "one_of_many_required": True,
         },
     )
 
-    medicationReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    medicationReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="medicationReference",
         title="What medication was taken",
         description=(
@@ -251,6 +262,7 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e medication[x]
             "one_of_many": "medication",
             "one_of_many_required": True,
@@ -259,8 +271,8 @@ class MedicationStatement(domainresource.DomainResource):
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Further information about the statement",
         description=(
@@ -272,13 +284,14 @@ class MedicationStatement(domainresource.DomainResource):
         },
     )
 
-    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="partOf",
         title="Part of referenced event",
         description="A larger event of which this particular event is a component or step.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "MedicationAdministration",
@@ -290,8 +303,8 @@ class MedicationStatement(domainresource.DomainResource):
         },
     )
 
-    reasonCode: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    reasonCode: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="reasonCode",
         title="Reason for why the medication is being/was taken",
         description="A reason for why the medication is being/was taken.",
@@ -300,8 +313,8 @@ class MedicationStatement(domainresource.DomainResource):
         },
     )
 
-    reasonNotTaken: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    reasonNotTaken: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="reasonNotTaken",
         title="True if asserting medication was not given",
         description="A code indicating why the medication was not taken.",
@@ -310,8 +323,8 @@ class MedicationStatement(domainresource.DomainResource):
         },
     )
 
-    reasonReference: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    reasonReference: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="reasonReference",
         title=(
             "Condition or observation that supports why the medication is being/was"
@@ -325,8 +338,8 @@ class MedicationStatement(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="active | completed | entered-in-error | intended | stopped | on-hold",
         description=(
@@ -336,6 +349,7 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -349,24 +363,25 @@ class MedicationStatement(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    subject: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="subject",
         title="Who is/was taking  the medication",
         description="The person, animal or group who is/was taking the medication.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Group"],
         },
     )
 
-    taken: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    taken: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="taken",
         title="y | n | unk | na",
         description=(
@@ -375,21 +390,22 @@ class MedicationStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["y", "n", "unk", "na"],
         },
     )
-    taken__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_taken", title="Extension field for ``taken``."
+    taken__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_taken", title="Extension field for ``taken``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``MedicationStatement`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``MedicationStatement`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -420,6 +436,30 @@ class MedicationStatement(domainresource.DomainResource):
             "reasonReference",
             "note",
             "dosage",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``MedicationStatement`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "basedOn",
+            "partOf",
+            "context",
+            "status",
+            "category",
+            "medicationCodeableConcept",
+            "medicationReference",
+            "effectiveDateTime",
+            "effectivePeriod",
+            "dateAsserted",
+            "subject",
+            "taken",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:

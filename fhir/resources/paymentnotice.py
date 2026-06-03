@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/PaymentNotice
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,32 +27,34 @@ class PaymentNotice(domainresource.DomainResource):
 
     __resource_type__ = "PaymentNotice"
 
-    amount: fhirtypes.MoneyType = Field(  # type: ignore
-        ...,
+    amount: fhirtypes.MoneyType = Field(
+        default=...,
         alias="amount",
         title="Monetary amount of the payment",
         description="The amount sent to the payee.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    created: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    created: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="created",
         title="Creation date",
         description="The date when this resource was created.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    created__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_created", title="Extension field for ``created``."
+    created__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_created", title="Extension field for ``created``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business Identifier for the payment notice",
         description="A unique identifier assigned to this payment notice.",
@@ -60,8 +63,8 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    payee: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    payee: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="payee",
         title="Party being paid",
         description=(
@@ -79,20 +82,21 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    payment: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    payment: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="payment",
         title="Payment reference",
         description="A reference to the payment which is the subject of this notice.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["PaymentReconciliation"],
         },
     )
 
-    paymentDate: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    paymentDate: fhirtypes.DateType | None = Field(
+        default=None,
         alias="paymentDate",
         title="Payment or clearing date",
         description="The date when the above payment action occurred.",
@@ -100,12 +104,12 @@ class PaymentNotice(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    paymentDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_paymentDate", title="Extension field for ``paymentDate``."
+    paymentDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_paymentDate", title="Extension field for ``paymentDate``."
     )
 
-    paymentStatus: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    paymentStatus: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="paymentStatus",
         title="Issued or cleared Status of the payment",
         description="A code indicating whether payment has been sent or cleared.",
@@ -114,20 +118,21 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    recipient: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    recipient: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="recipient",
         title="Party being notified",
         description="The party who is notified of the payment status.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    reporter: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    reporter: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="reporter",
         title="Responsible practitioner",
         description="The party who reports the payment notice.",
@@ -142,8 +147,8 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    request: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    request: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="request",
         title="Request reference",
         description="Reference of resource for which payment is being made.",
@@ -154,8 +159,8 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    response: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    response: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="response",
         title="Response reference",
         description="Reference of response to resource for which payment is being made.",
@@ -166,28 +171,29 @@ class PaymentNotice(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="active | cancelled | draft | entered-in-error",
         description="The status of the resource instance.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["active", "cancelled", "draft", "entered-in-error"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``PaymentNotice`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``PaymentNotice`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -210,6 +216,23 @@ class PaymentNotice(domainresource.DomainResource):
             "recipient",
             "amount",
             "paymentStatus",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``PaymentNotice`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "modifierExtension",
+            "status",
+            "created",
+            "payment",
+            "recipient",
+            "amount",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:

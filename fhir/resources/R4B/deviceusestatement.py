@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/DeviceUseStatement
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class DeviceUseStatement(domainresource.DomainResource):
 
     __resource_type__ = "DeviceUseStatement"
 
-    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="basedOn",
         title="Fulfills plan, proposal or order",
         description=(
@@ -36,13 +37,14 @@ class DeviceUseStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["ServiceRequest"],
         },
     )
 
-    bodySite: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    bodySite: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="bodySite",
         title="Target body site",
         description=(
@@ -51,11 +53,12 @@ class DeviceUseStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    derivedFrom: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    derivedFrom: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="derivedFrom",
         title="Supporting information",
         description=(
@@ -65,6 +68,7 @@ class DeviceUseStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "ServiceRequest",
@@ -77,30 +81,32 @@ class DeviceUseStatement(domainresource.DomainResource):
         },
     )
 
-    device: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    device: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="device",
         title="Reference to device used",
         description="The details of the device used.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Device"],
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="External identifier for this record",
         description="An external identifier for this statement such as an IRI.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Addition details (comments, instructions)",
         description=(
@@ -114,18 +120,19 @@ class DeviceUseStatement(domainresource.DomainResource):
         },
     )
 
-    reasonCode: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    reasonCode: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="reasonCode",
         title="Why device was used",
         description="Reason or justification for the use of the device.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    reasonReference: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    reasonReference: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="reasonReference",
         title="Why was DeviceUseStatement performed?",
         description=(
@@ -134,6 +141,7 @@ class DeviceUseStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Condition",
@@ -145,26 +153,28 @@ class DeviceUseStatement(domainresource.DomainResource):
         },
     )
 
-    recordedOn: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    recordedOn: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="recordedOn",
         title="When statement was recorded",
         description="The time at which the statement was made/recorded.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    recordedOn__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_recordedOn", title="Extension field for ``recordedOn``."
+    recordedOn__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_recordedOn", title="Extension field for ``recordedOn``."
     )
 
-    source: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    source: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="source",
         title="Who made the statement",
         description="Who reported the device was being used by the patient.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Patient",
@@ -175,8 +185,8 @@ class DeviceUseStatement(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="active | completed | entered-in-error +",
         description=(
@@ -186,64 +196,71 @@ class DeviceUseStatement(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["active", "completed", "entered-in-error", "+"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    subject: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="subject",
         title="Patient using device",
         description="The patient who used the device.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Group"],
         },
     )
 
-    timingDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    timingDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="timingDateTime",
         title="How often  the device was used",
         description="How often the device was used.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e timing[x]
             "one_of_many": "timing",
             "one_of_many_required": False,
         },
     )
-    timingDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_timingDateTime", title="Extension field for ``timingDateTime``."
+    timingDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_timingDateTime",
+        title="Extension field for ``timingDateTime``.",
     )
 
-    timingPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    timingPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="timingPeriod",
         title="How often  the device was used",
         description="How often the device was used.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e timing[x]
             "one_of_many": "timing",
             "one_of_many_required": False,
         },
     )
 
-    timingTiming: fhirtypes.TimingType | None = Field(  # type: ignore
-        None,
+    timingTiming: fhirtypes.TimingType | None = Field(
+        default=None,
         alias="timingTiming",
         title="How often  the device was used",
         description="How often the device was used.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e timing[x]
             "one_of_many": "timing",
             "one_of_many_required": False,
@@ -251,10 +268,10 @@ class DeviceUseStatement(domainresource.DomainResource):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DeviceUseStatement`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DeviceUseStatement`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -280,6 +297,31 @@ class DeviceUseStatement(domainresource.DomainResource):
             "reasonReference",
             "bodySite",
             "note",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DeviceUseStatement`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "basedOn",
+            "status",
+            "subject",
+            "derivedFrom",
+            "timingTiming",
+            "timingPeriod",
+            "timingDateTime",
+            "recordedOn",
+            "source",
+            "device",
+            "reasonCode",
+            "reasonReference",
+            "bodySite",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:

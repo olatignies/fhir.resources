@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/SearchParameter
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class SearchParameter(domainresource.DomainResource):
 
     __resource_type__ = "SearchParameter"
 
-    base: typing.List[fhirtypes.CodeType | None] | None = Field(  # type: ignore
-        None,
+    base: typing.List[fhirtypes.CodeType | None] | None = Field(
+        default=None,
         alias="base",
         title="The resource type(s) this search parameter applies to",
         description=(
@@ -36,15 +37,16 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    base__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_base", title="Extension field for ``base``."
+    base__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(
+        default=None, alias="_base", title="Extension field for ``base``."
     )
 
-    chain: typing.List[fhirtypes.StringType | None] | None = Field(  # type: ignore
-        None,
+    chain: typing.List[fhirtypes.StringType | None] | None = Field(
+        default=None,
         alias="chain",
         title="Chained names supported",
         description=(
@@ -60,12 +62,12 @@ class SearchParameter(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    chain__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_chain", title="Extension field for ``chain``."
+    chain__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(
+        default=None, alias="_chain", title="Extension field for ``chain``."
     )
 
-    code: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="code",
         title="Code used in URL",
         description=(
@@ -74,15 +76,16 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    code__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_code", title="Extension field for ``code``."
+    code__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_code", title="Extension field for ``code``."
     )
 
-    comparator: typing.List[fhirtypes.CodeType | None] | None = Field(  # type: ignore
-        None,
+    comparator: typing.List[fhirtypes.CodeType | None] | None = Field(
+        default=None,
         alias="comparator",
         title="eq | ne | gt | lt | ge | le | sa | eb | ap",
         description="Comparators supported for the search parameter.",
@@ -93,12 +96,14 @@ class SearchParameter(domainresource.DomainResource):
             "enum_values": ["eq", "ne", "gt", "lt", "ge", "le", "sa", "eb", "ap"],
         },
     )
-    comparator__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_comparator", title="Extension field for ``comparator``."
+    comparator__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None, alias="_comparator", title="Extension field for ``comparator``."
     )
 
-    component: typing.List[fhirtypes.SearchParameterComponentType] | None = Field(  # type: ignore
-        None,
+    component: typing.List[fhirtypes.SearchParameterComponentType] | None = Field(
+        default=None,
         alias="component",
         title="For Composite resources to define the parts",
         description="Used to define the parts of a composite search parameter.",
@@ -107,8 +112,8 @@ class SearchParameter(domainresource.DomainResource):
         },
     )
 
-    contact: typing.List[fhirtypes.ContactDetailType] | None = Field(  # type: ignore
-        None,
+    contact: typing.List[fhirtypes.ContactDetailType] | None = Field(
+        default=None,
         alias="contact",
         title="Contact details for the publisher",
         description=(
@@ -117,11 +122,12 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    date: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    date: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="date",
         title="Date this was last changed",
         description=(
@@ -133,14 +139,15 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_date", title="Extension field for ``date``."
+    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_date", title="Extension field for ``date``."
     )
 
-    derivedFrom: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    derivedFrom: fhirtypes.UriType | None = Field(
+        default=None,
         alias="derivedFrom",
         title="Original Definition for the search parameter",
         description=(
@@ -154,12 +161,12 @@ class SearchParameter(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    derivedFrom__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_derivedFrom", title="Extension field for ``derivedFrom``."
+    derivedFrom__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_derivedFrom", title="Extension field for ``derivedFrom``."
     )
 
-    description: fhirtypes.MarkdownType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.MarkdownType | None = Field(
+        default=None,
         alias="description",
         title="Natural language description of the search parameter",
         description=(
@@ -168,15 +175,16 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    experimental: bool | None = Field(  # type: ignore
-        None,
+    experimental: bool | None = Field(
+        default=None,
         alias="experimental",
         title="For testing purposes, not real usage",
         description=(
@@ -186,14 +194,17 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    experimental__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_experimental", title="Extension field for ``experimental``."
+    experimental__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_experimental",
+        title="Extension field for ``experimental``.",
     )
 
-    expression: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    expression: fhirtypes.StringType | None = Field(
+        default=None,
         alias="expression",
         title="FHIRPath expression that extracts the values",
         description=(
@@ -204,12 +215,12 @@ class SearchParameter(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    expression__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_expression", title="Extension field for ``expression``."
+    expression__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_expression", title="Extension field for ``expression``."
     )
 
-    jurisdiction: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    jurisdiction: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="jurisdiction",
         title="Intended jurisdiction for search parameter (if applicable)",
         description=(
@@ -218,11 +229,12 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    modifier: typing.List[fhirtypes.CodeType | None] | None = Field(  # type: ignore
-        None,
+    modifier: typing.List[fhirtypes.CodeType | None] | None = Field(
+        default=None,
         alias="modifier",
         title=(
             "missing | exact | contains | not | text | in | not-in | below | above "
@@ -247,12 +259,14 @@ class SearchParameter(domainresource.DomainResource):
             ],
         },
     )
-    modifier__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_modifier", title="Extension field for ``modifier``."
+    modifier__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None, alias="_modifier", title="Extension field for ``modifier``."
     )
 
-    name: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    name: fhirtypes.StringType | None = Field(
+        default=None,
         alias="name",
         title="Name for this search parameter (computer friendly)",
         description=(
@@ -262,15 +276,16 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_name", title="Extension field for ``name``."
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_name", title="Extension field for ``name``."
     )
 
-    publisher: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    publisher: fhirtypes.StringType | None = Field(
+        default=None,
         alias="publisher",
         title="Name of the publisher (organization or individual)",
         description=(
@@ -279,14 +294,15 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    publisher__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_publisher", title="Extension field for ``publisher``."
+    publisher__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_publisher", title="Extension field for ``publisher``."
     )
 
-    purpose: fhirtypes.MarkdownType | None = Field(  # type: ignore
-        None,
+    purpose: fhirtypes.MarkdownType | None = Field(
+        default=None,
         alias="purpose",
         title="Why this search parameter is defined",
         description=(
@@ -297,12 +313,12 @@ class SearchParameter(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    purpose__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_purpose", title="Extension field for ``purpose``."
+    purpose__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_purpose", title="Extension field for ``purpose``."
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="draft | active | retired | unknown",
         description=(
@@ -311,18 +327,19 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["draft", "active", "retired", "unknown"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    target: typing.List[fhirtypes.CodeType | None] | None = Field(  # type: ignore
-        None,
+    target: typing.List[fhirtypes.CodeType | None] | None = Field(
+        default=None,
         alias="target",
         title="Types of resource (if a resource reference)",
         description="Types of resource (if a resource is referenced).",
@@ -330,12 +347,14 @@ class SearchParameter(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    target__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_target", title="Extension field for ``target``."
+    target__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None, alias="_target", title="Extension field for ``target``."
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title=(
             "number | date | string | token | reference | composite | quantity | " "uri"
@@ -346,6 +365,7 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -361,12 +381,12 @@ class SearchParameter(domainresource.DomainResource):
             ],
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
-    url: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    url: fhirtypes.UriType | None = Field(
+        default=None,
         alias="url",
         title="Logical URI to reference this search parameter (globally unique)",
         description=(
@@ -380,15 +400,16 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    url__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_url", title="Extension field for ``url``."
+    url__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_url", title="Extension field for ``url``."
     )
 
-    useContext: typing.List[fhirtypes.UsageContextType] | None = Field(  # type: ignore
-        None,
+    useContext: typing.List[fhirtypes.UsageContextType] | None = Field(
+        default=None,
         alias="useContext",
         title="Context the content is intended to support",
         description=(
@@ -398,11 +419,12 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    version: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    version: fhirtypes.StringType | None = Field(
+        default=None,
         alias="version",
         title="Business version of the search parameter",
         description=(
@@ -416,14 +438,15 @@ class SearchParameter(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    version__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_version", title="Extension field for ``version``."
+    version__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_version", title="Extension field for ``version``."
     )
 
-    xpath: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    xpath: fhirtypes.StringType | None = Field(
+        default=None,
         alias="xpath",
         title="XPath that extracts the values",
         description=(
@@ -434,12 +457,12 @@ class SearchParameter(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    xpath__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_xpath", title="Extension field for ``xpath``."
+    xpath__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_xpath", title="Extension field for ``xpath``."
     )
 
-    xpathUsage: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    xpathUsage: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="xpathUsage",
         title="normal | phonetic | nearby | distance | other",
         description=(
@@ -453,15 +476,15 @@ class SearchParameter(domainresource.DomainResource):
             "enum_values": ["normal", "phonetic", "nearby", "distance", "other"],
         },
     )
-    xpathUsage__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_xpathUsage", title="Extension field for ``xpathUsage``."
+    xpathUsage__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_xpathUsage", title="Extension field for ``xpathUsage``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SearchParameter`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SearchParameter`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -498,6 +521,31 @@ class SearchParameter(domainresource.DomainResource):
             "component",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SearchParameter`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "url",
+            "version",
+            "name",
+            "status",
+            "experimental",
+            "date",
+            "publisher",
+            "contact",
+            "useContext",
+            "jurisdiction",
+            "code",
+            "base",
+            "type",
+            "description",
+        ]
+
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
         In some cases, implementers might find that they do not have appropriate data for
@@ -529,8 +577,8 @@ class SearchParameterComponent(backboneelement.BackboneElement):
 
     __resource_type__ = "SearchParameterComponent"
 
-    definition: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    definition: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="definition",
         title="Defines how the part works",
         description="The definition of the search parameter that describes this part.",
@@ -541,8 +589,8 @@ class SearchParameterComponent(backboneelement.BackboneElement):
         },
     )
 
-    expression: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    expression: fhirtypes.StringType | None = Field(
+        default=None,
         alias="expression",
         title="Subexpression relative to main expression",
         description=(
@@ -554,17 +602,24 @@ class SearchParameterComponent(backboneelement.BackboneElement):
             "element_required": True,
         },
     )
-    expression__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_expression", title="Extension field for ``expression``."
+    expression__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_expression", title="Extension field for ``expression``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SearchParameterComponent`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SearchParameterComponent`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "definition", "expression"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SearchParameterComponent`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case

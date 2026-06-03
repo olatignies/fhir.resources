@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/RegulatedAuthorization
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -30,8 +31,8 @@ class RegulatedAuthorization(domainresource.DomainResource):
 
     __resource_type__ = "RegulatedAuthorization"
 
-    basis: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    basis: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="basis",
         title=(
             "The legal/regulatory framework or reasons under which this "
@@ -43,11 +44,12 @@ class RegulatedAuthorization(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    case: fhirtypes.RegulatedAuthorizationCaseType | None = Field(  # type: ignore
-        None,
+    case: fhirtypes.RegulatedAuthorizationCaseType | None = Field(
+        default=None,
         alias="case",
         title=(
             "The case or regulatory procedure for granting or amending a regulated "
@@ -66,24 +68,26 @@ class RegulatedAuthorization(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    description: fhirtypes.MarkdownType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.MarkdownType | None = Field(
+        default=None,
         alias="description",
         title="General textual supporting information",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    holder: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    holder: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="holder",
         title=(
             "The organization that has been granted this authorization, by the "
@@ -95,13 +99,14 @@ class RegulatedAuthorization(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title=(
             "Business identifier for the authorization, typically assigned by the "
@@ -110,23 +115,25 @@ class RegulatedAuthorization(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    indication: fhirtypes.CodeableReferenceType | None = Field(  # type: ignore
-        None,
+    indication: fhirtypes.CodeableReferenceType | None = Field(
+        default=None,
         alias="indication",
         title="Condition for which the use of the regulated product applies",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["ClinicalUseDefinition"],
         },
     )
 
-    intendedUse: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    intendedUse: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="intendedUse",
         title="The intended use of the product, e.g. prevention, treatment",
         description=(
@@ -134,11 +141,12 @@ class RegulatedAuthorization(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    region: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    region: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="region",
         title="The territory in which the authorization has been granted",
         description=(
@@ -147,11 +155,12 @@ class RegulatedAuthorization(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    regulator: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    regulator: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="regulator",
         title=(
             "The regulatory authority or authorizing body granting the " "authorization"
@@ -163,13 +172,14 @@ class RegulatedAuthorization(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    status: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="status",
         title=(
             "The status that is authorised e.g. approved. Intermediate states can "
@@ -181,24 +191,26 @@ class RegulatedAuthorization(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    statusDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    statusDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="statusDate",
         title="The date at which the current status was assigned",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    statusDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_statusDate", title="Extension field for ``statusDate``."
+    statusDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_statusDate", title="Extension field for ``statusDate``."
     )
 
-    subject: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    subject: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="subject",
         title=(
             "The product type, treatment, facility or activity that is being "
@@ -207,6 +219,7 @@ class RegulatedAuthorization(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "MedicinalProductDefinition",
@@ -226,8 +239,8 @@ class RegulatedAuthorization(domainresource.DomainResource):
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title=(
             "Overall type of this authorization, for example drug marketing "
@@ -236,11 +249,12 @@ class RegulatedAuthorization(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    validityPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    validityPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="validityPeriod",
         title=(
             "The time period in which the regulatory approval etc. is in effect, "
@@ -254,14 +268,15 @@ class RegulatedAuthorization(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``RegulatedAuthorization`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``RegulatedAuthorization`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -272,6 +287,31 @@ class RegulatedAuthorization(domainresource.DomainResource):
             "contained",
             "extension",
             "modifierExtension",
+            "identifier",
+            "subject",
+            "type",
+            "description",
+            "region",
+            "status",
+            "statusDate",
+            "validityPeriod",
+            "indication",
+            "intendedUse",
+            "basis",
+            "holder",
+            "regulator",
+            "case",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``RegulatedAuthorization`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
             "identifier",
             "subject",
             "type",
@@ -309,8 +349,8 @@ class RegulatedAuthorizationCase(backboneelement.BackboneElement):
 
     __resource_type__ = "RegulatedAuthorizationCase"
 
-    application: typing.List[fhirtypes.RegulatedAuthorizationCaseType] | None = Field(  # type: ignore
-        None,
+    application: typing.List[fhirtypes.RegulatedAuthorizationCaseType] | None = Field(
+        default=None,
         alias="application",
         title=(
             "Applications submitted to obtain a regulated authorization. Steps "
@@ -325,77 +365,100 @@ class RegulatedAuthorizationCase(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    dateDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    dateDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="dateDateTime",
         title="Relevant date for this case",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e date[x]
             "one_of_many": "date",
             "one_of_many_required": False,
         },
     )
-    dateDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_dateDateTime", title="Extension field for ``dateDateTime``."
+    dateDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_dateDateTime",
+        title="Extension field for ``dateDateTime``.",
     )
 
-    datePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    datePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="datePeriod",
         title="Relevant date for this case",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e date[x]
             "one_of_many": "date",
             "one_of_many_required": False,
         },
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Identifier by which this case can be referenced",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    status: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="status",
         title="The status associated with the case",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="The defining type of case",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``RegulatedAuthorizationCase`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``RegulatedAuthorizationCase`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "identifier",
+            "type",
+            "status",
+            "datePeriod",
+            "dateDateTime",
+            "application",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``RegulatedAuthorizationCase`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "identifier",
             "type",

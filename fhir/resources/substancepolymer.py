@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/SubstancePolymer
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -24,28 +25,30 @@ class SubstancePolymer(domainresource.DomainResource):
 
     __resource_type__ = "SubstancePolymer"
 
-    class_fhir: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    class_fhir: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="class",
         title="Overall type of the polymer",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    copolymerConnectivity: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    copolymerConnectivity: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="copolymerConnectivity",
         title="Descrtibes the copolymer sequence type (polymer connectivity)",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    geometry: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    geometry: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="geometry",
         title=(
             "Polymer geometry, e.g. linear, branched, cross-linked, network or "
@@ -54,11 +57,12 @@ class SubstancePolymer(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title=(
             "A business idenfier for this polymer, but typically this is handled by"
@@ -67,11 +71,12 @@ class SubstancePolymer(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    modification: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    modification: fhirtypes.StringType | None = Field(
+        default=None,
         alias="modification",
         title=(
             "Todo - this is intended to connect to a repeating full modification "
@@ -81,37 +86,42 @@ class SubstancePolymer(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    modification__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_modification", title="Extension field for ``modification``."
+    modification__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_modification",
+        title="Extension field for ``modification``.",
     )
 
-    monomerSet: typing.List[fhirtypes.SubstancePolymerMonomerSetType] | None = Field(  # type: ignore
-        None,
+    monomerSet: typing.List[fhirtypes.SubstancePolymerMonomerSetType] | None = Field(
+        default=None,
         alias="monomerSet",
         title="Todo",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    repeat: typing.List[fhirtypes.SubstancePolymerRepeatType] | None = Field(  # type: ignore
-        None,
+    repeat: typing.List[fhirtypes.SubstancePolymerRepeatType] | None = Field(
+        default=None,
         alias="repeat",
         title="Specifies and quantifies the repeated units and their configuration",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SubstancePolymer`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SubstancePolymer`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -121,6 +131,25 @@ class SubstancePolymer(domainresource.DomainResource):
             "text",
             "contained",
             "extension",
+            "modifierExtension",
+            "identifier",
+            "class",
+            "geometry",
+            "copolymerConnectivity",
+            "modification",
+            "monomerSet",
+            "repeat",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SubstancePolymer`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
             "modifierExtension",
             "identifier",
             "class",
@@ -142,8 +171,8 @@ class SubstancePolymerMonomerSet(backboneelement.BackboneElement):
 
     __resource_type__ = "SubstancePolymerMonomerSet"
 
-    ratioType: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    ratioType: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="ratioType",
         title=(
             "Captures the type of ratio to the entire polymer, e.g. Monomer/Polymer"
@@ -152,11 +181,14 @@ class SubstancePolymerMonomerSet(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    startingMaterial: typing.List[fhirtypes.SubstancePolymerMonomerSetStartingMaterialType] | None = Field(  # type: ignore
-        None,
+    startingMaterial: typing.List[
+        fhirtypes.SubstancePolymerMonomerSetStartingMaterialType
+    ] | None = Field(
+        default=None,
         alias="startingMaterial",
         title=(
             "The starting materials - monomer(s) used in the synthesis of the "
@@ -165,16 +197,24 @@ class SubstancePolymerMonomerSet(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SubstancePolymerMonomerSet`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SubstancePolymerMonomerSet`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "ratioType", "startingMaterial"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SubstancePolymerMonomerSet`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "ratioType", "startingMaterial"]
 
 
 class SubstancePolymerMonomerSetStartingMaterial(backboneelement.BackboneElement):
@@ -187,38 +227,41 @@ class SubstancePolymerMonomerSetStartingMaterial(backboneelement.BackboneElement
 
     __resource_type__ = "SubstancePolymerMonomerSetStartingMaterial"
 
-    amount: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    amount: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="amount",
         title="A percentage",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    category: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    category: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="category",
         title="Substance high level category, e.g. chemical substance",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    code: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="code",
         title="The type of substance for this starting material",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    isDefining: bool | None = Field(  # type: ignore
-        None,
+    isDefining: bool | None = Field(
+        default=None,
         alias="isDefining",
         title=(
             "Used to specify whether the attribute described is a defining element "
@@ -227,17 +270,18 @@ class SubstancePolymerMonomerSetStartingMaterial(backboneelement.BackboneElement
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    isDefining__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_isDefining", title="Extension field for ``isDefining``."
+    isDefining__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_isDefining", title="Extension field for ``isDefining``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SubstancePolymerMonomerSetStartingMaterial`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SubstancePolymerMonomerSetStartingMaterial`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -248,6 +292,13 @@ class SubstancePolymerMonomerSetStartingMaterial(backboneelement.BackboneElement
             "isDefining",
             "amount",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SubstancePolymerMonomerSetStartingMaterial`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "code", "category", "isDefining", "amount"]
 
 
 class SubstancePolymerRepeat(backboneelement.BackboneElement):
@@ -260,33 +311,37 @@ class SubstancePolymerRepeat(backboneelement.BackboneElement):
 
     __resource_type__ = "SubstancePolymerRepeat"
 
-    averageMolecularFormula: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    averageMolecularFormula: fhirtypes.StringType | None = Field(
+        default=None,
         alias="averageMolecularFormula",
         title="A representation of an (average) molecular formula from a polymer",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    averageMolecularFormula__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    averageMolecularFormula__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_averageMolecularFormula",
         title="Extension field for ``averageMolecularFormula``.",
     )
 
-    repeatUnit: typing.List[fhirtypes.SubstancePolymerRepeatRepeatUnitType] | None = Field(  # type: ignore
-        None,
+    repeatUnit: typing.List[
+        fhirtypes.SubstancePolymerRepeatRepeatUnitType
+    ] | None = Field(
+        default=None,
         alias="repeatUnit",
         title="An SRU - Structural Repeat Unit",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    repeatUnitAmountType: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    repeatUnitAmountType: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="repeatUnitAmountType",
         title=(
             "How the quantitative amount of Structural Repeat Units is captured "
@@ -295,18 +350,31 @@ class SubstancePolymerRepeat(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SubstancePolymerRepeat`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SubstancePolymerRepeat`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "averageMolecularFormula",
+            "repeatUnitAmountType",
+            "repeatUnit",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SubstancePolymerRepeat`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "averageMolecularFormula",
             "repeatUnitAmountType",
@@ -324,21 +392,24 @@ class SubstancePolymerRepeatRepeatUnit(backboneelement.BackboneElement):
 
     __resource_type__ = "SubstancePolymerRepeatRepeatUnit"
 
-    amount: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    amount: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="amount",
         title="Number of repeats of this unit",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    amount__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_amount", title="Extension field for ``amount``."
+    amount__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_amount", title="Extension field for ``amount``."
     )
 
-    degreeOfPolymerisation: typing.List[fhirtypes.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisationType] | None = Field(  # type: ignore
-        None,
+    degreeOfPolymerisation: typing.List[
+        fhirtypes.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisationType
+    ] | None = Field(
+        default=None,
         alias="degreeOfPolymerisation",
         title=(
             "Applies to homopolymer and block co-polymers where the degree of "
@@ -347,11 +418,12 @@ class SubstancePolymerRepeatRepeatUnit(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    orientation: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    orientation: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="orientation",
         title=(
             "The orientation of the polymerisation, e.g. head-tail, head-head, "
@@ -360,41 +432,60 @@ class SubstancePolymerRepeatRepeatUnit(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    structuralRepresentation: typing.List[fhirtypes.SubstancePolymerRepeatRepeatUnitStructuralRepresentationType] | None = Field(  # type: ignore
-        None,
+    structuralRepresentation: typing.List[
+        fhirtypes.SubstancePolymerRepeatRepeatUnitStructuralRepresentationType
+    ] | None = Field(
+        default=None,
         alias="structuralRepresentation",
         title="A graphical structure for this SRU",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    unit: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    unit: fhirtypes.StringType | None = Field(
+        default=None,
         alias="unit",
         title="Structural repeat units are essential elements for defining polymers",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    unit__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_unit", title="Extension field for ``unit``."
+    unit__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_unit", title="Extension field for ``unit``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SubstancePolymerRepeatRepeatUnit`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SubstancePolymerRepeatRepeatUnit`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "unit",
+            "orientation",
+            "amount",
+            "degreeOfPolymerisation",
+            "structuralRepresentation",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SubstancePolymerRepeatRepeatUnit`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "unit",
             "orientation",
@@ -417,47 +508,50 @@ class SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation(
 
     __resource_type__ = "SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation"
 
-    average: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    average: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="average",
         title="An average amount of polymerisation",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    average__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_average", title="Extension field for ``average``."
+    average__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_average", title="Extension field for ``average``."
     )
 
-    high: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    high: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="high",
         title="A high expected limit of the amount",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    high__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_high", title="Extension field for ``high``."
+    high__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_high", title="Extension field for ``high``."
     )
 
-    low: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    low: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="low",
         title="A low expected limit of the amount",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    low__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_low", title="Extension field for ``low``."
+    low__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_low", title="Extension field for ``low``."
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title=(
             "The type of the degree of polymerisation shall be described, e.g. "
@@ -466,14 +560,15 @@ class SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation(
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -484,6 +579,13 @@ class SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation(
             "low",
             "high",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "type", "average", "low", "high"]
 
 
 class SubstancePolymerRepeatRepeatUnitStructuralRepresentation(
@@ -498,18 +600,19 @@ class SubstancePolymerRepeatRepeatUnitStructuralRepresentation(
 
     __resource_type__ = "SubstancePolymerRepeatRepeatUnitStructuralRepresentation"
 
-    attachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    attachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="attachment",
         title="An attached file with the structural representation",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    format: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    format: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="format",
         title=(
             "The format of the representation e.g. InChI, SMILES, MOLFILE, CDX, "
@@ -518,11 +621,12 @@ class SubstancePolymerRepeatRepeatUnitStructuralRepresentation(
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    representation: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    representation: fhirtypes.StringType | None = Field(
+        default=None,
         alias="representation",
         title=(
             "The structural representation as text string in a standard format e.g."
@@ -531,27 +635,31 @@ class SubstancePolymerRepeatRepeatUnitStructuralRepresentation(
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    representation__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_representation", title="Extension field for ``representation``."
+    representation__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_representation",
+        title="Extension field for ``representation``.",
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="The type of structure (e.g. Full, Partial, Representative)",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SubstancePolymerRepeatRepeatUnitStructuralRepresentation`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SubstancePolymerRepeatRepeatUnitStructuralRepresentation`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -562,3 +670,10 @@ class SubstancePolymerRepeatRepeatUnitStructuralRepresentation(
             "format",
             "attachment",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SubstancePolymerRepeatRepeatUnitStructuralRepresentation`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "type", "representation", "format", "attachment"]

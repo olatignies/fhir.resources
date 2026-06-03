@@ -30,19 +30,28 @@ jobs:
       python: 3.11
       env: python_version=3.11
 
-    - name: "Python 3.12-dev on Linux (dist:jammy)"
+    - name: "Python 3.12 on Linux (dist:jammy)"
       os: linux
       dist: jammy
       language: python
-      python: 3.12-dev
-      env: python_version=3.12-dev
+      python: 3.12
+      env: python_version=3.12
+
+    -   name: "Python 3.13 on Linux (dist:jammy)"
+        os: linux
+        dist: jammy
+        language: python
+        python: 3.13
+        env: python_version=3.13
 
   allow_failures:
-    - python: 3.12-dev
+    - python: 3.12
+    - python: 3.13
 
 cache:
   directories:
     - eggs
+    - $HOME/.cache/pip
 install:
   - pip install -U pip
   - pip install -e .[test]
@@ -52,7 +61,7 @@ script:
   - make clean
   - make lint
   - black --check --verbose fhir/resources/
-#  - pytest tests
+  - pytest tests
   - pytest fhir/resources/STU3/tests
   - pytest -s --cov=fhir/resources/R4B/tests -s --tb=native -v --cov-report term-missing --cov-append fhir/resources/R4B/tests
   - pytest -s --cov=fhir/resources/tests -s --tb=native -v --cov-report term-missing --cov-append fhir/resources/tests

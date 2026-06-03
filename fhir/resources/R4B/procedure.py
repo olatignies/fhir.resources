@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Procedure
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -27,13 +28,14 @@ class Procedure(domainresource.DomainResource):
 
     __resource_type__ = "Procedure"
 
-    asserter: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    asserter: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="asserter",
         title="Person who asserts this procedure",
         description="Individual who is making the procedure statement.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Patient",
@@ -44,8 +46,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="basedOn",
         title="A request for this procedure",
         description=(
@@ -54,13 +56,14 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["CarePlan", "ServiceRequest"],
         },
     )
 
-    bodySite: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    bodySite: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="bodySite",
         title="Target body sites",
         description=(
@@ -69,11 +72,12 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    category: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    category: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="category",
         title="Classification of the procedure",
         description=(
@@ -82,11 +86,12 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    code: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="code",
         title="Identification of the procedure",
         description=(
@@ -95,11 +100,12 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    complication: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    complication: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="complication",
         title="Complication following the procedure",
         description=(
@@ -113,8 +119,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    complicationDetail: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    complicationDetail: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="complicationDetail",
         title="A condition that is a result of the procedure",
         description=(
@@ -128,8 +134,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    encounter: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    encounter: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="encounter",
         title="Encounter created as part of",
         description=(
@@ -138,13 +144,14 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Encounter"],
         },
     )
 
-    focalDevice: typing.List[fhirtypes.ProcedureFocalDeviceType] | None = Field(  # type: ignore
-        None,
+    focalDevice: typing.List[fhirtypes.ProcedureFocalDeviceType] | None = Field(
+        default=None,
         alias="focalDevice",
         title="Manipulated, implanted, or removed device",
         description=(
@@ -157,8 +164,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    followUp: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    followUp: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="followUp",
         title="Instructions for follow up",
         description=(
@@ -172,8 +179,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="External Identifiers for this procedure",
         description=(
@@ -183,11 +190,12 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    instantiatesCanonical: typing.List[fhirtypes.CanonicalType | None] | None = Field(  # type: ignore
-        None,
+    instantiatesCanonical: typing.List[fhirtypes.CanonicalType | None] | None = Field(
+        default=None,
         alias="instantiatesCanonical",
         title="Instantiates FHIR protocol or definition",
         description=(
@@ -197,6 +205,7 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "PlanDefinition",
@@ -207,14 +216,16 @@ class Procedure(domainresource.DomainResource):
             ],
         },
     )
-    instantiatesCanonical__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None,
+    instantiatesCanonical__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None,
         alias="_instantiatesCanonical",
         title="Extension field for ``instantiatesCanonical``.",
     )
 
-    instantiatesUri: typing.List[fhirtypes.UriType | None] | None = Field(  # type: ignore
-        None,
+    instantiatesUri: typing.List[fhirtypes.UriType | None] | None = Field(
+        default=None,
         alias="instantiatesUri",
         title="Instantiates external protocol or definition",
         description=(
@@ -224,14 +235,19 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    instantiatesUri__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_instantiatesUri", title="Extension field for ``instantiatesUri``."
+    instantiatesUri__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None,
+        alias="_instantiatesUri",
+        title="Extension field for ``instantiatesUri``.",
     )
 
-    location: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    location: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="location",
         title="Where the procedure happened",
         description=(
@@ -240,13 +256,14 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Location"],
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Additional information about the procedure",
         description="Any other notes and comments about the procedure.",
@@ -255,8 +272,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    outcome: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    outcome: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="outcome",
         title="The result of procedure",
         description=(
@@ -265,11 +282,12 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="partOf",
         title="Part of referenced event",
         description=(
@@ -278,6 +296,7 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Procedure",
@@ -287,8 +306,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    performedAge: fhirtypes.AgeType | None = Field(  # type: ignore
-        None,
+    performedAge: fhirtypes.AgeType | None = Field(
+        default=None,
         alias="performedAge",
         title="When the procedure was performed",
         description=(
@@ -299,14 +318,15 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e performed[x]
             "one_of_many": "performed",
             "one_of_many_required": False,
         },
     )
 
-    performedDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    performedDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="performedDateTime",
         title="When the procedure was performed",
         description=(
@@ -317,19 +337,20 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e performed[x]
             "one_of_many": "performed",
             "one_of_many_required": False,
         },
     )
-    performedDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    performedDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_performedDateTime",
         title="Extension field for ``performedDateTime``.",
     )
 
-    performedPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    performedPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="performedPeriod",
         title="When the procedure was performed",
         description=(
@@ -340,14 +361,15 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e performed[x]
             "one_of_many": "performed",
             "one_of_many_required": False,
         },
     )
 
-    performedRange: fhirtypes.RangeType | None = Field(  # type: ignore
-        None,
+    performedRange: fhirtypes.RangeType | None = Field(
+        default=None,
         alias="performedRange",
         title="When the procedure was performed",
         description=(
@@ -358,14 +380,15 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e performed[x]
             "one_of_many": "performed",
             "one_of_many_required": False,
         },
     )
 
-    performedString: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    performedString: fhirtypes.StringType | None = Field(
+        default=None,
         alias="performedString",
         title="When the procedure was performed",
         description=(
@@ -376,27 +399,31 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e performed[x]
             "one_of_many": "performed",
             "one_of_many_required": False,
         },
     )
-    performedString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_performedString", title="Extension field for ``performedString``."
+    performedString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_performedString",
+        title="Extension field for ``performedString``.",
     )
 
-    performer: typing.List[fhirtypes.ProcedurePerformerType] | None = Field(  # type: ignore
-        None,
+    performer: typing.List[fhirtypes.ProcedurePerformerType] | None = Field(
+        default=None,
         alias="performer",
         title="The people who performed the procedure",
         description='Limited to "real" people rather than equipment.',
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    reasonCode: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    reasonCode: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="reasonCode",
         title="Coded reason procedure performed",
         description=(
@@ -405,16 +432,18 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    reasonReference: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    reasonReference: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="reasonReference",
         title="The justification that the procedure was performed",
         description="The justification of why the procedure was performed.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Condition",
@@ -426,8 +455,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    recorder: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    recorder: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="recorder",
         title="Who recorded the procedure",
         description=(
@@ -436,6 +465,7 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Patient",
@@ -446,8 +476,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    report: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    report: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="report",
         title="Any report resulting from the procedure",
         description=(
@@ -465,8 +495,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title=(
             "preparation | in-progress | not-done | on-hold | stopped | completed |"
@@ -478,6 +508,7 @@ class Procedure(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -493,34 +524,36 @@ class Procedure(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    statusReason: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    statusReason: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="statusReason",
         title="Reason for current status",
         description="Captures the reason for the current state of the procedure.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    subject: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    subject: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="subject",
         title="Who the procedure was performed on",
         description="The person, animal or group on which the procedure was performed.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Group"],
         },
     )
 
-    usedCode: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    usedCode: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="usedCode",
         title="Coded items used during the procedure",
         description="Identifies coded items that were used as part of the procedure.",
@@ -529,8 +562,8 @@ class Procedure(domainresource.DomainResource):
         },
     )
 
-    usedReference: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    usedReference: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="usedReference",
         title="Items used during procedure",
         description=(
@@ -545,10 +578,10 @@ class Procedure(domainresource.DomainResource):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Procedure`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Procedure`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -591,6 +624,41 @@ class Procedure(domainresource.DomainResource):
             "focalDevice",
             "usedReference",
             "usedCode",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Procedure`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "instantiatesCanonical",
+            "instantiatesUri",
+            "basedOn",
+            "partOf",
+            "status",
+            "statusReason",
+            "category",
+            "code",
+            "subject",
+            "encounter",
+            "performedDateTime",
+            "performedPeriod",
+            "performedString",
+            "performedAge",
+            "performedRange",
+            "recorder",
+            "asserter",
+            "performer",
+            "location",
+            "reasonCode",
+            "reasonReference",
+            "bodySite",
+            "outcome",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
@@ -642,8 +710,8 @@ class ProcedureFocalDevice(backboneelement.BackboneElement):
 
     __resource_type__ = "ProcedureFocalDevice"
 
-    action: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    action: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="action",
         title="Kind of change to device",
         description="The kind of change that happened to the device during the procedure.",
@@ -652,8 +720,8 @@ class ProcedureFocalDevice(backboneelement.BackboneElement):
         },
     )
 
-    manipulated: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    manipulated: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="manipulated",
         title="Device that was changed",
         description="The device that was manipulated (changed) during the procedure.",
@@ -665,12 +733,19 @@ class ProcedureFocalDevice(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ProcedureFocalDevice`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ProcedureFocalDevice`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "action", "manipulated"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ProcedureFocalDevice`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class ProcedurePerformer(backboneelement.BackboneElement):
@@ -684,13 +759,14 @@ class ProcedurePerformer(backboneelement.BackboneElement):
 
     __resource_type__ = "ProcedurePerformer"
 
-    actor: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    actor: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="actor",
         title="The reference to the practitioner",
         description="The practitioner who was involved in the procedure.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -703,8 +779,8 @@ class ProcedurePerformer(backboneelement.BackboneElement):
         },
     )
 
-    function: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    function: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="function",
         title="Type of performance",
         description=(
@@ -713,11 +789,12 @@ class ProcedurePerformer(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    onBehalfOf: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    onBehalfOf: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="onBehalfOf",
         title="Organization the device or practitioner was acting for",
         description="The organization the device or practitioner was acting on behalf of.",
@@ -729,10 +806,10 @@ class ProcedurePerformer(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ProcedurePerformer`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ProcedurePerformer`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -742,3 +819,10 @@ class ProcedurePerformer(backboneelement.BackboneElement):
             "actor",
             "onBehalfOf",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ProcedurePerformer`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "function", "actor"]

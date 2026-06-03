@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/MedicationDispense
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -29,8 +30,8 @@ class MedicationDispense(domainresource.DomainResource):
 
     __resource_type__ = "MedicationDispense"
 
-    authorizingPrescription: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    authorizingPrescription: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="authorizingPrescription",
         title="Medication order that authorizes the dispense",
         description="Indicates the medication order that is being dispensed against.",
@@ -41,8 +42,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    category: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    category: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="category",
         title="Type of medication dispense",
         description=(
@@ -54,8 +55,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    context: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    context: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="context",
         title="Encounter / Episode associated with event",
         description=(
@@ -69,8 +70,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    daysSupply: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    daysSupply: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="daysSupply",
         title="Amount of medication expressed as a timing amount",
         description="The amount of medication expressed as a timing amount.",
@@ -79,8 +80,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    destination: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    destination: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="destination",
         title="Where the medication was sent",
         description=(
@@ -94,8 +95,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    detectedIssue: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    detectedIssue: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="detectedIssue",
         title="Clinical issue with action",
         description=(
@@ -110,8 +111,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    dosageInstruction: typing.List[fhirtypes.DosageType] | None = Field(  # type: ignore
-        None,
+    dosageInstruction: typing.List[fhirtypes.DosageType] | None = Field(
+        default=None,
         alias="dosageInstruction",
         title=(
             "How the medication is to be used by the patient or administered by the"
@@ -123,8 +124,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    eventHistory: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    eventHistory: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="eventHistory",
         title="A list of releveant lifecycle events",
         description=(
@@ -138,8 +139,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="External identifier",
         description=(
@@ -151,8 +152,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    medicationCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    medicationCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="medicationCodeableConcept",
         title="What medication was supplied",
         description=(
@@ -163,14 +164,15 @@ class MedicationDispense(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e medication[x]
             "one_of_many": "medication",
             "one_of_many_required": True,
         },
     )
 
-    medicationReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    medicationReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="medicationReference",
         title="What medication was supplied",
         description=(
@@ -181,6 +183,7 @@ class MedicationDispense(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e medication[x]
             "one_of_many": "medication",
             "one_of_many_required": True,
@@ -189,8 +192,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    notDone: bool | None = Field(  # type: ignore
-        None,
+    notDone: bool | None = Field(
+        default=None,
         alias="notDone",
         title="Whether the dispense was or was not performed",
         description="True if the dispense was not performed for some reason.",
@@ -198,12 +201,12 @@ class MedicationDispense(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    notDone__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_notDone", title="Extension field for ``notDone``."
+    notDone__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_notDone", title="Extension field for ``notDone``."
     )
 
-    notDoneReasonCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    notDoneReasonCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="notDoneReasonCodeableConcept",
         title="Why a dispense was not performed",
         description="Indicates the reason why a dispense was not performed.",
@@ -215,8 +218,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    notDoneReasonReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    notDoneReasonReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="notDoneReasonReference",
         title="Why a dispense was not performed",
         description="Indicates the reason why a dispense was not performed.",
@@ -230,8 +233,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Information about the dispense",
         description=(
@@ -243,8 +246,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="partOf",
         title="Event that dispense is part of",
         description="The procedure that the dispense is done because of.",
@@ -255,8 +258,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    performer: typing.List[fhirtypes.MedicationDispensePerformerType] | None = Field(  # type: ignore
-        None,
+    performer: typing.List[fhirtypes.MedicationDispensePerformerType] | None = Field(
+        default=None,
         alias="performer",
         title="Who performed event",
         description=(
@@ -268,8 +271,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    quantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    quantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="quantity",
         title="Amount dispensed",
         description=(
@@ -281,8 +284,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    receiver: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    receiver: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="receiver",
         title="Who collected the medication",
         description=(
@@ -297,8 +300,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title=(
             "preparation | in-progress | on-hold | completed | entered-in-error | "
@@ -307,6 +310,7 @@ class MedicationDispense(domainresource.DomainResource):
         description="A code specifying the state of the set of dispense events.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": [
@@ -319,12 +323,12 @@ class MedicationDispense(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    subject: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="subject",
         title="Who the dispense is for",
         description=(
@@ -333,13 +337,14 @@ class MedicationDispense(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Group"],
         },
     )
 
-    substitution: fhirtypes.MedicationDispenseSubstitutionType | None = Field(  # type: ignore
-        None,
+    substitution: fhirtypes.MedicationDispenseSubstitutionType | None = Field(
+        default=None,
         alias="substitution",
         title="Whether a substitution was performed on the dispense",
         description=(
@@ -354,8 +359,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    supportingInformation: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    supportingInformation: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="supportingInformation",
         title="Information that supports the dispensing of the medication",
         description="Additional information that supports the medication being dispensed.",
@@ -366,8 +371,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Trial fill, partial fill, emergency fill, etc.",
         description=(
@@ -380,8 +385,8 @@ class MedicationDispense(domainresource.DomainResource):
         },
     )
 
-    whenHandedOver: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    whenHandedOver: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="whenHandedOver",
         title="When product was given out",
         description=(
@@ -392,28 +397,33 @@ class MedicationDispense(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    whenHandedOver__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_whenHandedOver", title="Extension field for ``whenHandedOver``."
+    whenHandedOver__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_whenHandedOver",
+        title="Extension field for ``whenHandedOver``.",
     )
 
-    whenPrepared: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    whenPrepared: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="whenPrepared",
         title="When product was packaged and reviewed",
         description="The time when the dispensed product was packaged and reviewed.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    whenPrepared__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_whenPrepared", title="Extension field for ``whenPrepared``."
+    whenPrepared__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_whenPrepared",
+        title="Extension field for ``whenPrepared``.",
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``MedicationDispense`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``MedicationDispense`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -452,6 +462,22 @@ class MedicationDispense(domainresource.DomainResource):
             "eventHistory",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``MedicationDispense`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "status",
+            "medicationCodeableConcept",
+            "medicationReference",
+            "subject",
+            "whenPrepared",
+        ]
+
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
         A few elements have a choice of more than one data type for their content.
@@ -484,8 +510,8 @@ class MedicationDispensePerformer(backboneelement.BackboneElement):
 
     __resource_type__ = "MedicationDispensePerformer"
 
-    actor: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    actor: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="actor",
         title="Individual who was performing",
         description=(
@@ -505,8 +531,8 @@ class MedicationDispensePerformer(backboneelement.BackboneElement):
         },
     )
 
-    onBehalfOf: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    onBehalfOf: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="onBehalfOf",
         title="Organization organization was acting for",
         description="The organization the device or practitioner was acting on behalf of.",
@@ -518,12 +544,19 @@ class MedicationDispensePerformer(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``MedicationDispensePerformer`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``MedicationDispensePerformer`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "actor", "onBehalfOf"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``MedicationDispensePerformer`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class MedicationDispenseSubstitution(backboneelement.BackboneElement):
@@ -541,8 +574,8 @@ class MedicationDispenseSubstitution(backboneelement.BackboneElement):
 
     __resource_type__ = "MedicationDispenseSubstitution"
 
-    reason: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    reason: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="reason",
         title="Why was substitution made",
         description=(
@@ -554,8 +587,8 @@ class MedicationDispenseSubstitution(backboneelement.BackboneElement):
         },
     )
 
-    responsibleParty: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    responsibleParty: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="responsibleParty",
         title="Who is responsible for the substitution",
         description=(
@@ -569,8 +602,8 @@ class MedicationDispenseSubstitution(backboneelement.BackboneElement):
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title=(
             "Code signifying whether a different drug was dispensed from what was "
@@ -585,8 +618,8 @@ class MedicationDispenseSubstitution(backboneelement.BackboneElement):
         },
     )
 
-    wasSubstituted: bool | None = Field(  # type: ignore
-        None,
+    wasSubstituted: bool | None = Field(
+        default=None,
         alias="wasSubstituted",
         title="Whether a substitution was or was not performed on the dispense",
         description=(
@@ -598,15 +631,17 @@ class MedicationDispenseSubstitution(backboneelement.BackboneElement):
             "element_required": True,
         },
     )
-    wasSubstituted__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_wasSubstituted", title="Extension field for ``wasSubstituted``."
+    wasSubstituted__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_wasSubstituted",
+        title="Extension field for ``wasSubstituted``.",
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``MedicationDispenseSubstitution`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``MedicationDispenseSubstitution`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -617,6 +652,13 @@ class MedicationDispenseSubstitution(backboneelement.BackboneElement):
             "reason",
             "responsibleParty",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``MedicationDispenseSubstitution`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case

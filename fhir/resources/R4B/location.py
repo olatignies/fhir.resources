@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Location
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -27,8 +28,8 @@ class Location(domainresource.DomainResource):
 
     __resource_type__ = "Location"
 
-    address: fhirtypes.AddressType | None = Field(  # type: ignore
-        None,
+    address: fhirtypes.AddressType | None = Field(
+        default=None,
         alias="address",
         title="Physical location",
         description=None,
@@ -37,8 +38,8 @@ class Location(domainresource.DomainResource):
         },
     )
 
-    alias: typing.List[fhirtypes.StringType | None] | None = Field(  # type: ignore
-        None,
+    alias: typing.List[fhirtypes.StringType | None] | None = Field(
+        default=None,
         alias="alias",
         title=(
             "A list of alternate names that the location is known as, or was known "
@@ -49,12 +50,12 @@ class Location(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    alias__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_alias", title="Extension field for ``alias``."
+    alias__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(
+        default=None, alias="_alias", title="Extension field for ``alias``."
     )
 
-    availabilityExceptions: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    availabilityExceptions: fhirtypes.StringType | None = Field(
+        default=None,
         alias="availabilityExceptions",
         title="Description of availability exceptions",
         description=(
@@ -67,14 +68,14 @@ class Location(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    availabilityExceptions__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    availabilityExceptions__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_availabilityExceptions",
         title="Extension field for ``availabilityExceptions``.",
     )
 
-    description: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.StringType | None = Field(
+        default=None,
         alias="description",
         title=(
             "Additional details about the location that could be displayed as "
@@ -86,14 +87,15 @@ class Location(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    endpoint: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    endpoint: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="endpoint",
         title=(
             "Technical endpoints providing access to services operated for the "
@@ -107,8 +109,10 @@ class Location(domainresource.DomainResource):
         },
     )
 
-    hoursOfOperation: typing.List[fhirtypes.LocationHoursOfOperationType] | None = Field(  # type: ignore
-        None,
+    hoursOfOperation: typing.List[
+        fhirtypes.LocationHoursOfOperationType
+    ] | None = Field(
+        default=None,
         alias="hoursOfOperation",
         title="What days/times during a week is this location usually open",
         description=None,
@@ -117,18 +121,19 @@ class Location(domainresource.DomainResource):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Unique code or number identifying the location to its users",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    managingOrganization: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    managingOrganization: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="managingOrganization",
         title="Organization responsible for provisioning and upkeep",
         description=(
@@ -137,13 +142,14 @@ class Location(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    mode: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    mode: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="mode",
         title="instance | kind",
         description=(
@@ -152,30 +158,32 @@ class Location(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["instance", "kind"],
         },
     )
-    mode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_mode", title="Extension field for ``mode``."
+    mode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_mode", title="Extension field for ``mode``."
     )
 
-    name: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    name: fhirtypes.StringType | None = Field(
+        default=None,
         alias="name",
         title="Name of the location as used by humans",
         description="Name of the location as used by humans. Does not need to be unique.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_name", title="Extension field for ``name``."
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_name", title="Extension field for ``name``."
     )
 
-    operationalStatus: fhirtypes.CodingType | None = Field(  # type: ignore
-        None,
+    operationalStatus: fhirtypes.CodingType | None = Field(
+        default=None,
         alias="operationalStatus",
         title="The operational status of the location (typically only for a bed/room)",
         description=(
@@ -186,11 +194,12 @@ class Location(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    partOf: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    partOf: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="partOf",
         title="Another Location this one is physically a part of",
         description="Another Location of which this Location is physically a part of.",
@@ -201,18 +210,19 @@ class Location(domainresource.DomainResource):
         },
     )
 
-    physicalType: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    physicalType: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="physicalType",
         title="Physical form of the location",
         description="Physical form of the location, e.g. building, room, vehicle, road.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    position: fhirtypes.LocationPositionType | None = Field(  # type: ignore
-        None,
+    position: fhirtypes.LocationPositionType | None = Field(
+        default=None,
         alias="position",
         title="The absolute geographic location",
         description=(
@@ -224,8 +234,8 @@ class Location(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="active | suspended | inactive",
         description=(
@@ -235,17 +245,18 @@ class Location(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["active", "suspended", "inactive"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    telecom: typing.List[fhirtypes.ContactPointType] | None = Field(  # type: ignore
-        None,
+    telecom: typing.List[fhirtypes.ContactPointType] | None = Field(
+        default=None,
         alias="telecom",
         title="Contact details of the location",
         description=(
@@ -258,21 +269,22 @@ class Location(domainresource.DomainResource):
         },
     )
 
-    type: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    type: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="type",
         title="Type of function performed",
         description="Indicates the type of function performed at the location.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Location`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Location`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -302,6 +314,26 @@ class Location(domainresource.DomainResource):
             "endpoint",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Location`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "status",
+            "operationalStatus",
+            "name",
+            "description",
+            "mode",
+            "type",
+            "physicalType",
+            "managingOrganization",
+        ]
+
 
 class LocationHoursOfOperation(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -313,8 +345,8 @@ class LocationHoursOfOperation(backboneelement.BackboneElement):
 
     __resource_type__ = "LocationHoursOfOperation"
 
-    allDay: bool | None = Field(  # type: ignore
-        None,
+    allDay: bool | None = Field(
+        default=None,
         alias="allDay",
         title="The Location is open all day",
         description=None,
@@ -322,12 +354,12 @@ class LocationHoursOfOperation(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    allDay__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_allDay", title="Extension field for ``allDay``."
+    allDay__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_allDay", title="Extension field for ``allDay``."
     )
 
-    closingTime: fhirtypes.TimeType | None = Field(  # type: ignore
-        None,
+    closingTime: fhirtypes.TimeType | None = Field(
+        default=None,
         alias="closingTime",
         title="Time that the Location closes",
         description=None,
@@ -335,12 +367,12 @@ class LocationHoursOfOperation(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    closingTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_closingTime", title="Extension field for ``closingTime``."
+    closingTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_closingTime", title="Extension field for ``closingTime``."
     )
 
-    daysOfWeek: typing.List[fhirtypes.CodeType | None] | None = Field(  # type: ignore
-        None,
+    daysOfWeek: typing.List[fhirtypes.CodeType | None] | None = Field(
+        default=None,
         alias="daysOfWeek",
         title="mon | tue | wed | thu | fri | sat | sun",
         description=(
@@ -354,12 +386,14 @@ class LocationHoursOfOperation(backboneelement.BackboneElement):
             "enum_values": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
         },
     )
-    daysOfWeek__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_daysOfWeek", title="Extension field for ``daysOfWeek``."
+    daysOfWeek__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None, alias="_daysOfWeek", title="Extension field for ``daysOfWeek``."
     )
 
-    openingTime: fhirtypes.TimeType | None = Field(  # type: ignore
-        None,
+    openingTime: fhirtypes.TimeType | None = Field(
+        default=None,
         alias="openingTime",
         title="Time that the Location opens",
         description=None,
@@ -367,15 +401,15 @@ class LocationHoursOfOperation(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    openingTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_openingTime", title="Extension field for ``openingTime``."
+    openingTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_openingTime", title="Extension field for ``openingTime``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``LocationHoursOfOperation`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``LocationHoursOfOperation`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -386,6 +420,13 @@ class LocationHoursOfOperation(backboneelement.BackboneElement):
             "openingTime",
             "closingTime",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``LocationHoursOfOperation`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class LocationPosition(backboneelement.BackboneElement):
@@ -400,8 +441,8 @@ class LocationPosition(backboneelement.BackboneElement):
 
     __resource_type__ = "LocationPosition"
 
-    altitude: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    altitude: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="altitude",
         title="Altitude with WGS84 datum",
         description=(
@@ -412,12 +453,12 @@ class LocationPosition(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    altitude__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_altitude", title="Extension field for ``altitude``."
+    altitude__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_altitude", title="Extension field for ``altitude``."
     )
 
-    latitude: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    latitude: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="latitude",
         title="Latitude with WGS84 datum",
         description=(
@@ -429,12 +470,12 @@ class LocationPosition(backboneelement.BackboneElement):
             "element_required": True,
         },
     )
-    latitude__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_latitude", title="Extension field for ``latitude``."
+    latitude__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_latitude", title="Extension field for ``latitude``."
     )
 
-    longitude: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    longitude: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="longitude",
         title="Longitude with WGS84 datum",
         description=(
@@ -446,15 +487,15 @@ class LocationPosition(backboneelement.BackboneElement):
             "element_required": True,
         },
     )
-    longitude__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_longitude", title="Extension field for ``longitude``."
+    longitude__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_longitude", title="Extension field for ``longitude``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``LocationPosition`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``LocationPosition`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -464,6 +505,13 @@ class LocationPosition(backboneelement.BackboneElement):
             "latitude",
             "altitude",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``LocationPosition`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case

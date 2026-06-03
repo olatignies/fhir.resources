@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/VerificationResult
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -25,8 +26,8 @@ class VerificationResult(domainresource.DomainResource):
 
     __resource_type__ = "VerificationResult"
 
-    attestation: fhirtypes.VerificationResultAttestationType | None = Field(  # type: ignore
-        None,
+    attestation: fhirtypes.VerificationResultAttestationType | None = Field(
+        default=None,
         alias="attestation",
         title="Information about the entity attesting to information",
         description=None,
@@ -35,18 +36,19 @@ class VerificationResult(domainresource.DomainResource):
         },
     )
 
-    failureAction: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    failureAction: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="failureAction",
         title="fatal | warn | rec-only | none",
         description="The result if validation fails (fatal; warning; record only; none).",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    frequency: fhirtypes.TimingType | None = Field(  # type: ignore
-        None,
+    frequency: fhirtypes.TimingType | None = Field(
+        default=None,
         alias="frequency",
         title="Frequency of revalidation",
         description=None,
@@ -55,8 +57,8 @@ class VerificationResult(domainresource.DomainResource):
         },
     )
 
-    lastPerformed: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    lastPerformed: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="lastPerformed",
         title=(
             "The date/time validation was last completed (including failed "
@@ -67,12 +69,14 @@ class VerificationResult(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    lastPerformed__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_lastPerformed", title="Extension field for ``lastPerformed``."
+    lastPerformed__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_lastPerformed",
+        title="Extension field for ``lastPerformed``.",
     )
 
-    need: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    need: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="need",
         title="none | initial | periodic",
         description=(
@@ -81,11 +85,12 @@ class VerificationResult(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    nextScheduled: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    nextScheduled: fhirtypes.DateType | None = Field(
+        default=None,
         alias="nextScheduled",
         title="The date when target is next validated, if appropriate",
         description=None,
@@ -93,12 +98,16 @@ class VerificationResult(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    nextScheduled__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_nextScheduled", title="Extension field for ``nextScheduled``."
+    nextScheduled__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_nextScheduled",
+        title="Extension field for ``nextScheduled``.",
     )
 
-    primarySource: typing.List[fhirtypes.VerificationResultPrimarySourceType] | None = Field(  # type: ignore
-        None,
+    primarySource: typing.List[
+        fhirtypes.VerificationResultPrimarySourceType
+    ] | None = Field(
+        default=None,
         alias="primarySource",
         title="Information about the primary source(s) involved in validation",
         description=None,
@@ -107,8 +116,8 @@ class VerificationResult(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title=(
             "attested | validated | in-process | req-revalid | val-fail | reval-"
@@ -120,6 +129,7 @@ class VerificationResult(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -134,50 +144,57 @@ class VerificationResult(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    statusDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    statusDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="statusDate",
         title="When the validation status was updated",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    statusDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_statusDate", title="Extension field for ``statusDate``."
+    statusDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_statusDate", title="Extension field for ``statusDate``."
     )
 
-    target: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    target: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="target",
         title="A resource that was validated",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    targetLocation: typing.List[fhirtypes.StringType | None] | None = Field(  # type: ignore
-        None,
+    targetLocation: typing.List[fhirtypes.StringType | None] | None = Field(
+        default=None,
         alias="targetLocation",
         title="The fhirpath location(s) within the resource that was validated",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    targetLocation__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_targetLocation", title="Extension field for ``targetLocation``."
+    targetLocation__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None,
+        alias="_targetLocation",
+        title="Extension field for ``targetLocation``.",
     )
 
-    validationProcess: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    validationProcess: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="validationProcess",
         title=(
             "The primary process by which the target is validated (edit check; "
@@ -186,11 +203,12 @@ class VerificationResult(domainresource.DomainResource):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    validationType: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    validationType: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="validationType",
         title="nothing | primary | multiple",
         description=(
@@ -199,11 +217,12 @@ class VerificationResult(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    validator: typing.List[fhirtypes.VerificationResultValidatorType] | None = Field(  # type: ignore
-        None,
+    validator: typing.List[fhirtypes.VerificationResultValidatorType] | None = Field(
+        default=None,
         alias="validator",
         title="Information about the entity validating information",
         description=None,
@@ -213,10 +232,10 @@ class VerificationResult(domainresource.DomainResource):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``VerificationResult`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``VerificationResult`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -243,6 +262,26 @@ class VerificationResult(domainresource.DomainResource):
             "validator",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``VerificationResult`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "modifierExtension",
+            "target",
+            "targetLocation",
+            "need",
+            "status",
+            "statusDate",
+            "validationType",
+            "validationProcess",
+            "failureAction",
+        ]
+
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
         In some cases, implementers might find that they do not have appropriate data for
@@ -265,8 +304,8 @@ class VerificationResultAttestation(backboneelement.BackboneElement):
 
     __resource_type__ = "VerificationResultAttestation"
 
-    communicationMethod: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    communicationMethod: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="communicationMethod",
         title="The method by which attested information was submitted/retrieved",
         description=(
@@ -275,24 +314,26 @@ class VerificationResultAttestation(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    date: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    date: fhirtypes.DateType | None = Field(
+        default=None,
         alias="date",
         title="The date the information was attested to",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_date", title="Extension field for ``date``."
+    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_date", title="Extension field for ``date``."
     )
 
-    onBehalfOf: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    onBehalfOf: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="onBehalfOf",
         title=(
             "When the who is asserting on behalf of another (organization or "
@@ -301,6 +342,7 @@ class VerificationResultAttestation(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Organization",
@@ -310,8 +352,8 @@ class VerificationResultAttestation(backboneelement.BackboneElement):
         },
     )
 
-    proxyIdentityCertificate: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    proxyIdentityCertificate: fhirtypes.StringType | None = Field(
+        default=None,
         alias="proxyIdentityCertificate",
         title=(
             "A digital identity certificate associated with the proxy entity "
@@ -322,14 +364,14 @@ class VerificationResultAttestation(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    proxyIdentityCertificate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    proxyIdentityCertificate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_proxyIdentityCertificate",
         title="Extension field for ``proxyIdentityCertificate``.",
     )
 
-    proxySignature: fhirtypes.SignatureType | None = Field(  # type: ignore
-        None,
+    proxySignature: fhirtypes.SignatureType | None = Field(
+        default=None,
         alias="proxySignature",
         title="Proxy signature (digital or image)",
         description=(
@@ -342,8 +384,8 @@ class VerificationResultAttestation(backboneelement.BackboneElement):
         },
     )
 
-    sourceIdentityCertificate: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    sourceIdentityCertificate: fhirtypes.StringType | None = Field(
+        default=None,
         alias="sourceIdentityCertificate",
         title="A digital identity certificate associated with the attestation source",
         description=None,
@@ -351,14 +393,14 @@ class VerificationResultAttestation(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    sourceIdentityCertificate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    sourceIdentityCertificate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_sourceIdentityCertificate",
         title="Extension field for ``sourceIdentityCertificate``.",
     )
 
-    sourceSignature: fhirtypes.SignatureType | None = Field(  # type: ignore
-        None,
+    sourceSignature: fhirtypes.SignatureType | None = Field(
+        default=None,
         alias="sourceSignature",
         title="Attester signature (digital or image)",
         description=(
@@ -370,13 +412,14 @@ class VerificationResultAttestation(backboneelement.BackboneElement):
         },
     )
 
-    who: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    who: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="who",
         title="The individual or organization attesting to information",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -387,10 +430,10 @@ class VerificationResultAttestation(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``VerificationResultAttestation`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``VerificationResultAttestation`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -406,6 +449,13 @@ class VerificationResultAttestation(backboneelement.BackboneElement):
             "sourceSignature",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``VerificationResultAttestation`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "who", "onBehalfOf", "communicationMethod", "date"]
+
 
 class VerificationResultPrimarySource(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -417,8 +467,8 @@ class VerificationResultPrimarySource(backboneelement.BackboneElement):
 
     __resource_type__ = "VerificationResultPrimarySource"
 
-    canPushUpdates: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    canPushUpdates: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="canPushUpdates",
         title="yes | no | undetermined",
         description=(
@@ -427,21 +477,23 @@ class VerificationResultPrimarySource(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    communicationMethod: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    communicationMethod: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="communicationMethod",
         title="Method for exchanging information with the primary source",
         description="Method for communicating with the primary source (manual; API; Push).",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    pushTypeAvailable: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    pushTypeAvailable: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="pushTypeAvailable",
         title="specific | any | source",
         description=(
@@ -453,8 +505,8 @@ class VerificationResultPrimarySource(backboneelement.BackboneElement):
         },
     )
 
-    type: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    type: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="type",
         title=(
             "Type of primary source (License Board; Primary Education; Continuing "
@@ -464,11 +516,12 @@ class VerificationResultPrimarySource(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    validationDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    validationDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="validationDate",
         title="When the target was validated against the primary source",
         description=None,
@@ -476,12 +529,14 @@ class VerificationResultPrimarySource(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    validationDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_validationDate", title="Extension field for ``validationDate``."
+    validationDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_validationDate",
+        title="Extension field for ``validationDate``.",
     )
 
-    validationStatus: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    validationStatus: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="validationStatus",
         title="successful | failed | unknown",
         description=(
@@ -493,8 +548,8 @@ class VerificationResultPrimarySource(backboneelement.BackboneElement):
         },
     )
 
-    who: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    who: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="who",
         title="Reference to the primary source",
         description=None,
@@ -510,10 +565,10 @@ class VerificationResultPrimarySource(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``VerificationResultPrimarySource`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``VerificationResultPrimarySource`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -528,6 +583,13 @@ class VerificationResultPrimarySource(backboneelement.BackboneElement):
             "pushTypeAvailable",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``VerificationResultPrimarySource`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "type", "communicationMethod", "canPushUpdates"]
+
 
 class VerificationResultValidator(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -539,8 +601,8 @@ class VerificationResultValidator(backboneelement.BackboneElement):
 
     __resource_type__ = "VerificationResultValidator"
 
-    attestationSignature: fhirtypes.SignatureType | None = Field(  # type: ignore
-        None,
+    attestationSignature: fhirtypes.SignatureType | None = Field(
+        default=None,
         alias="attestationSignature",
         title="Validator signature (digital or image)",
         description=(
@@ -552,8 +614,8 @@ class VerificationResultValidator(backboneelement.BackboneElement):
         },
     )
 
-    identityCertificate: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    identityCertificate: fhirtypes.StringType | None = Field(
+        default=None,
         alias="identityCertificate",
         title="A digital identity certificate associated with the validator",
         description=None,
@@ -561,14 +623,14 @@ class VerificationResultValidator(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    identityCertificate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    identityCertificate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_identityCertificate",
         title="Extension field for ``identityCertificate``.",
     )
 
-    organization: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    organization: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="organization",
         title="Reference to the organization validating information",
         description=None,
@@ -580,10 +642,10 @@ class VerificationResultValidator(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``VerificationResultValidator`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``VerificationResultValidator`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -593,3 +655,10 @@ class VerificationResultValidator(backboneelement.BackboneElement):
             "identityCertificate",
             "attestationSignature",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``VerificationResultValidator`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Permission
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -25,13 +26,14 @@ class Permission(domainresource.DomainResource):
 
     __resource_type__ = "Permission"
 
-    asserter: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    asserter: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="asserter",
         title="The person or entity that asserts the permission",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -45,8 +47,8 @@ class Permission(domainresource.DomainResource):
         },
     )
 
-    combining: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    combining: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="combining",
         title=(
             "deny-overrides | permit-overrides | ordered-deny-overrides | ordered-"
@@ -58,6 +60,7 @@ class Permission(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
@@ -71,75 +74,80 @@ class Permission(domainresource.DomainResource):
             ],
         },
     )
-    combining__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_combining", title="Extension field for ``combining``."
+    combining__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_combining", title="Extension field for ``combining``."
     )
 
-    date: typing.List[fhirtypes.DateTimeType | None] | None = Field(  # type: ignore
-        None,
+    date: typing.List[fhirtypes.DateTimeType | None] | None = Field(
+        default=None,
         alias="date",
         title="The date that permission was asserted",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    date__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_date", title="Extension field for ``date``."
+    date__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(
+        default=None, alias="_date", title="Extension field for ``date``."
     )
 
-    justification: fhirtypes.PermissionJustificationType | None = Field(  # type: ignore
-        None,
+    justification: fhirtypes.PermissionJustificationType | None = Field(
+        default=None,
         alias="justification",
         title="The asserted justification for using the data",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    rule: typing.List[fhirtypes.PermissionRuleType] | None = Field(  # type: ignore
-        None,
+    rule: typing.List[fhirtypes.PermissionRuleType] | None = Field(
+        default=None,
         alias="rule",
         title="Constraints to the Permission",
         description="A set of rules.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="active | entered-in-error | draft | rejected",
         description="Status.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["active", "entered-in-error", "draft", "rejected"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    validity: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    validity: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="validity",
         title="The period in which the permission is active",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Permission`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Permission`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -149,6 +157,25 @@ class Permission(domainresource.DomainResource):
             "text",
             "contained",
             "extension",
+            "modifierExtension",
+            "status",
+            "asserter",
+            "date",
+            "validity",
+            "justification",
+            "combining",
+            "rule",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Permission`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
             "modifierExtension",
             "status",
             "asserter",
@@ -181,8 +208,8 @@ class PermissionJustification(backboneelement.BackboneElement):
 
     __resource_type__ = "PermissionJustification"
 
-    basis: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    basis: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="basis",
         title="The regulatory grounds upon which this Permission builds",
         description=(
@@ -191,28 +218,37 @@ class PermissionJustification(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    evidence: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    evidence: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="evidence",
         title="Justifing rational",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``PermissionJustification`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``PermissionJustification`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "basis", "evidence"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``PermissionJustification`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "basis", "evidence"]
 
 
 class PermissionRule(backboneelement.BackboneElement):
@@ -226,8 +262,8 @@ class PermissionRule(backboneelement.BackboneElement):
 
     __resource_type__ = "PermissionRule"
 
-    activity: typing.List[fhirtypes.PermissionRuleActivityType] | None = Field(  # type: ignore
-        None,
+    activity: typing.List[fhirtypes.PermissionRuleActivityType] | None = Field(
+        default=None,
         alias="activity",
         title=(
             "A description or definition of which activities are allowed to be done"
@@ -236,11 +272,12 @@ class PermissionRule(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    data: typing.List[fhirtypes.PermissionRuleDataType] | None = Field(  # type: ignore
-        None,
+    data: typing.List[fhirtypes.PermissionRuleDataType] | None = Field(
+        default=None,
         alias="data",
         title=(
             "The selection criteria to identify data that is within scope of this "
@@ -252,40 +289,43 @@ class PermissionRule(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    limit: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    limit: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="limit",
         title="What limits apply to the use of the data",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title="deny | permit",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["deny", "permit"],
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``PermissionRule`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``PermissionRule`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -296,6 +336,13 @@ class PermissionRule(backboneelement.BackboneElement):
             "activity",
             "limit",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``PermissionRule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "type", "data", "activity", "limit"]
 
 
 class PermissionRuleActivity(backboneelement.BackboneElement):
@@ -309,23 +356,25 @@ class PermissionRuleActivity(backboneelement.BackboneElement):
 
     __resource_type__ = "PermissionRuleActivity"
 
-    action: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    action: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="action",
         title="Actions controlled by this rule",
         description="Actions controlled by this Rule.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    actor: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    actor: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="actor",
         title="Authorized actor(s)",
         description="The actor(s) authorized for the defined activity.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Device",
@@ -340,23 +389,31 @@ class PermissionRuleActivity(backboneelement.BackboneElement):
         },
     )
 
-    purpose: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    purpose: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="purpose",
         title="The purpose for which the permission is given",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``PermissionRuleActivity`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``PermissionRuleActivity`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "actor", "action", "purpose"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``PermissionRuleActivity`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "actor", "action", "purpose"]
 
 
 class PermissionRuleData(backboneelement.BackboneElement):
@@ -372,18 +429,19 @@ class PermissionRuleData(backboneelement.BackboneElement):
 
     __resource_type__ = "PermissionRuleData"
 
-    expression: fhirtypes.ExpressionType | None = Field(  # type: ignore
-        None,
+    expression: fhirtypes.ExpressionType | None = Field(
+        default=None,
         alias="expression",
         title="Expression identifying the data",
         description="Used when other data selection elements are insufficient.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    period: typing.List[fhirtypes.PeriodType] | None = Field(  # type: ignore
-        None,
+    period: typing.List[fhirtypes.PeriodType] | None = Field(
+        default=None,
         alias="period",
         title="Timeframe encompasing data create/update",
         description=(
@@ -392,21 +450,23 @@ class PermissionRuleData(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    resource: typing.List[fhirtypes.PermissionRuleDataResourceType] | None = Field(  # type: ignore
-        None,
+    resource: typing.List[fhirtypes.PermissionRuleDataResourceType] | None = Field(
+        default=None,
         alias="resource",
         title="Explicit FHIR Resource references",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    security: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    security: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="security",
         title="Security tag code on .meta.security",
         description=(
@@ -415,14 +475,15 @@ class PermissionRuleData(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``PermissionRuleData`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``PermissionRuleData`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -433,6 +494,13 @@ class PermissionRuleData(backboneelement.BackboneElement):
             "period",
             "expression",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``PermissionRuleData`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "resource", "security", "period", "expression"]
 
 
 class PermissionRuleDataResource(backboneelement.BackboneElement):
@@ -445,8 +513,8 @@ class PermissionRuleDataResource(backboneelement.BackboneElement):
 
     __resource_type__ = "PermissionRuleDataResource"
 
-    meaning: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    meaning: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="meaning",
         title="instance | related | dependents | authoredby",
         description=(
@@ -455,18 +523,19 @@ class PermissionRuleDataResource(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["instance", "related", "dependents", "authoredby"],
         },
     )
-    meaning__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_meaning", title="Extension field for ``meaning``."
+    meaning__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_meaning", title="Extension field for ``meaning``."
     )
 
-    reference: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    reference: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="reference",
         title="The actual data reference",
         description=(
@@ -475,18 +544,26 @@ class PermissionRuleDataResource(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``PermissionRuleDataResource`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``PermissionRuleDataResource`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "meaning", "reference"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``PermissionRuleDataResource`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "meaning", "reference"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case

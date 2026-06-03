@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/DocumentReference
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -29,8 +30,8 @@ class DocumentReference(domainresource.DomainResource):
 
     __resource_type__ = "DocumentReference"
 
-    authenticator: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    authenticator: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="authenticator",
         title="Who/what authenticated the document",
         description=(
@@ -47,8 +48,8 @@ class DocumentReference(domainresource.DomainResource):
         },
     )
 
-    author: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    author: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="author",
         title="Who and/or what authored the document",
         description=(
@@ -57,6 +58,7 @@ class DocumentReference(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -69,8 +71,8 @@ class DocumentReference(domainresource.DomainResource):
         },
     )
 
-    category: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    category: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="category",
         title="Categorization of document",
         description=(
@@ -80,11 +82,12 @@ class DocumentReference(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    content: typing.List[fhirtypes.DocumentReferenceContentType] = Field(  # type: ignore
-        ...,
+    content: typing.List[fhirtypes.DocumentReferenceContentType] = Field(
+        default=...,
         alias="content",
         title="Document referenced",
         description=(
@@ -93,21 +96,23 @@ class DocumentReference(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    context: fhirtypes.DocumentReferenceContextType | None = Field(  # type: ignore
-        None,
+    context: fhirtypes.DocumentReferenceContextType | None = Field(
+        default=None,
         alias="context",
         title="Clinical context of document",
         description="The clinical context in which the document was prepared.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    custodian: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    custodian: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="custodian",
         title="Organization which maintains the document",
         description=(
@@ -121,50 +126,53 @@ class DocumentReference(domainresource.DomainResource):
         },
     )
 
-    date: fhirtypes.InstantType | None = Field(  # type: ignore
-        None,
+    date: fhirtypes.InstantType | None = Field(
+        default=None,
         alias="date",
         title="When this document reference was created",
         description="When the document reference was created.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_date", title="Extension field for ``date``."
+    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_date", title="Extension field for ``date``."
     )
 
-    description: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.StringType | None = Field(
+        default=None,
         alias="description",
         title="Human-readable description",
         description="Human-readable description of the source document.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    docStatus: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    docStatus: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="docStatus",
         title="preliminary | final | amended | entered-in-error",
         description="The status of the underlying document.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["preliminary", "final", "amended", "entered-in-error"],
         },
     )
-    docStatus__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_docStatus", title="Extension field for ``docStatus``."
+    docStatus__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_docStatus", title="Extension field for ``docStatus``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Other identifiers for the document",
         description=(
@@ -173,11 +181,12 @@ class DocumentReference(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    masterIdentifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    masterIdentifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="masterIdentifier",
         title="Master Version Specific Identifier",
         description=(
@@ -188,11 +197,12 @@ class DocumentReference(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    relatesTo: typing.List[fhirtypes.DocumentReferenceRelatesToType] | None = Field(  # type: ignore
-        None,
+    relatesTo: typing.List[fhirtypes.DocumentReferenceRelatesToType] | None = Field(
+        default=None,
         alias="relatesTo",
         title="Relationships to other documents",
         description=(
@@ -201,11 +211,12 @@ class DocumentReference(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    securityLabel: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    securityLabel: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="securityLabel",
         title="Document security-tags",
         description=(
@@ -217,28 +228,30 @@ class DocumentReference(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="current | superseded | entered-in-error",
         description="The status of this document reference.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["current", "superseded", "entered-in-error"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subject: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    subject: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="subject",
         title="Who/what is the subject of the document",
         description=(
@@ -249,13 +262,14 @@ class DocumentReference(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Practitioner", "Group", "Device"],
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Kind of document (LOINC if possible)",
         description=(
@@ -265,14 +279,15 @@ class DocumentReference(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DocumentReference`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DocumentReference`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -294,6 +309,31 @@ class DocumentReference(domainresource.DomainResource):
             "author",
             "authenticator",
             "custodian",
+            "relatesTo",
+            "description",
+            "securityLabel",
+            "content",
+            "context",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DocumentReference`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "masterIdentifier",
+            "identifier",
+            "status",
+            "docStatus",
+            "type",
+            "category",
+            "subject",
+            "date",
+            "author",
             "relatesTo",
             "description",
             "securityLabel",
@@ -325,8 +365,8 @@ class DocumentReferenceContent(backboneelement.BackboneElement):
 
     __resource_type__ = "DocumentReferenceContent"
 
-    attachment: fhirtypes.AttachmentType = Field(  # type: ignore
-        ...,
+    attachment: fhirtypes.AttachmentType = Field(
+        default=...,
         alias="attachment",
         title="Where to access the document",
         description=(
@@ -335,11 +375,12 @@ class DocumentReferenceContent(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    format: fhirtypes.CodingType | None = Field(  # type: ignore
-        None,
+    format: fhirtypes.CodingType | None = Field(
+        default=None,
         alias="format",
         title="Format/content rules for the document",
         description=(
@@ -349,16 +390,24 @@ class DocumentReferenceContent(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DocumentReferenceContent`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DocumentReferenceContent`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "attachment", "format"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DocumentReferenceContent`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "attachment", "format"]
 
 
 class DocumentReferenceContext(backboneelement.BackboneElement):
@@ -372,8 +421,8 @@ class DocumentReferenceContext(backboneelement.BackboneElement):
 
     __resource_type__ = "DocumentReferenceContext"
 
-    encounter: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    encounter: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="encounter",
         title="Context of the document  content",
         description=(
@@ -387,8 +436,8 @@ class DocumentReferenceContext(backboneelement.BackboneElement):
         },
     )
 
-    event: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    event: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="event",
         title="Main clinical acts documented",
         description=(
@@ -403,8 +452,8 @@ class DocumentReferenceContext(backboneelement.BackboneElement):
         },
     )
 
-    facilityType: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    facilityType: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="facilityType",
         title="Kind of facility where patient was seen",
         description="The kind of facility where the patient was seen.",
@@ -413,8 +462,8 @@ class DocumentReferenceContext(backboneelement.BackboneElement):
         },
     )
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="Time of service that is being documented",
         description=(
@@ -423,11 +472,12 @@ class DocumentReferenceContext(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    practiceSetting: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    practiceSetting: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="practiceSetting",
         title=(
             "Additional details about where the content was created (e.g. clinical "
@@ -442,8 +492,8 @@ class DocumentReferenceContext(backboneelement.BackboneElement):
         },
     )
 
-    related: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    related: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="related",
         title="Related identifiers or resources",
         description=(
@@ -456,8 +506,8 @@ class DocumentReferenceContext(backboneelement.BackboneElement):
         },
     )
 
-    sourcePatientInfo: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    sourcePatientInfo: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="sourcePatientInfo",
         title="Patient demographics from source",
         description=(
@@ -472,10 +522,10 @@ class DocumentReferenceContext(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DocumentReferenceContext`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DocumentReferenceContext`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -490,6 +540,13 @@ class DocumentReferenceContext(backboneelement.BackboneElement):
             "related",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DocumentReferenceContext`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "period"]
+
 
 class DocumentReferenceRelatesTo(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -503,42 +560,51 @@ class DocumentReferenceRelatesTo(backboneelement.BackboneElement):
 
     __resource_type__ = "DocumentReferenceRelatesTo"
 
-    code: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="code",
         title="replaces | transforms | signs | appends",
         description="The type of relationship that this document has with anther document.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["replaces", "transforms", "signs", "appends"],
         },
     )
-    code__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_code", title="Extension field for ``code``."
+    code__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_code", title="Extension field for ``code``."
     )
 
-    target: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    target: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="target",
         title="Target of the relationship",
         description="The target document of this relationship.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["DocumentReference"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DocumentReferenceRelatesTo`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DocumentReferenceRelatesTo`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "code", "target"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DocumentReferenceRelatesTo`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "code", "target"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case

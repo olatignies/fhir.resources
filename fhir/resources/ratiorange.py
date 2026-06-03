@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/RatioRange
 Release: R5
@@ -7,6 +5,11 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
+import typing
+
 from pydantic import Field
 
 from . import datatype, fhirtypes
@@ -23,40 +26,50 @@ class RatioRange(datatype.DataType):
 
     __resource_type__ = "RatioRange"
 
-    denominator: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    denominator: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="denominator",
         title="Denominator value",
         description="The value of the denominator.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    highNumerator: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    highNumerator: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="highNumerator",
         title="High Numerator limit",
         description="The value of the high limit numerator.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    lowNumerator: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    lowNumerator: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="lowNumerator",
         title="Low Numerator limit",
         description="The value of the low limit numerator.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``RatioRange`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``RatioRange`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "lowNumerator", "highNumerator", "denominator"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``RatioRange`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["lowNumerator", "highNumerator", "denominator"]

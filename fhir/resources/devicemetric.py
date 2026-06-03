@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/DeviceMetric
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -25,8 +26,8 @@ class DeviceMetric(domainresource.DomainResource):
 
     __resource_type__ = "DeviceMetric"
 
-    calibration: typing.List[fhirtypes.DeviceMetricCalibrationType] | None = Field(  # type: ignore
-        None,
+    calibration: typing.List[fhirtypes.DeviceMetricCalibrationType] | None = Field(
+        default=None,
         alias="calibration",
         title=(
             "Describes the calibrations that have been performed or that are "
@@ -38,8 +39,8 @@ class DeviceMetric(domainresource.DomainResource):
         },
     )
 
-    category: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    category: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="category",
         title="measurement | setting | calculation | unspecified",
         description=(
@@ -49,18 +50,19 @@ class DeviceMetric(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["measurement", "setting", "calculation", "unspecified"],
         },
     )
-    category__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_category", title="Extension field for ``category``."
+    category__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_category", title="Extension field for ``category``."
     )
 
-    color: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    color: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="color",
         title="Color name (from CSS4) or #RRGGBB code",
         description=(
@@ -75,12 +77,12 @@ class DeviceMetric(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    color__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_color", title="Extension field for ``color``."
+    color__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_color", title="Extension field for ``color``."
     )
 
-    device: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    device: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="device",
         title="Describes the link to the Device",
         description=(
@@ -89,13 +91,14 @@ class DeviceMetric(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Device"],
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Instance identifier",
         description=(
@@ -105,11 +108,12 @@ class DeviceMetric(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    measurementFrequency: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    measurementFrequency: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="measurementFrequency",
         title="Indicates how often the metric is taken or recorded",
         description=(
@@ -127,8 +131,8 @@ class DeviceMetric(domainresource.DomainResource):
         },
     )
 
-    operationalStatus: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    operationalStatus: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="operationalStatus",
         title="on | off | standby | entered-in-error",
         description=(
@@ -137,19 +141,20 @@ class DeviceMetric(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["on", "off", "standby", "entered-in-error"],
         },
     )
-    operationalStatus__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    operationalStatus__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_operationalStatus",
         title="Extension field for ``operationalStatus``.",
     )
 
-    type: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="type",
         title="Identity of metric, for example Heart Rate or PEEP Setting",
         description=(
@@ -158,11 +163,12 @@ class DeviceMetric(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    unit: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    unit: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="unit",
         title="Unit of Measure for the Metric",
         description=(
@@ -171,14 +177,15 @@ class DeviceMetric(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DeviceMetric`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DeviceMetric`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -198,6 +205,24 @@ class DeviceMetric(domainresource.DomainResource):
             "category",
             "measurementFrequency",
             "calibration",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DeviceMetric`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "modifierExtension",
+            "identifier",
+            "type",
+            "unit",
+            "device",
+            "operationalStatus",
+            "category",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
@@ -223,8 +248,8 @@ class DeviceMetricCalibration(backboneelement.BackboneElement):
 
     __resource_type__ = "DeviceMetricCalibration"
 
-    state: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    state: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="state",
         title="not-calibrated | calibration-required | calibrated | unspecified",
         description="Describes the state of the calibration.",
@@ -240,12 +265,12 @@ class DeviceMetricCalibration(backboneelement.BackboneElement):
             ],
         },
     )
-    state__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_state", title="Extension field for ``state``."
+    state__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_state", title="Extension field for ``state``."
     )
 
-    time: fhirtypes.InstantType | None = Field(  # type: ignore
-        None,
+    time: fhirtypes.InstantType | None = Field(
+        default=None,
         alias="time",
         title="Describes the time last calibration has been performed",
         description=None,
@@ -253,12 +278,12 @@ class DeviceMetricCalibration(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    time__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_time", title="Extension field for ``time``."
+    time__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_time", title="Extension field for ``time``."
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title="unspecified | offset | gain | two-point",
         description="Describes the type of the calibration method.",
@@ -269,14 +294,21 @@ class DeviceMetricCalibration(backboneelement.BackboneElement):
             "enum_values": ["unspecified", "offset", "gain", "two-point"],
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DeviceMetricCalibration`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DeviceMetricCalibration`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "type", "state", "time"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DeviceMetricCalibration`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

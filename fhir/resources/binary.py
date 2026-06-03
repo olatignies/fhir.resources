@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Binary
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -27,8 +28,8 @@ class Binary(resource.Resource):
 
     __resource_type__ = "Binary"
 
-    contentType: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    contentType: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="contentType",
         title="MimeType of the binary content",
         description=(
@@ -37,15 +38,16 @@ class Binary(resource.Resource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    contentType__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_contentType", title="Extension field for ``contentType``."
+    contentType__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_contentType", title="Extension field for ``contentType``."
     )
 
-    data: fhirtypes.Base64BinaryType | None = Field(  # type: ignore
-        None,
+    data: fhirtypes.Base64BinaryType | None = Field(
+        default=None,
         alias="data",
         title="The actual content",
         description="The actual content, base64 encoded.",
@@ -53,12 +55,12 @@ class Binary(resource.Resource):
             "element_property": True,
         },
     )
-    data__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_data", title="Extension field for ``data``."
+    data__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_data", title="Extension field for ``data``."
     )
 
-    securityContext: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    securityContext: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="securityContext",
         title=(
             "Identifies another resource to use as proxy when enforcing access "
@@ -79,16 +81,17 @@ class Binary(resource.Resource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Binary`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Binary`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -99,6 +102,13 @@ class Binary(resource.Resource):
             "securityContext",
             "data",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Binary`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "meta", "implicitRules", "contentType", "securityContext"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case

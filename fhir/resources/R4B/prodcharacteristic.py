@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/ProdCharacteristic
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class ProdCharacteristic(backboneelement.BackboneElement):
 
     __resource_type__ = "ProdCharacteristic"
 
-    color: typing.List[fhirtypes.StringType | None] | None = Field(  # type: ignore
-        None,
+    color: typing.List[fhirtypes.StringType | None] | None = Field(
+        default=None,
         alias="color",
         title=(
             "Where applicable, the color can be specified An appropriate controlled"
@@ -37,14 +38,15 @@ class ProdCharacteristic(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    color__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_color", title="Extension field for ``color``."
+    color__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(
+        default=None, alias="_color", title="Extension field for ``color``."
     )
 
-    depth: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    depth: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="depth",
         title=(
             "Where applicable, the depth can be specified using a numerical value "
@@ -55,11 +57,12 @@ class ProdCharacteristic(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    externalDiameter: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    externalDiameter: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="externalDiameter",
         title=(
             "Where applicable, the external diameter can be specified using a "
@@ -70,11 +73,12 @@ class ProdCharacteristic(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    height: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    height: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="height",
         title=(
             "Where applicable, the height can be specified using a numerical value "
@@ -85,11 +89,12 @@ class ProdCharacteristic(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    image: typing.List[fhirtypes.AttachmentType] | None = Field(  # type: ignore
-        None,
+    image: typing.List[fhirtypes.AttachmentType] | None = Field(
+        default=None,
         alias="image",
         title=(
             "Where applicable, the image can be provided The format of the image "
@@ -98,24 +103,28 @@ class ProdCharacteristic(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    imprint: typing.List[fhirtypes.StringType | None] | None = Field(  # type: ignore
-        None,
+    imprint: typing.List[fhirtypes.StringType | None] | None = Field(
+        default=None,
         alias="imprint",
         title="Where applicable, the imprint can be specified as text",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    imprint__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_imprint", title="Extension field for ``imprint``."
+    imprint__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None, alias="_imprint", title="Extension field for ``imprint``."
     )
 
-    nominalVolume: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    nominalVolume: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="nominalVolume",
         title=(
             "Where applicable, the nominal volume can be specified using a "
@@ -126,11 +135,12 @@ class ProdCharacteristic(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    scoring: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    scoring: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="scoring",
         title=(
             "Where applicable, the scoring can be specified An appropriate "
@@ -140,11 +150,12 @@ class ProdCharacteristic(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    shape: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    shape: fhirtypes.StringType | None = Field(
+        default=None,
         alias="shape",
         title=(
             "Where applicable, the shape can be specified An appropriate controlled"
@@ -154,14 +165,15 @@ class ProdCharacteristic(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    shape__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_shape", title="Extension field for ``shape``."
+    shape__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_shape", title="Extension field for ``shape``."
     )
 
-    weight: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    weight: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="weight",
         title=(
             "Where applicable, the weight can be specified using a numerical value "
@@ -172,11 +184,12 @@ class ProdCharacteristic(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    width: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    width: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="width",
         title=(
             "Where applicable, the width can be specified using a numerical value "
@@ -187,18 +200,39 @@ class ProdCharacteristic(backboneelement.BackboneElement):
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ProdCharacteristic`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ProdCharacteristic`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "height",
+            "width",
+            "depth",
+            "weight",
+            "nominalVolume",
+            "externalDiameter",
+            "shape",
+            "color",
+            "imprint",
+            "image",
+            "scoring",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ProdCharacteristic`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "height",
             "width",

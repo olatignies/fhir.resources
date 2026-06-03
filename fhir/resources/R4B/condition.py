@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Condition
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class Condition(domainresource.DomainResource):
 
     __resource_type__ = "Condition"
 
-    abatementAge: fhirtypes.AgeType | None = Field(  # type: ignore
-        None,
+    abatementAge: fhirtypes.AgeType | None = Field(
+        default=None,
         alias="abatementAge",
         title="When in resolution/remission",
         description=(
@@ -44,8 +45,8 @@ class Condition(domainresource.DomainResource):
         },
     )
 
-    abatementDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    abatementDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="abatementDateTime",
         title="When in resolution/remission",
         description=(
@@ -61,14 +62,14 @@ class Condition(domainresource.DomainResource):
             "one_of_many_required": False,
         },
     )
-    abatementDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    abatementDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_abatementDateTime",
         title="Extension field for ``abatementDateTime``.",
     )
 
-    abatementPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    abatementPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="abatementPeriod",
         title="When in resolution/remission",
         description=(
@@ -85,8 +86,8 @@ class Condition(domainresource.DomainResource):
         },
     )
 
-    abatementRange: fhirtypes.RangeType | None = Field(  # type: ignore
-        None,
+    abatementRange: fhirtypes.RangeType | None = Field(
+        default=None,
         alias="abatementRange",
         title="When in resolution/remission",
         description=(
@@ -103,8 +104,8 @@ class Condition(domainresource.DomainResource):
         },
     )
 
-    abatementString: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    abatementString: fhirtypes.StringType | None = Field(
+        default=None,
         alias="abatementString",
         title="When in resolution/remission",
         description=(
@@ -120,17 +121,20 @@ class Condition(domainresource.DomainResource):
             "one_of_many_required": False,
         },
     )
-    abatementString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_abatementString", title="Extension field for ``abatementString``."
+    abatementString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_abatementString",
+        title="Extension field for ``abatementString``.",
     )
 
-    asserter: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    asserter: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="asserter",
         title="Person who asserts this condition",
         description="Individual who is making the condition statement.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -141,18 +145,19 @@ class Condition(domainresource.DomainResource):
         },
     )
 
-    bodySite: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    bodySite: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="bodySite",
         title="Anatomical location, if relevant",
         description="The anatomical location where this condition manifests itself.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    category: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    category: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="category",
         title="problem-list-item | encounter-diagnosis",
         description="A category assigned to the condition.",
@@ -161,28 +166,30 @@ class Condition(domainresource.DomainResource):
         },
     )
 
-    clinicalStatus: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    clinicalStatus: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="clinicalStatus",
         title="active | recurrence | relapse | inactive | remission | resolved",
         description="The clinical status of the condition.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    code: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="code",
         title="Identification of the condition, problem or diagnosis",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    encounter: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    encounter: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="encounter",
         title="Encounter created as part of",
         description=(
@@ -191,13 +198,14 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Encounter"],
         },
     )
 
-    evidence: typing.List[fhirtypes.ConditionEvidenceType] | None = Field(  # type: ignore
-        None,
+    evidence: typing.List[fhirtypes.ConditionEvidenceType] | None = Field(
+        default=None,
         alias="evidence",
         title="Supporting evidence",
         description=(
@@ -210,8 +218,8 @@ class Condition(domainresource.DomainResource):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="External Ids for this condition",
         description=(
@@ -221,11 +229,12 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Additional information about the Condition",
         description=(
@@ -238,8 +247,8 @@ class Condition(domainresource.DomainResource):
         },
     )
 
-    onsetAge: fhirtypes.AgeType | None = Field(  # type: ignore
-        None,
+    onsetAge: fhirtypes.AgeType | None = Field(
+        default=None,
         alias="onsetAge",
         title="Estimated or actual date,  date-time, or age",
         description=(
@@ -248,14 +257,15 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e onset[x]
             "one_of_many": "onset",
             "one_of_many_required": False,
         },
     )
 
-    onsetDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    onsetDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="onsetDateTime",
         title="Estimated or actual date,  date-time, or age",
         description=(
@@ -264,17 +274,20 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e onset[x]
             "one_of_many": "onset",
             "one_of_many_required": False,
         },
     )
-    onsetDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_onsetDateTime", title="Extension field for ``onsetDateTime``."
+    onsetDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_onsetDateTime",
+        title="Extension field for ``onsetDateTime``.",
     )
 
-    onsetPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    onsetPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="onsetPeriod",
         title="Estimated or actual date,  date-time, or age",
         description=(
@@ -283,14 +296,15 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e onset[x]
             "one_of_many": "onset",
             "one_of_many_required": False,
         },
     )
 
-    onsetRange: fhirtypes.RangeType | None = Field(  # type: ignore
-        None,
+    onsetRange: fhirtypes.RangeType | None = Field(
+        default=None,
         alias="onsetRange",
         title="Estimated or actual date,  date-time, or age",
         description=(
@@ -299,14 +313,15 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e onset[x]
             "one_of_many": "onset",
             "one_of_many_required": False,
         },
     )
 
-    onsetString: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    onsetString: fhirtypes.StringType | None = Field(
+        default=None,
         alias="onsetString",
         title="Estimated or actual date,  date-time, or age",
         description=(
@@ -315,17 +330,18 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e onset[x]
             "one_of_many": "onset",
             "one_of_many_required": False,
         },
     )
-    onsetString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_onsetString", title="Extension field for ``onsetString``."
+    onsetString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_onsetString", title="Extension field for ``onsetString``."
     )
 
-    recordedDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    recordedDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="recordedDate",
         title="Date record was first recorded",
         description=(
@@ -334,14 +350,17 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    recordedDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_recordedDate", title="Extension field for ``recordedDate``."
+    recordedDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_recordedDate",
+        title="Extension field for ``recordedDate``.",
     )
 
-    recorder: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    recorder: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="recorder",
         title="Who recorded the condition",
         description=(
@@ -350,6 +369,7 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -360,8 +380,8 @@ class Condition(domainresource.DomainResource):
         },
     )
 
-    severity: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    severity: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="severity",
         title="Subjective severity of condition",
         description=(
@@ -373,8 +393,8 @@ class Condition(domainresource.DomainResource):
         },
     )
 
-    stage: typing.List[fhirtypes.ConditionStageType] | None = Field(  # type: ignore
-        None,
+    stage: typing.List[fhirtypes.ConditionStageType] | None = Field(
+        default=None,
         alias="stage",
         title="Stage/grade, usually assessed formally",
         description=(
@@ -386,8 +406,8 @@ class Condition(domainresource.DomainResource):
         },
     )
 
-    subject: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    subject: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="subject",
         title="Who has the condition?",
         description=(
@@ -396,13 +416,14 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient", "Group"],
         },
     )
 
-    verificationStatus: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    verificationStatus: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="verificationStatus",
         title=(
             "unconfirmed | provisional | differential | confirmed | refuted | "
@@ -414,14 +435,15 @@ class Condition(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Condition`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Condition`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -457,6 +479,32 @@ class Condition(domainresource.DomainResource):
             "stage",
             "evidence",
             "note",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Condition`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "clinicalStatus",
+            "verificationStatus",
+            "code",
+            "bodySite",
+            "subject",
+            "encounter",
+            "onsetDateTime",
+            "onsetAge",
+            "onsetPeriod",
+            "onsetRange",
+            "onsetString",
+            "recordedDate",
+            "recorder",
+            "asserter",
         ]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
@@ -504,8 +552,8 @@ class ConditionEvidence(backboneelement.BackboneElement):
 
     __resource_type__ = "ConditionEvidence"
 
-    code: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    code: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="code",
         title="Manifestation/symptom",
         description=(
@@ -513,28 +561,37 @@ class ConditionEvidence(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    detail: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    detail: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="detail",
         title="Supporting information found elsewhere",
         description="Links to other relevant information, including pathology reports.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ConditionEvidence`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ConditionEvidence`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "code", "detail"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ConditionEvidence`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "code", "detail"]
 
 
 class ConditionStage(backboneelement.BackboneElement):
@@ -549,8 +606,8 @@ class ConditionStage(backboneelement.BackboneElement):
 
     __resource_type__ = "ConditionStage"
 
-    assessment: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    assessment: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="assessment",
         title="Formal record of assessment",
         description=(
@@ -568,8 +625,8 @@ class ConditionStage(backboneelement.BackboneElement):
         },
     )
 
-    summary: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    summary: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="summary",
         title="Simple summary (disease specific)",
         description=(
@@ -581,8 +638,8 @@ class ConditionStage(backboneelement.BackboneElement):
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Kind of staging",
         description="The kind of staging, such as pathological or clinical staging.",
@@ -592,9 +649,16 @@ class ConditionStage(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ConditionStage`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ConditionStage`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "summary", "assessment", "type"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ConditionStage`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

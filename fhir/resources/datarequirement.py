@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/DataRequirement
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class DataRequirement(datatype.DataType):
 
     __resource_type__ = "DataRequirement"
 
-    codeFilter: typing.List[fhirtypes.DataRequirementCodeFilterType] | None = Field(  # type: ignore
-        None,
+    codeFilter: typing.List[fhirtypes.DataRequirementCodeFilterType] | None = Field(
+        default=None,
         alias="codeFilter",
         title="What codes are expected",
         description=(
@@ -38,11 +39,12 @@ class DataRequirement(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    dateFilter: typing.List[fhirtypes.DataRequirementDateFilterType] | None = Field(  # type: ignore
-        None,
+    dateFilter: typing.List[fhirtypes.DataRequirementDateFilterType] | None = Field(
+        default=None,
         alias="dateFilter",
         title="What dates/date ranges are expected",
         description=(
@@ -53,11 +55,12 @@ class DataRequirement(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    limit: fhirtypes.PositiveIntType | None = Field(  # type: ignore
-        None,
+    limit: fhirtypes.PositiveIntType | None = Field(
+        default=None,
         alias="limit",
         title="Number of results",
         description=(
@@ -66,14 +69,15 @@ class DataRequirement(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    limit__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_limit", title="Extension field for ``limit``."
+    limit__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_limit", title="Extension field for ``limit``."
     )
 
-    mustSupport: typing.List[fhirtypes.StringType | None] | None = Field(  # type: ignore
-        None,
+    mustSupport: typing.List[fhirtypes.StringType | None] | None = Field(
+        default=None,
         alias="mustSupport",
         title=(
             "Indicates specific structure elements that are referenced by the "
@@ -92,14 +96,17 @@ class DataRequirement(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    mustSupport__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_mustSupport", title="Extension field for ``mustSupport``."
+    mustSupport__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None, alias="_mustSupport", title="Extension field for ``mustSupport``."
     )
 
-    profile: typing.List[fhirtypes.CanonicalType | None] | None = Field(  # type: ignore
-        None,
+    profile: typing.List[fhirtypes.CanonicalType | None] | None = Field(
+        default=None,
         alias="profile",
         title="The profile of the required data",
         description=(
@@ -108,26 +115,30 @@ class DataRequirement(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["StructureDefinition"],
         },
     )
-    profile__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
-        None, alias="_profile", title="Extension field for ``profile``."
+    profile__ext: typing.List[
+        fhirtypes.FHIRPrimitiveExtensionType | None
+    ] | None = Field(
+        default=None, alias="_profile", title="Extension field for ``profile``."
     )
 
-    sort: typing.List[fhirtypes.DataRequirementSortType] | None = Field(  # type: ignore
-        None,
+    sort: typing.List[fhirtypes.DataRequirementSortType] | None = Field(
+        default=None,
         alias="sort",
         title="Order of the results",
         description="Specifies the order of the results to be returned.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    subjectCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    subjectCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="subjectCodeableConcept",
         title=(
             "E.g. Patient, Practitioner, RelatedPerson, Organization, Location, "
@@ -139,14 +150,15 @@ class DataRequirement(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e subject[x]
             "one_of_many": "subject",
             "one_of_many_required": False,
         },
     )
 
-    subjectReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    subjectReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="subjectReference",
         title=(
             "E.g. Patient, Practitioner, RelatedPerson, Organization, Location, "
@@ -158,6 +170,7 @@ class DataRequirement(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e subject[x]
             "one_of_many": "subject",
             "one_of_many_required": False,
@@ -166,8 +179,8 @@ class DataRequirement(datatype.DataType):
         },
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title="The type of the required data",
         description=(
@@ -177,15 +190,16 @@ class DataRequirement(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
-    valueFilter: typing.List[fhirtypes.DataRequirementValueFilterType] | None = Field(  # type: ignore
-        None,
+    valueFilter: typing.List[fhirtypes.DataRequirementValueFilterType] | None = Field(
+        default=None,
         alias="valueFilter",
         title="What values are expected",
         description=(
@@ -196,18 +210,37 @@ class DataRequirement(datatype.DataType):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DataRequirement`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DataRequirement`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "type",
+            "profile",
+            "subjectCodeableConcept",
+            "subjectReference",
+            "mustSupport",
+            "codeFilter",
+            "dateFilter",
+            "valueFilter",
+            "limit",
+            "sort",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DataRequirement`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "type",
             "profile",
             "subjectCodeableConcept",
@@ -262,8 +295,8 @@ class DataRequirementCodeFilter(element.Element):
 
     __resource_type__ = "DataRequirementCodeFilter"
 
-    code: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    code: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="code",
         title="What code is expected",
         description=(
@@ -275,11 +308,12 @@ class DataRequirementCodeFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    path: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    path: fhirtypes.StringType | None = Field(
+        default=None,
         alias="path",
         title="A code-valued attribute to filter on",
         description=(
@@ -295,14 +329,15 @@ class DataRequirementCodeFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    path__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_path", title="Extension field for ``path``."
+    path__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_path", title="Extension field for ``path``."
     )
 
-    searchParam: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    searchParam: fhirtypes.StringType | None = Field(
+        default=None,
         alias="searchParam",
         title="A coded (token) parameter to search on",
         description=(
@@ -312,14 +347,15 @@ class DataRequirementCodeFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    searchParam__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_searchParam", title="Extension field for ``searchParam``."
+    searchParam__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_searchParam", title="Extension field for ``searchParam``."
     )
 
-    valueSet: fhirtypes.CanonicalType | None = Field(  # type: ignore
-        None,
+    valueSet: fhirtypes.CanonicalType | None = Field(
+        default=None,
         alias="valueSet",
         title="ValueSet for the filter",
         description=(
@@ -330,21 +366,29 @@ class DataRequirementCodeFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["ValueSet"],
         },
     )
-    valueSet__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueSet", title="Extension field for ``valueSet``."
+    valueSet__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueSet", title="Extension field for ``valueSet``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DataRequirementCodeFilter`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DataRequirementCodeFilter`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "path", "searchParam", "valueSet", "code"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DataRequirementCodeFilter`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["path", "searchParam", "valueSet", "code"]
 
 
 class DataRequirementDateFilter(element.Element):
@@ -360,8 +404,8 @@ class DataRequirementDateFilter(element.Element):
 
     __resource_type__ = "DataRequirementDateFilter"
 
-    path: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    path: fhirtypes.StringType | None = Field(
+        default=None,
         alias="path",
         title="A date-valued attribute to filter on",
         description=(
@@ -377,14 +421,15 @@ class DataRequirementDateFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    path__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_path", title="Extension field for ``path``."
+    path__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_path", title="Extension field for ``path``."
     )
 
-    searchParam: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    searchParam: fhirtypes.StringType | None = Field(
+        default=None,
         alias="searchParam",
         title="A date valued parameter to search on",
         description=(
@@ -394,14 +439,15 @@ class DataRequirementDateFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    searchParam__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_searchParam", title="Extension field for ``searchParam``."
+    searchParam__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_searchParam", title="Extension field for ``searchParam``."
     )
 
-    valueDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    valueDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="valueDateTime",
         title="The value of the filter, as a Period, DateTime, or Duration value",
         description=(
@@ -415,17 +461,20 @@ class DataRequirementDateFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDateTime", title="Extension field for ``valueDateTime``."
+    valueDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueDateTime",
+        title="Extension field for ``valueDateTime``.",
     )
 
-    valueDuration: fhirtypes.DurationType | None = Field(  # type: ignore
-        None,
+    valueDuration: fhirtypes.DurationType | None = Field(
+        default=None,
         alias="valueDuration",
         title="The value of the filter, as a Period, DateTime, or Duration value",
         description=(
@@ -439,14 +488,15 @@ class DataRequirementDateFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valuePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    valuePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="valuePeriod",
         title="The value of the filter, as a Period, DateTime, or Duration value",
         description=(
@@ -460,6 +510,7 @@ class DataRequirementDateFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
@@ -467,10 +518,10 @@ class DataRequirementDateFilter(element.Element):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DataRequirementDateFilter`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DataRequirementDateFilter`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -481,6 +532,13 @@ class DataRequirementDateFilter(element.Element):
             "valuePeriod",
             "valueDuration",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DataRequirementDateFilter`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["path", "searchParam", "valueDateTime", "valuePeriod", "valueDuration"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -512,25 +570,26 @@ class DataRequirementSort(element.Element):
 
     __resource_type__ = "DataRequirementSort"
 
-    direction: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    direction: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="direction",
         title="ascending | descending",
         description="The direction of the sort, ascending or descending.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["ascending", "descending"],
         },
     )
-    direction__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_direction", title="Extension field for ``direction``."
+    direction__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_direction", title="Extension field for ``direction``."
     )
 
-    path: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    path: fhirtypes.StringType | None = Field(
+        default=None,
         alias="path",
         title="The name of the attribute to perform the sort",
         description=(
@@ -542,20 +601,28 @@ class DataRequirementSort(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    path__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_path", title="Extension field for ``path``."
+    path__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_path", title="Extension field for ``path``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DataRequirementSort`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DataRequirementSort`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "path", "direction"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DataRequirementSort`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["path", "direction"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
@@ -582,24 +649,25 @@ class DataRequirementValueFilter(element.Element):
 
     __resource_type__ = "DataRequirementValueFilter"
 
-    comparator: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    comparator: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="comparator",
         title="eq | gt | lt | ge | le | sa | eb",
         description="The comparator to be used to determine whether the value is matching.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["eq", "gt", "lt", "ge", "le", "sa", "eb"],
         },
     )
-    comparator__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_comparator", title="Extension field for ``comparator``."
+    comparator__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_comparator", title="Extension field for ``comparator``."
     )
 
-    path: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    path: fhirtypes.StringType | None = Field(
+        default=None,
         alias="path",
         title="An attribute to filter on",
         description=(
@@ -615,14 +683,15 @@ class DataRequirementValueFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    path__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_path", title="Extension field for ``path``."
+    path__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_path", title="Extension field for ``path``."
     )
 
-    searchParam: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    searchParam: fhirtypes.StringType | None = Field(
+        default=None,
         alias="searchParam",
         title="A parameter to search on",
         description=(
@@ -632,48 +701,54 @@ class DataRequirementValueFilter(element.Element):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    searchParam__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_searchParam", title="Extension field for ``searchParam``."
+    searchParam__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_searchParam", title="Extension field for ``searchParam``."
     )
 
-    valueDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    valueDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="valueDateTime",
         title="The value of the filter, as a Period, DateTime, or Duration value",
         description="The value of the filter.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
-    valueDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDateTime", title="Extension field for ``valueDateTime``."
+    valueDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueDateTime",
+        title="Extension field for ``valueDateTime``.",
     )
 
-    valueDuration: fhirtypes.DurationType | None = Field(  # type: ignore
-        None,
+    valueDuration: fhirtypes.DurationType | None = Field(
+        default=None,
         alias="valueDuration",
         title="The value of the filter, as a Period, DateTime, or Duration value",
         description="The value of the filter.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
         },
     )
 
-    valuePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    valuePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="valuePeriod",
         title="The value of the filter, as a Period, DateTime, or Duration value",
         description="The value of the filter.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e value[x]
             "one_of_many": "value",
             "one_of_many_required": False,
@@ -681,14 +756,28 @@ class DataRequirementValueFilter(element.Element):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DataRequirementValueFilter`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DataRequirementValueFilter`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "path",
+            "searchParam",
+            "comparator",
+            "valueDateTime",
+            "valuePeriod",
+            "valueDuration",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DataRequirementValueFilter`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "path",
             "searchParam",
             "comparator",

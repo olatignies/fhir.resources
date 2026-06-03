@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/DomainResource
 Release: R4B
@@ -7,6 +5,9 @@ Version: 4.3.0
 Build ID: c475c22
 Last updated: 2022-05-28T12:47:40.239+10:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -25,8 +26,8 @@ class DomainResource(resource.Resource):
 
     __resource_type__ = "DomainResource"
 
-    contained: typing.List[fhirtypes.ResourceType] | None = Field(  # type: ignore
-        None,
+    contained: typing.List[fhirtypes.ResourceType] | None = Field(
+        default=None,
         alias="contained",
         title="Contained, inline Resources",
         description=(
@@ -39,8 +40,8 @@ class DomainResource(resource.Resource):
         },
     )
 
-    extension: typing.List[fhirtypes.ExtensionType] | None = Field(  # type: ignore
-        None,
+    extension: typing.List[fhirtypes.ExtensionType] | None = Field(
+        default=None,
         alias="extension",
         title="Additional content defined by implementations",
         description=(
@@ -56,8 +57,8 @@ class DomainResource(resource.Resource):
         },
     )
 
-    modifierExtension: typing.List[fhirtypes.ExtensionType] | None = Field(  # type: ignore
-        None,
+    modifierExtension: typing.List[fhirtypes.ExtensionType] | None = Field(
+        default=None,
         alias="modifierExtension",
         title="Extensions that cannot be ignored",
         description=(
@@ -80,8 +81,8 @@ class DomainResource(resource.Resource):
         },
     )
 
-    text: fhirtypes.NarrativeType | None = Field(  # type: ignore
-        None,
+    text: fhirtypes.NarrativeType | None = Field(
+        default=None,
         alias="text",
         title="Text summary of the resource, for human interpretation",
         description=(
@@ -98,10 +99,10 @@ class DomainResource(resource.Resource):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``DomainResource`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``DomainResource`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -113,3 +114,10 @@ class DomainResource(resource.Resource):
             "extension",
             "modifierExtension",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``DomainResource`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "meta", "implicitRules"]

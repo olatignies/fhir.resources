@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Task
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -24,8 +25,8 @@ class Task(domainresource.DomainResource):
 
     __resource_type__ = "Task"
 
-    authoredOn: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    authoredOn: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="authoredOn",
         title="Task Creation Date",
         description="The date and time this task was created.",
@@ -33,12 +34,12 @@ class Task(domainresource.DomainResource):
             "element_property": True,
         },
     )
-    authoredOn__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_authoredOn", title="Extension field for ``authoredOn``."
+    authoredOn__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_authoredOn", title="Extension field for ``authoredOn``."
     )
 
-    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    basedOn: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="basedOn",
         title="Request fulfilled by this task",
         description=(
@@ -52,33 +53,36 @@ class Task(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    businessStatus: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    businessStatus: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="businessStatus",
         title='E.g. "Specimen collected", "IV prepped"',
         description="Contains business-specific nuances of the business state.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    code: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="code",
         title="Task Type",
         description="A name or code (or both) briefly describing what the task involves.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    context: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    context: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="context",
         title="Healthcare event during which this task originated",
         description=(
@@ -87,13 +91,14 @@ class Task(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Encounter", "EpisodeOfCare"],
         },
     )
 
-    definitionReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    definitionReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="definitionReference",
         title="Formal definition of task",
         description=(
@@ -102,6 +107,7 @@ class Task(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e definition[x]
             "one_of_many": "definition",
             "one_of_many_required": False,
@@ -110,8 +116,8 @@ class Task(domainresource.DomainResource):
         },
     )
 
-    definitionUri: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    definitionUri: fhirtypes.UriType | None = Field(
+        default=None,
         alias="definitionUri",
         title="Formal definition of task",
         description=(
@@ -120,30 +126,34 @@ class Task(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # Choice of Data Types. i.e definition[x]
             "one_of_many": "definition",
             "one_of_many_required": False,
         },
     )
-    definitionUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_definitionUri", title="Extension field for ``definitionUri``."
+    definitionUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_definitionUri",
+        title="Extension field for ``definitionUri``.",
     )
 
-    description: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.StringType | None = Field(
+        default=None,
         alias="description",
         title="Human-readable explanation of task",
         description="A free-text description of what is to be performed.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    executionPeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    executionPeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="executionPeriod",
         title="Start and end time of execution",
         description=(
@@ -153,11 +163,12 @@ class Task(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    focus: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    focus: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="focus",
         title="What task is acting on",
         description=(
@@ -166,13 +177,14 @@ class Task(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    for_fhir: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    for_fhir: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="for",
         title="Beneficiary of the Task",
         description=(
@@ -181,13 +193,14 @@ class Task(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    groupIdentifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    groupIdentifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="groupIdentifier",
         title="Requisition or grouper id",
         description=(
@@ -196,11 +209,12 @@ class Task(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Task Instance Identifier",
         description="The business identifier for this task.",
@@ -209,8 +223,8 @@ class Task(domainresource.DomainResource):
         },
     )
 
-    input: typing.List[fhirtypes.TaskInputType] | None = Field(  # type: ignore
-        None,
+    input: typing.List[fhirtypes.TaskInputType] | None = Field(
+        default=None,
         alias="input",
         title="Information used to perform task",
         description=(
@@ -221,8 +235,8 @@ class Task(domainresource.DomainResource):
         },
     )
 
-    intent: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    intent: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="intent",
         title="proposal | plan | order +",
         description=(
@@ -231,31 +245,35 @@ class Task(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["proposal", "plan", "order", "+"],
         },
     )
-    intent__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_intent", title="Extension field for ``intent``."
+    intent__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_intent", title="Extension field for ``intent``."
     )
 
-    lastModified: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    lastModified: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="lastModified",
         title="Task Last Modified Date",
         description="The date and time of last modification to this task.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    lastModified__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_lastModified", title="Extension field for ``lastModified``."
+    lastModified__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_lastModified",
+        title="Extension field for ``lastModified``.",
     )
 
-    note: typing.List[fhirtypes.AnnotationType] | None = Field(  # type: ignore
-        None,
+    note: typing.List[fhirtypes.AnnotationType] | None = Field(
+        default=None,
         alias="note",
         title="Comments made about the task",
         description="Free-text information captured about the task as it progresses.",
@@ -264,8 +282,8 @@ class Task(domainresource.DomainResource):
         },
     )
 
-    output: typing.List[fhirtypes.TaskOutputType] | None = Field(  # type: ignore
-        None,
+    output: typing.List[fhirtypes.TaskOutputType] | None = Field(
+        default=None,
         alias="output",
         title="Information produced as part of task",
         description="Outputs produced by the Task.",
@@ -274,8 +292,8 @@ class Task(domainresource.DomainResource):
         },
     )
 
-    owner: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    owner: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="owner",
         title="Responsible individual",
         description=(
@@ -284,6 +302,7 @@ class Task(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Device",
@@ -295,20 +314,21 @@ class Task(domainresource.DomainResource):
         },
     )
 
-    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    partOf: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="partOf",
         title="Composite task",
         description="Task that this particular task is part of.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Task"],
         },
     )
 
-    performerType: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    performerType: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="performerType",
         title=(
             "requester | dispatcher | scheduler | performer | monitor | manager | "
@@ -320,8 +340,8 @@ class Task(domainresource.DomainResource):
         },
     )
 
-    priority: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    priority: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="priority",
         title="normal | urgent | asap | stat",
         description=(
@@ -335,12 +355,12 @@ class Task(domainresource.DomainResource):
             "enum_values": ["normal", "urgent", "asap", "stat"],
         },
     )
-    priority__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_priority", title="Extension field for ``priority``."
+    priority__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_priority", title="Extension field for ``priority``."
     )
 
-    reason: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    reason: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="reason",
         title="Why task is needed",
         description="A description or code indicating why this task needs to be performed.",
@@ -349,8 +369,8 @@ class Task(domainresource.DomainResource):
         },
     )
 
-    relevantHistory: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    relevantHistory: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="relevantHistory",
         title="Key events in history of the Task",
         description=(
@@ -365,18 +385,19 @@ class Task(domainresource.DomainResource):
         },
     )
 
-    requester: fhirtypes.TaskRequesterType | None = Field(  # type: ignore
-        None,
+    requester: fhirtypes.TaskRequesterType | None = Field(
+        default=None,
         alias="requester",
         title="Who is asking for task to be done",
         description="The creator of the task.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    restriction: fhirtypes.TaskRestrictionType | None = Field(  # type: ignore
-        None,
+    restriction: fhirtypes.TaskRestrictionType | None = Field(
+        default=None,
         alias="restriction",
         title="Constraints on fulfillment tasks",
         description=(
@@ -390,38 +411,40 @@ class Task(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="draft | requested | received | accepted | +",
         description="The current status of the task.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["draft", "requested", "received", "accepted", "+"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    statusReason: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    statusReason: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="statusReason",
         title="Reason for current status",
         description="An explanation as to why this task is held, failed, was refused, etc.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Task`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Task`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -460,6 +483,35 @@ class Task(domainresource.DomainResource):
             "restriction",
             "input",
             "output",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Task`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "definitionUri",
+            "definitionReference",
+            "basedOn",
+            "groupIdentifier",
+            "partOf",
+            "status",
+            "statusReason",
+            "businessStatus",
+            "intent",
+            "code",
+            "description",
+            "focus",
+            "for",
+            "context",
+            "executionPeriod",
+            "lastModified",
+            "requester",
+            "owner",
         ]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
@@ -501,8 +553,8 @@ class TaskInput(backboneelement.BackboneElement):
 
     __resource_type__ = "TaskInput"
 
-    type: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="type",
         title="Label for the input",
         description=(
@@ -514,8 +566,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueAddress: fhirtypes.AddressType | None = Field(  # type: ignore
-        None,
+    valueAddress: fhirtypes.AddressType | None = Field(
+        default=None,
         alias="valueAddress",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -527,8 +579,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueAge: fhirtypes.AgeType | None = Field(  # type: ignore
-        None,
+    valueAge: fhirtypes.AgeType | None = Field(
+        default=None,
         alias="valueAge",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -540,8 +592,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueAnnotation: fhirtypes.AnnotationType | None = Field(  # type: ignore
-        None,
+    valueAnnotation: fhirtypes.AnnotationType | None = Field(
+        default=None,
         alias="valueAnnotation",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -553,8 +605,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueAttachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    valueAttachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="valueAttachment",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -566,8 +618,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueBase64Binary: fhirtypes.Base64BinaryType | None = Field(  # type: ignore
-        None,
+    valueBase64Binary: fhirtypes.Base64BinaryType | None = Field(
+        default=None,
         alias="valueBase64Binary",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -578,14 +630,14 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueBase64Binary__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    valueBase64Binary__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_valueBase64Binary",
         title="Extension field for ``valueBase64Binary``.",
     )
 
-    valueBoolean: bool | None = Field(  # type: ignore
-        None,
+    valueBoolean: bool | None = Field(
+        default=None,
         alias="valueBoolean",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -596,12 +648,14 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueBoolean__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueBoolean", title="Extension field for ``valueBoolean``."
+    valueBoolean__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueBoolean",
+        title="Extension field for ``valueBoolean``.",
     )
 
-    valueCode: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    valueCode: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="valueCode",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -612,12 +666,12 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueCode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueCode", title="Extension field for ``valueCode``."
+    valueCode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueCode", title="Extension field for ``valueCode``."
     )
 
-    valueCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    valueCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="valueCodeableConcept",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -629,8 +683,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueCoding: fhirtypes.CodingType | None = Field(  # type: ignore
-        None,
+    valueCoding: fhirtypes.CodingType | None = Field(
+        default=None,
         alias="valueCoding",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -642,8 +696,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueContactPoint: fhirtypes.ContactPointType | None = Field(  # type: ignore
-        None,
+    valueContactPoint: fhirtypes.ContactPointType | None = Field(
+        default=None,
         alias="valueContactPoint",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -655,8 +709,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueCount: fhirtypes.CountType | None = Field(  # type: ignore
-        None,
+    valueCount: fhirtypes.CountType | None = Field(
+        default=None,
         alias="valueCount",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -668,8 +722,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueDate: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    valueDate: fhirtypes.DateType | None = Field(
+        default=None,
         alias="valueDate",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -680,12 +734,12 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDate", title="Extension field for ``valueDate``."
+    valueDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueDate", title="Extension field for ``valueDate``."
     )
 
-    valueDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    valueDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="valueDateTime",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -696,12 +750,14 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDateTime", title="Extension field for ``valueDateTime``."
+    valueDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueDateTime",
+        title="Extension field for ``valueDateTime``.",
     )
 
-    valueDecimal: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    valueDecimal: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="valueDecimal",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -712,12 +768,14 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueDecimal__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDecimal", title="Extension field for ``valueDecimal``."
+    valueDecimal__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueDecimal",
+        title="Extension field for ``valueDecimal``.",
     )
 
-    valueDistance: fhirtypes.DistanceType | None = Field(  # type: ignore
-        None,
+    valueDistance: fhirtypes.DistanceType | None = Field(
+        default=None,
         alias="valueDistance",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -729,8 +787,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueDuration: fhirtypes.DurationType | None = Field(  # type: ignore
-        None,
+    valueDuration: fhirtypes.DurationType | None = Field(
+        default=None,
         alias="valueDuration",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -742,8 +800,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueHumanName: fhirtypes.HumanNameType | None = Field(  # type: ignore
-        None,
+    valueHumanName: fhirtypes.HumanNameType | None = Field(
+        default=None,
         alias="valueHumanName",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -755,8 +813,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueId: fhirtypes.IdType | None = Field(  # type: ignore
-        None,
+    valueId: fhirtypes.IdType | None = Field(
+        default=None,
         alias="valueId",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -767,12 +825,12 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueId", title="Extension field for ``valueId``."
+    valueId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueId", title="Extension field for ``valueId``."
     )
 
-    valueIdentifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    valueIdentifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="valueIdentifier",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -784,8 +842,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueInstant: fhirtypes.InstantType | None = Field(  # type: ignore
-        None,
+    valueInstant: fhirtypes.InstantType | None = Field(
+        default=None,
         alias="valueInstant",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -796,12 +854,14 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueInstant__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueInstant", title="Extension field for ``valueInstant``."
+    valueInstant__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueInstant",
+        title="Extension field for ``valueInstant``.",
     )
 
-    valueInteger: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    valueInteger: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="valueInteger",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -812,12 +872,14 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueInteger__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueInteger", title="Extension field for ``valueInteger``."
+    valueInteger__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueInteger",
+        title="Extension field for ``valueInteger``.",
     )
 
-    valueMarkdown: fhirtypes.MarkdownType | None = Field(  # type: ignore
-        None,
+    valueMarkdown: fhirtypes.MarkdownType | None = Field(
+        default=None,
         alias="valueMarkdown",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -828,12 +890,14 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueMarkdown__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueMarkdown", title="Extension field for ``valueMarkdown``."
+    valueMarkdown__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueMarkdown",
+        title="Extension field for ``valueMarkdown``.",
     )
 
-    valueMeta: fhirtypes.MetaType | None = Field(  # type: ignore
-        None,
+    valueMeta: fhirtypes.MetaType | None = Field(
+        default=None,
         alias="valueMeta",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -845,8 +909,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueMoney: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    valueMoney: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="valueMoney",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -858,8 +922,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueOid: fhirtypes.OidType | None = Field(  # type: ignore
-        None,
+    valueOid: fhirtypes.OidType | None = Field(
+        default=None,
         alias="valueOid",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -870,12 +934,12 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueOid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueOid", title="Extension field for ``valueOid``."
+    valueOid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueOid", title="Extension field for ``valueOid``."
     )
 
-    valuePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    valuePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="valuePeriod",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -887,8 +951,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valuePositiveInt: fhirtypes.PositiveIntType | None = Field(  # type: ignore
-        None,
+    valuePositiveInt: fhirtypes.PositiveIntType | None = Field(
+        default=None,
         alias="valuePositiveInt",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -899,14 +963,14 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valuePositiveInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    valuePositiveInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_valuePositiveInt",
         title="Extension field for ``valuePositiveInt``.",
     )
 
-    valueQuantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    valueQuantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="valueQuantity",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -918,8 +982,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueRange: fhirtypes.RangeType | None = Field(  # type: ignore
-        None,
+    valueRange: fhirtypes.RangeType | None = Field(
+        default=None,
         alias="valueRange",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -931,8 +995,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueRatio: fhirtypes.RatioType | None = Field(  # type: ignore
-        None,
+    valueRatio: fhirtypes.RatioType | None = Field(
+        default=None,
         alias="valueRatio",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -944,8 +1008,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    valueReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="valueReference",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -957,8 +1021,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueSampledData: fhirtypes.SampledDataType | None = Field(  # type: ignore
-        None,
+    valueSampledData: fhirtypes.SampledDataType | None = Field(
+        default=None,
         alias="valueSampledData",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -970,8 +1034,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueSignature: fhirtypes.SignatureType | None = Field(  # type: ignore
-        None,
+    valueSignature: fhirtypes.SignatureType | None = Field(
+        default=None,
         alias="valueSignature",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -983,8 +1047,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueString: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    valueString: fhirtypes.StringType | None = Field(
+        default=None,
         alias="valueString",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -995,12 +1059,12 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueString", title="Extension field for ``valueString``."
+    valueString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueString", title="Extension field for ``valueString``."
     )
 
-    valueTime: fhirtypes.TimeType | None = Field(  # type: ignore
-        None,
+    valueTime: fhirtypes.TimeType | None = Field(
+        default=None,
         alias="valueTime",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -1011,12 +1075,12 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueTime", title="Extension field for ``valueTime``."
+    valueTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueTime", title="Extension field for ``valueTime``."
     )
 
-    valueTiming: fhirtypes.TimingType | None = Field(  # type: ignore
-        None,
+    valueTiming: fhirtypes.TimingType | None = Field(
+        default=None,
         alias="valueTiming",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -1028,8 +1092,8 @@ class TaskInput(backboneelement.BackboneElement):
         },
     )
 
-    valueUnsignedInt: fhirtypes.UnsignedIntType | None = Field(  # type: ignore
-        None,
+    valueUnsignedInt: fhirtypes.UnsignedIntType | None = Field(
+        default=None,
         alias="valueUnsignedInt",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -1040,14 +1104,14 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueUnsignedInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    valueUnsignedInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_valueUnsignedInt",
         title="Extension field for ``valueUnsignedInt``.",
     )
 
-    valueUri: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    valueUri: fhirtypes.UriType | None = Field(
+        default=None,
         alias="valueUri",
         title="Content to use in performing the task",
         description="The value of the input parameter as a basic type.",
@@ -1058,15 +1122,15 @@ class TaskInput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueUri", title="Extension field for ``valueUri``."
+    valueUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueUri", title="Extension field for ``valueUri``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``TaskInput`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``TaskInput`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -1112,6 +1176,13 @@ class TaskInput(backboneelement.BackboneElement):
             "valueTiming",
             "valueMeta",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``TaskInput`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -1182,8 +1253,8 @@ class TaskOutput(backboneelement.BackboneElement):
 
     __resource_type__ = "TaskOutput"
 
-    type: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="type",
         title="Label for output",
         description="The name of the Output parameter.",
@@ -1192,8 +1263,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueAddress: fhirtypes.AddressType | None = Field(  # type: ignore
-        None,
+    valueAddress: fhirtypes.AddressType | None = Field(
+        default=None,
         alias="valueAddress",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1205,8 +1276,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueAge: fhirtypes.AgeType | None = Field(  # type: ignore
-        None,
+    valueAge: fhirtypes.AgeType | None = Field(
+        default=None,
         alias="valueAge",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1218,8 +1289,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueAnnotation: fhirtypes.AnnotationType | None = Field(  # type: ignore
-        None,
+    valueAnnotation: fhirtypes.AnnotationType | None = Field(
+        default=None,
         alias="valueAnnotation",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1231,8 +1302,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueAttachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    valueAttachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="valueAttachment",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1244,8 +1315,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueBase64Binary: fhirtypes.Base64BinaryType | None = Field(  # type: ignore
-        None,
+    valueBase64Binary: fhirtypes.Base64BinaryType | None = Field(
+        default=None,
         alias="valueBase64Binary",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1256,14 +1327,14 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueBase64Binary__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    valueBase64Binary__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_valueBase64Binary",
         title="Extension field for ``valueBase64Binary``.",
     )
 
-    valueBoolean: bool | None = Field(  # type: ignore
-        None,
+    valueBoolean: bool | None = Field(
+        default=None,
         alias="valueBoolean",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1274,12 +1345,14 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueBoolean__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueBoolean", title="Extension field for ``valueBoolean``."
+    valueBoolean__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueBoolean",
+        title="Extension field for ``valueBoolean``.",
     )
 
-    valueCode: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    valueCode: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="valueCode",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1290,12 +1363,12 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueCode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueCode", title="Extension field for ``valueCode``."
+    valueCode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueCode", title="Extension field for ``valueCode``."
     )
 
-    valueCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    valueCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="valueCodeableConcept",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1307,8 +1380,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueCoding: fhirtypes.CodingType | None = Field(  # type: ignore
-        None,
+    valueCoding: fhirtypes.CodingType | None = Field(
+        default=None,
         alias="valueCoding",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1320,8 +1393,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueContactPoint: fhirtypes.ContactPointType | None = Field(  # type: ignore
-        None,
+    valueContactPoint: fhirtypes.ContactPointType | None = Field(
+        default=None,
         alias="valueContactPoint",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1333,8 +1406,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueCount: fhirtypes.CountType | None = Field(  # type: ignore
-        None,
+    valueCount: fhirtypes.CountType | None = Field(
+        default=None,
         alias="valueCount",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1346,8 +1419,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueDate: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    valueDate: fhirtypes.DateType | None = Field(
+        default=None,
         alias="valueDate",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1358,12 +1431,12 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDate", title="Extension field for ``valueDate``."
+    valueDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueDate", title="Extension field for ``valueDate``."
     )
 
-    valueDateTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    valueDateTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="valueDateTime",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1374,12 +1447,14 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDateTime", title="Extension field for ``valueDateTime``."
+    valueDateTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueDateTime",
+        title="Extension field for ``valueDateTime``.",
     )
 
-    valueDecimal: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    valueDecimal: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="valueDecimal",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1390,12 +1465,14 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueDecimal__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueDecimal", title="Extension field for ``valueDecimal``."
+    valueDecimal__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueDecimal",
+        title="Extension field for ``valueDecimal``.",
     )
 
-    valueDistance: fhirtypes.DistanceType | None = Field(  # type: ignore
-        None,
+    valueDistance: fhirtypes.DistanceType | None = Field(
+        default=None,
         alias="valueDistance",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1407,8 +1484,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueDuration: fhirtypes.DurationType | None = Field(  # type: ignore
-        None,
+    valueDuration: fhirtypes.DurationType | None = Field(
+        default=None,
         alias="valueDuration",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1420,8 +1497,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueHumanName: fhirtypes.HumanNameType | None = Field(  # type: ignore
-        None,
+    valueHumanName: fhirtypes.HumanNameType | None = Field(
+        default=None,
         alias="valueHumanName",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1433,8 +1510,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueId: fhirtypes.IdType | None = Field(  # type: ignore
-        None,
+    valueId: fhirtypes.IdType | None = Field(
+        default=None,
         alias="valueId",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1445,12 +1522,12 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueId", title="Extension field for ``valueId``."
+    valueId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueId", title="Extension field for ``valueId``."
     )
 
-    valueIdentifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    valueIdentifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="valueIdentifier",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1462,8 +1539,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueInstant: fhirtypes.InstantType | None = Field(  # type: ignore
-        None,
+    valueInstant: fhirtypes.InstantType | None = Field(
+        default=None,
         alias="valueInstant",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1474,12 +1551,14 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueInstant__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueInstant", title="Extension field for ``valueInstant``."
+    valueInstant__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueInstant",
+        title="Extension field for ``valueInstant``.",
     )
 
-    valueInteger: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    valueInteger: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="valueInteger",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1490,12 +1569,14 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueInteger__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueInteger", title="Extension field for ``valueInteger``."
+    valueInteger__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueInteger",
+        title="Extension field for ``valueInteger``.",
     )
 
-    valueMarkdown: fhirtypes.MarkdownType | None = Field(  # type: ignore
-        None,
+    valueMarkdown: fhirtypes.MarkdownType | None = Field(
+        default=None,
         alias="valueMarkdown",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1506,12 +1587,14 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueMarkdown__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueMarkdown", title="Extension field for ``valueMarkdown``."
+    valueMarkdown__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_valueMarkdown",
+        title="Extension field for ``valueMarkdown``.",
     )
 
-    valueMeta: fhirtypes.MetaType | None = Field(  # type: ignore
-        None,
+    valueMeta: fhirtypes.MetaType | None = Field(
+        default=None,
         alias="valueMeta",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1523,8 +1606,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueMoney: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    valueMoney: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="valueMoney",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1536,8 +1619,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueOid: fhirtypes.OidType | None = Field(  # type: ignore
-        None,
+    valueOid: fhirtypes.OidType | None = Field(
+        default=None,
         alias="valueOid",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1548,12 +1631,12 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueOid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueOid", title="Extension field for ``valueOid``."
+    valueOid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueOid", title="Extension field for ``valueOid``."
     )
 
-    valuePeriod: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    valuePeriod: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="valuePeriod",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1565,8 +1648,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valuePositiveInt: fhirtypes.PositiveIntType | None = Field(  # type: ignore
-        None,
+    valuePositiveInt: fhirtypes.PositiveIntType | None = Field(
+        default=None,
         alias="valuePositiveInt",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1577,14 +1660,14 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valuePositiveInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    valuePositiveInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_valuePositiveInt",
         title="Extension field for ``valuePositiveInt``.",
     )
 
-    valueQuantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    valueQuantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="valueQuantity",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1596,8 +1679,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueRange: fhirtypes.RangeType | None = Field(  # type: ignore
-        None,
+    valueRange: fhirtypes.RangeType | None = Field(
+        default=None,
         alias="valueRange",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1609,8 +1692,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueRatio: fhirtypes.RatioType | None = Field(  # type: ignore
-        None,
+    valueRatio: fhirtypes.RatioType | None = Field(
+        default=None,
         alias="valueRatio",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1622,8 +1705,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    valueReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="valueReference",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1635,8 +1718,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueSampledData: fhirtypes.SampledDataType | None = Field(  # type: ignore
-        None,
+    valueSampledData: fhirtypes.SampledDataType | None = Field(
+        default=None,
         alias="valueSampledData",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1648,8 +1731,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueSignature: fhirtypes.SignatureType | None = Field(  # type: ignore
-        None,
+    valueSignature: fhirtypes.SignatureType | None = Field(
+        default=None,
         alias="valueSignature",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1661,8 +1744,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueString: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    valueString: fhirtypes.StringType | None = Field(
+        default=None,
         alias="valueString",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1673,12 +1756,12 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueString", title="Extension field for ``valueString``."
+    valueString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueString", title="Extension field for ``valueString``."
     )
 
-    valueTime: fhirtypes.TimeType | None = Field(  # type: ignore
-        None,
+    valueTime: fhirtypes.TimeType | None = Field(
+        default=None,
         alias="valueTime",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1689,12 +1772,12 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueTime", title="Extension field for ``valueTime``."
+    valueTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueTime", title="Extension field for ``valueTime``."
     )
 
-    valueTiming: fhirtypes.TimingType | None = Field(  # type: ignore
-        None,
+    valueTiming: fhirtypes.TimingType | None = Field(
+        default=None,
         alias="valueTiming",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1706,8 +1789,8 @@ class TaskOutput(backboneelement.BackboneElement):
         },
     )
 
-    valueUnsignedInt: fhirtypes.UnsignedIntType | None = Field(  # type: ignore
-        None,
+    valueUnsignedInt: fhirtypes.UnsignedIntType | None = Field(
+        default=None,
         alias="valueUnsignedInt",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1718,14 +1801,14 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueUnsignedInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    valueUnsignedInt__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_valueUnsignedInt",
         title="Extension field for ``valueUnsignedInt``.",
     )
 
-    valueUri: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    valueUri: fhirtypes.UriType | None = Field(
+        default=None,
         alias="valueUri",
         title="Result of output",
         description="The value of the Output parameter as a basic type.",
@@ -1736,15 +1819,15 @@ class TaskOutput(backboneelement.BackboneElement):
             "one_of_many_required": True,
         },
     )
-    valueUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_valueUri", title="Extension field for ``valueUri``."
+    valueUri__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_valueUri", title="Extension field for ``valueUri``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``TaskOutput`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``TaskOutput`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -1790,6 +1873,13 @@ class TaskOutput(backboneelement.BackboneElement):
             "valueTiming",
             "valueMeta",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``TaskOutput`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -1860,13 +1950,14 @@ class TaskRequester(backboneelement.BackboneElement):
 
     __resource_type__ = "TaskRequester"
 
-    agent: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    agent: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="agent",
         title="Individual asking for task",
         description="The device, practitioner, etc. who initiated the task.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Device",
@@ -1878,8 +1969,8 @@ class TaskRequester(backboneelement.BackboneElement):
         },
     )
 
-    onBehalfOf: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    onBehalfOf: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="onBehalfOf",
         title="Organization individual is acting for",
         description=(
@@ -1894,12 +1985,19 @@ class TaskRequester(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``TaskRequester`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``TaskRequester`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "agent", "onBehalfOf"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``TaskRequester`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "agent"]
 
 
 class TaskRestriction(backboneelement.BackboneElement):
@@ -1915,8 +2013,8 @@ class TaskRestriction(backboneelement.BackboneElement):
 
     __resource_type__ = "TaskRestriction"
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="When fulfillment sought",
         description="Over what time-period is fulfillment sought.",
@@ -1925,8 +2023,8 @@ class TaskRestriction(backboneelement.BackboneElement):
         },
     )
 
-    recipient: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    recipient: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="recipient",
         title="For whom is fulfillment sought?",
         description=(
@@ -1946,8 +2044,8 @@ class TaskRestriction(backboneelement.BackboneElement):
         },
     )
 
-    repetitions: fhirtypes.PositiveIntType | None = Field(  # type: ignore
-        None,
+    repetitions: fhirtypes.PositiveIntType | None = Field(
+        default=None,
         alias="repetitions",
         title="How many times to repeat",
         description="Indicates the number of times the requested action should occur.",
@@ -1955,15 +2053,15 @@ class TaskRestriction(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    repetitions__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_repetitions", title="Extension field for ``repetitions``."
+    repetitions__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_repetitions", title="Extension field for ``repetitions``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``TaskRestriction`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``TaskRestriction`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -1973,3 +2071,10 @@ class TaskRestriction(backboneelement.BackboneElement):
             "period",
             "recipient",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``TaskRestriction`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

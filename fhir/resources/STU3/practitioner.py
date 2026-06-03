@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Practitioner
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -27,21 +28,22 @@ class Practitioner(domainresource.DomainResource):
 
     __resource_type__ = "Practitioner"
 
-    active: bool | None = Field(  # type: ignore
-        None,
+    active: bool | None = Field(
+        default=None,
         alias="active",
         title="Whether this practitioner's record is in active use",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    active__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_active", title="Extension field for ``active``."
+    active__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_active", title="Extension field for ``active``."
     )
 
-    address: typing.List[fhirtypes.AddressType] | None = Field(  # type: ignore
-        None,
+    address: typing.List[fhirtypes.AddressType] | None = Field(
+        default=None,
         alias="address",
         title=(
             "Address(es) of the practitioner that are not role specific (typically "
@@ -54,24 +56,26 @@ class Practitioner(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    birthDate: fhirtypes.DateType | None = Field(  # type: ignore
-        None,
+    birthDate: fhirtypes.DateType | None = Field(
+        default=None,
         alias="birthDate",
         title="The date  on which the practitioner was born",
         description="The date of birth for the practitioner.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    birthDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_birthDate", title="Extension field for ``birthDate``."
+    birthDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_birthDate", title="Extension field for ``birthDate``."
     )
 
-    communication: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    communication: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="communication",
         title="A language the practitioner is able to use in patient communication",
         description=None,
@@ -80,8 +84,8 @@ class Practitioner(domainresource.DomainResource):
         },
     )
 
-    gender: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    gender: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="gender",
         title="male | female | other | unknown",
         description=(
@@ -90,37 +94,40 @@ class Practitioner(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["male", "female", "other", "unknown"],
         },
     )
-    gender__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_gender", title="Extension field for ``gender``."
+    gender__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_gender", title="Extension field for ``gender``."
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="A identifier for the person as this agent",
         description="An identifier that applies to this person in this role.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    name: typing.List[fhirtypes.HumanNameType] | None = Field(  # type: ignore
-        None,
+    name: typing.List[fhirtypes.HumanNameType] | None = Field(
+        default=None,
         alias="name",
         title="The name(s) associated with the practitioner",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    photo: typing.List[fhirtypes.AttachmentType] | None = Field(  # type: ignore
-        None,
+    photo: typing.List[fhirtypes.AttachmentType] | None = Field(
+        default=None,
         alias="photo",
         title="Image of the person",
         description=None,
@@ -129,8 +136,8 @@ class Practitioner(domainresource.DomainResource):
         },
     )
 
-    qualification: typing.List[fhirtypes.PractitionerQualificationType] | None = Field(  # type: ignore
-        None,
+    qualification: typing.List[fhirtypes.PractitionerQualificationType] | None = Field(
+        default=None,
         alias="qualification",
         title="Qualifications obtained by training and certification",
         description=None,
@@ -139,8 +146,8 @@ class Practitioner(domainresource.DomainResource):
         },
     )
 
-    telecom: typing.List[fhirtypes.ContactPointType] | None = Field(  # type: ignore
-        None,
+    telecom: typing.List[fhirtypes.ContactPointType] | None = Field(
+        default=None,
         alias="telecom",
         title="A contact detail for the practitioner (that apply to all roles)",
         description=(
@@ -149,14 +156,15 @@ class Practitioner(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Practitioner`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Practitioner`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -179,6 +187,24 @@ class Practitioner(domainresource.DomainResource):
             "communication",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Practitioner`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "active",
+            "name",
+            "telecom",
+            "address",
+            "gender",
+            "birthDate",
+        ]
+
 
 class PractitionerQualification(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -190,8 +216,8 @@ class PractitionerQualification(backboneelement.BackboneElement):
 
     __resource_type__ = "PractitionerQualification"
 
-    code: fhirtypes.CodeableConceptType = Field(  # type: ignore
-        ...,
+    code: fhirtypes.CodeableConceptType = Field(
+        default=...,
         alias="code",
         title="Coded representation of the qualification",
         description=None,
@@ -200,8 +226,8 @@ class PractitionerQualification(backboneelement.BackboneElement):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="An identifier for this qualification for the practitioner",
         description=(
@@ -212,8 +238,8 @@ class PractitionerQualification(backboneelement.BackboneElement):
         },
     )
 
-    issuer: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    issuer: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="issuer",
         title="Organization that regulates and issues the qualification",
         description=None,
@@ -224,8 +250,8 @@ class PractitionerQualification(backboneelement.BackboneElement):
         },
     )
 
-    period: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    period: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="period",
         title="Period during which the qualification is valid",
         description=None,
@@ -235,10 +261,10 @@ class PractitionerQualification(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``PractitionerQualification`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``PractitionerQualification`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -249,3 +275,10 @@ class PractitionerQualification(backboneelement.BackboneElement):
             "period",
             "issuer",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``PractitionerQualification`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]

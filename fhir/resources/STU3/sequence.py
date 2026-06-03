@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Sequence
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -25,8 +26,8 @@ class Sequence(domainresource.DomainResource):
 
     __resource_type__ = "Sequence"
 
-    coordinateSystem: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    coordinateSystem: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="coordinateSystem",
         title=(
             "Base number of coordinate system (0 for 0-based numbering or "
@@ -40,29 +41,31 @@ class Sequence(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    coordinateSystem__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    coordinateSystem__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_coordinateSystem",
         title="Extension field for ``coordinateSystem``.",
     )
 
-    device: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    device: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="device",
         title="The method for sequencing",
         description="The method for sequencing, for example, chip information.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Device"],
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Unique ID for this particular sequence. This is a FHIR-defined id",
         description=(
@@ -71,11 +74,12 @@ class Sequence(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    observedSeq: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    observedSeq: fhirtypes.StringType | None = Field(
+        default=None,
         alias="observedSeq",
         title="Sequence that was observed",
         description=(
@@ -85,50 +89,54 @@ class Sequence(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    observedSeq__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_observedSeq", title="Extension field for ``observedSeq``."
+    observedSeq__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_observedSeq", title="Extension field for ``observedSeq``."
     )
 
-    patient: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    patient: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="patient",
         title="Who and/or what this is about",
         description="The patient whose sequencing results are described by this resource.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient"],
         },
     )
 
-    performer: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    performer: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="performer",
         title="Who should be responsible for test result",
         description="The organization or lab that should be responsible for this result.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    pointer: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    pointer: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="pointer",
         title="Pointer to next atomic sequence",
         description="Pointer to next atomic sequence which at most contains one variant.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Sequence"],
         },
     )
 
-    quality: typing.List[fhirtypes.SequenceQualityType] | None = Field(  # type: ignore
-        None,
+    quality: typing.List[fhirtypes.SequenceQualityType] | None = Field(
+        default=None,
         alias="quality",
         title="An set of value as quality of sequence",
         description=(
@@ -139,21 +147,23 @@ class Sequence(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    quantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    quantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="quantity",
         title="The number of copies of the seqeunce of interest.  (RNASeq)",
         description="The number of copies of the seqeunce of interest. (RNASeq).",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    readCoverage: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    readCoverage: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="readCoverage",
         title=(
             "Average number of reads representing a given nucleotide in the "
@@ -165,14 +175,17 @@ class Sequence(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    readCoverage__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_readCoverage", title="Extension field for ``readCoverage``."
+    readCoverage__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_readCoverage",
+        title="Extension field for ``readCoverage``.",
     )
 
-    referenceSeq: fhirtypes.SequenceReferenceSeqType | None = Field(  # type: ignore
-        None,
+    referenceSeq: fhirtypes.SequenceReferenceSeqType | None = Field(
+        default=None,
         alias="referenceSeq",
         title="A sequence used as reference",
         description=(
@@ -181,11 +194,12 @@ class Sequence(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    repository: typing.List[fhirtypes.SequenceRepositoryType] | None = Field(  # type: ignore
-        None,
+    repository: typing.List[fhirtypes.SequenceRepositoryType] | None = Field(
+        default=None,
         alias="repository",
         title=(
             "External repository which contains detailed report related with "
@@ -197,39 +211,42 @@ class Sequence(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    specimen: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    specimen: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="specimen",
         title="Specimen used for sequencing",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Specimen"],
         },
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title="aa | dna | rna",
         description="Amino Acid Sequence/ DNA Sequence / RNA Sequence.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["aa", "dna", "rna"],
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
-    variant: typing.List[fhirtypes.SequenceVariantType] | None = Field(  # type: ignore
-        None,
+    variant: typing.List[fhirtypes.SequenceVariantType] | None = Field(
+        default=None,
         alias="variant",
         title="Variant in sequence",
         description=(
@@ -241,14 +258,15 @@ class Sequence(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Sequence`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Sequence`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -259,6 +277,32 @@ class Sequence(domainresource.DomainResource):
             "contained",
             "extension",
             "modifierExtension",
+            "identifier",
+            "type",
+            "coordinateSystem",
+            "patient",
+            "specimen",
+            "device",
+            "performer",
+            "quantity",
+            "referenceSeq",
+            "variant",
+            "observedSeq",
+            "quality",
+            "readCoverage",
+            "repository",
+            "pointer",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Sequence`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
             "identifier",
             "type",
             "coordinateSystem",
@@ -301,8 +345,8 @@ class SequenceQuality(backboneelement.BackboneElement):
 
     __resource_type__ = "SequenceQuality"
 
-    end: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    end: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="end",
         title="End position of the sequence",
         description=(
@@ -313,14 +357,15 @@ class SequenceQuality(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    end__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_end", title="Extension field for ``end``."
+    end__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_end", title="Extension field for ``end``."
     )
 
-    fScore: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    fScore: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="fScore",
         title="F-score",
         description=(
@@ -329,14 +374,15 @@ class SequenceQuality(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    fScore__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_fScore", title="Extension field for ``fScore``."
+    fScore__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_fScore", title="Extension field for ``fScore``."
     )
 
-    gtFP: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    gtFP: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="gtFP",
         title=(
             "False positives where the non-REF alleles in the Truth and Query Call "
@@ -349,37 +395,40 @@ class SequenceQuality(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    gtFP__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_gtFP", title="Extension field for ``gtFP``."
+    gtFP__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_gtFP", title="Extension field for ``gtFP``."
     )
 
-    method: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    method: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="method",
         title="Method to get quality",
         description="Which method is used to get sequence quality.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    precision: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    precision: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="precision",
         title="Precision of comparison",
         description="QUERY.TP / (QUERY.TP + QUERY.FP).",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    precision__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_precision", title="Extension field for ``precision``."
+    precision__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_precision", title="Extension field for ``precision``."
     )
 
-    queryFP: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    queryFP: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="queryFP",
         title="False positives",
         description=(
@@ -390,14 +439,15 @@ class SequenceQuality(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    queryFP__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_queryFP", title="Extension field for ``queryFP``."
+    queryFP__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_queryFP", title="Extension field for ``queryFP``."
     )
 
-    queryTP: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    queryTP: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="queryTP",
         title="True positives from the perspective of the query data",
         description=(
@@ -409,27 +459,29 @@ class SequenceQuality(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    queryTP__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_queryTP", title="Extension field for ``queryTP``."
+    queryTP__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_queryTP", title="Extension field for ``queryTP``."
     )
 
-    recall: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    recall: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="recall",
         title="Recall of comparison",
         description="TRUTH.TP / (TRUTH.TP + TRUTH.FN).",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    recall__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_recall", title="Extension field for ``recall``."
+    recall__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_recall", title="Extension field for ``recall``."
     )
 
-    score: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    score: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="score",
         title="Quality score for the comparison",
         description=(
@@ -439,21 +491,23 @@ class SequenceQuality(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    standardSequence: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    standardSequence: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="standardSequence",
         title="Standard sequence for comparison",
         description="Gold standard sequence used for comparing against.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    start: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    start: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="start",
         title="Start position of the sequence",
         description=(
@@ -462,14 +516,15 @@ class SequenceQuality(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    start__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_start", title="Extension field for ``start``."
+    start__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_start", title="Extension field for ``start``."
     )
 
-    truthFN: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    truthFN: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="truthFN",
         title="False negatives",
         description=(
@@ -481,14 +536,15 @@ class SequenceQuality(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    truthFN__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_truthFN", title="Extension field for ``truthFN``."
+    truthFN__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_truthFN", title="Extension field for ``truthFN``."
     )
 
-    truthTP: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    truthTP: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="truthTP",
         title="True positives from the perspective of the truth data",
         description=(
@@ -500,38 +556,63 @@ class SequenceQuality(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    truthTP__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_truthTP", title="Extension field for ``truthTP``."
+    truthTP__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_truthTP", title="Extension field for ``truthTP``."
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title="indel | snp | unknown",
         description="INDEL / SNP / Undefined variant.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["indel", "snp", "unknown"],
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SequenceQuality`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SequenceQuality`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "type",
+            "standardSequence",
+            "start",
+            "end",
+            "score",
+            "method",
+            "truthTP",
+            "queryTP",
+            "truthFN",
+            "queryFP",
+            "gtFP",
+            "precision",
+            "recall",
+            "fScore",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SequenceQuality`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "type",
             "standardSequence",
@@ -573,8 +654,8 @@ class SequenceReferenceSeq(backboneelement.BackboneElement):
 
     __resource_type__ = "SequenceReferenceSeq"
 
-    chromosome: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    chromosome: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="chromosome",
         title="Chromosome containing genetic finding",
         description=(
@@ -585,11 +666,12 @@ class SequenceReferenceSeq(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    genomeBuild: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    genomeBuild: fhirtypes.StringType | None = Field(
+        default=None,
         alias="genomeBuild",
         title=(
             "The Genome Build used for reference, following GRCh build versions "
@@ -602,14 +684,15 @@ class SequenceReferenceSeq(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    genomeBuild__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_genomeBuild", title="Extension field for ``genomeBuild``."
+    genomeBuild__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_genomeBuild", title="Extension field for ``genomeBuild``."
     )
 
-    referenceSeqId: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    referenceSeqId: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="referenceSeqId",
         title="Reference identifier",
         description=(
@@ -620,38 +703,41 @@ class SequenceReferenceSeq(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    referenceSeqPointer: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    referenceSeqPointer: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="referenceSeqPointer",
         title="A Pointer to another Sequence entity as reference sequence",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Sequence"],
         },
     )
 
-    referenceSeqString: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    referenceSeqString: fhirtypes.StringType | None = Field(
+        default=None,
         alias="referenceSeqString",
         title="A string to represent reference sequence",
         description='A string like "ACGT".',
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    referenceSeqString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None,
+    referenceSeqString__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
         alias="_referenceSeqString",
         title="Extension field for ``referenceSeqString``.",
     )
 
-    strand: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    strand: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="strand",
         title="Directionality of DNA ( +1/-1)",
         description=(
@@ -661,14 +747,15 @@ class SequenceReferenceSeq(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    strand__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_strand", title="Extension field for ``strand``."
+    strand__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_strand", title="Extension field for ``strand``."
     )
 
-    windowEnd: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    windowEnd: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="windowEnd",
         title="End position of the window on the reference sequence",
         description=(
@@ -679,15 +766,16 @@ class SequenceReferenceSeq(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    windowEnd__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_windowEnd", title="Extension field for ``windowEnd``."
+    windowEnd__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_windowEnd", title="Extension field for ``windowEnd``."
     )
 
-    windowStart: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    windowStart: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="windowStart",
         title="Start position of the window on the  reference sequence",
         description=(
@@ -697,22 +785,40 @@ class SequenceReferenceSeq(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    windowStart__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_windowStart", title="Extension field for ``windowStart``."
+    windowStart__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_windowStart", title="Extension field for ``windowStart``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SequenceReferenceSeq`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SequenceReferenceSeq`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "chromosome",
+            "genomeBuild",
+            "referenceSeqId",
+            "referenceSeqPointer",
+            "referenceSeqString",
+            "strand",
+            "windowStart",
+            "windowEnd",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SequenceReferenceSeq`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "chromosome",
             "genomeBuild",
@@ -752,8 +858,8 @@ class SequenceRepository(backboneelement.BackboneElement):
 
     __resource_type__ = "SequenceRepository"
 
-    datasetId: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    datasetId: fhirtypes.StringType | None = Field(
+        default=None,
         alias="datasetId",
         title="Id of the dataset that used to call for dataset in repository",
         description=(
@@ -763,14 +869,15 @@ class SequenceRepository(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    datasetId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_datasetId", title="Extension field for ``datasetId``."
+    datasetId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_datasetId", title="Extension field for ``datasetId``."
     )
 
-    name: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    name: fhirtypes.StringType | None = Field(
+        default=None,
         alias="name",
         title="Repository's name",
         description=(
@@ -779,27 +886,29 @@ class SequenceRepository(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_name", title="Extension field for ``name``."
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_name", title="Extension field for ``name``."
     )
 
-    readsetId: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    readsetId: fhirtypes.StringType | None = Field(
+        default=None,
         alias="readsetId",
         title="Id of the read",
         description="Id of the read in this external repository.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    readsetId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_readsetId", title="Extension field for ``readsetId``."
+    readsetId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_readsetId", title="Extension field for ``readsetId``."
     )
 
-    type: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="type",
         title="directlink | openapi | login | oauth | other",
         description=(
@@ -808,18 +917,19 @@ class SequenceRepository(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["directlink", "openapi", "login", "oauth", "other"],
         },
     )
-    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_type", title="Extension field for ``type``."
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_type", title="Extension field for ``type``."
     )
 
-    url: fhirtypes.UriType | None = Field(  # type: ignore
-        None,
+    url: fhirtypes.UriType | None = Field(
+        default=None,
         alias="url",
         title="URI of the repository",
         description=(
@@ -828,14 +938,15 @@ class SequenceRepository(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    url__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_url", title="Extension field for ``url``."
+    url__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_url", title="Extension field for ``url``."
     )
 
-    variantsetId: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    variantsetId: fhirtypes.StringType | None = Field(
+        default=None,
         alias="variantsetId",
         title="Id of the variantset that used to call for variantset in repository",
         description=(
@@ -845,21 +956,39 @@ class SequenceRepository(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    variantsetId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_variantsetId", title="Extension field for ``variantsetId``."
+    variantsetId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_variantsetId",
+        title="Extension field for ``variantsetId``.",
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SequenceRepository`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SequenceRepository`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "type",
+            "url",
+            "name",
+            "datasetId",
+            "variantsetId",
+            "readsetId",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SequenceRepository`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "type",
             "url",
@@ -896,8 +1025,8 @@ class SequenceVariant(backboneelement.BackboneElement):
 
     __resource_type__ = "SequenceVariant"
 
-    cigar: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    cigar: fhirtypes.StringType | None = Field(
+        default=None,
         alias="cigar",
         title="Extended CIGAR string for aligning the sequence with reference bases",
         description=(
@@ -908,14 +1037,15 @@ class SequenceVariant(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    cigar__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_cigar", title="Extension field for ``cigar``."
+    cigar__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_cigar", title="Extension field for ``cigar``."
     )
 
-    end: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    end: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="end",
         title="End position of the variant on the reference sequence",
         description=(
@@ -926,14 +1056,15 @@ class SequenceVariant(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    end__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_end", title="Extension field for ``end``."
+    end__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_end", title="Extension field for ``end``."
     )
 
-    observedAllele: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    observedAllele: fhirtypes.StringType | None = Field(
+        default=None,
         alias="observedAllele",
         title="Allele that was observed",
         description=(
@@ -947,14 +1078,17 @@ class SequenceVariant(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    observedAllele__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_observedAllele", title="Extension field for ``observedAllele``."
+    observedAllele__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_observedAllele",
+        title="Extension field for ``observedAllele``.",
     )
 
-    referenceAllele: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    referenceAllele: fhirtypes.StringType | None = Field(
+        default=None,
         alias="referenceAllele",
         title="Allele in the reference sequence",
         description=(
@@ -968,14 +1102,17 @@ class SequenceVariant(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    referenceAllele__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_referenceAllele", title="Extension field for ``referenceAllele``."
+    referenceAllele__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_referenceAllele",
+        title="Extension field for ``referenceAllele``.",
     )
 
-    start: fhirtypes.IntegerType | None = Field(  # type: ignore
-        None,
+    start: fhirtypes.IntegerType | None = Field(
+        default=None,
         alias="start",
         title="Start position of the variant on the  reference sequence",
         description=(
@@ -985,33 +1122,50 @@ class SequenceVariant(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    start__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_start", title="Extension field for ``start``."
+    start__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_start", title="Extension field for ``start``."
     )
 
-    variantPointer: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    variantPointer: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="variantPointer",
         title="Pointer to observed variant information",
         description="A pointer to an Observation containing variant information.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Observation"],
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``SequenceVariant`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``SequenceVariant`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
             "extension",
+            "modifierExtension",
+            "start",
+            "end",
+            "observedAllele",
+            "referenceAllele",
+            "cigar",
+            "variantPointer",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``SequenceVariant`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
             "modifierExtension",
             "start",
             "end",

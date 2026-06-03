@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/ImagingManifest
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class ImagingManifest(domainresource.DomainResource):
 
     __resource_type__ = "ImagingManifest"
 
-    author: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    author: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="author",
         title="Author (human or machine)",
         description=(
@@ -39,6 +40,7 @@ class ImagingManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": [
                 "Practitioner",
@@ -50,8 +52,8 @@ class ImagingManifest(domainresource.DomainResource):
         },
     )
 
-    authoringTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    authoringTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="authoringTime",
         title="Time when the selection of instances was made",
         description=(
@@ -62,14 +64,17 @@ class ImagingManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    authoringTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_authoringTime", title="Extension field for ``authoringTime``."
+    authoringTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_authoringTime",
+        title="Extension field for ``authoringTime``.",
     )
 
-    description: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    description: fhirtypes.StringType | None = Field(
+        default=None,
         alias="description",
         title="Description text",
         description=(
@@ -83,14 +88,15 @@ class ImagingManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_description", title="Extension field for ``description``."
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_description", title="Extension field for ``description``."
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="SOP Instance UID",
         description=(
@@ -99,11 +105,12 @@ class ImagingManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    patient: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    patient: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="patient",
         title="Patient of the selected objects",
         description=(
@@ -112,13 +119,14 @@ class ImagingManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Patient"],
         },
     )
 
-    study: typing.List[fhirtypes.ImagingManifestStudyType] = Field(  # type: ignore
-        ...,
+    study: typing.List[fhirtypes.ImagingManifestStudyType] = Field(
+        default=...,
         alias="study",
         title="Study identity of the selected instances",
         description=(
@@ -127,14 +135,15 @@ class ImagingManifest(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ImagingManifest`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ImagingManifest`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -145,6 +154,23 @@ class ImagingManifest(domainresource.DomainResource):
             "contained",
             "extension",
             "modifierExtension",
+            "identifier",
+            "patient",
+            "authoringTime",
+            "author",
+            "description",
+            "study",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ImagingManifest`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
             "identifier",
             "patient",
             "authoringTime",
@@ -166,8 +192,8 @@ class ImagingManifestStudy(backboneelement.BackboneElement):
 
     __resource_type__ = "ImagingManifestStudy"
 
-    endpoint: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    endpoint: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="endpoint",
         title="Study access service endpoint",
         description=(
@@ -179,25 +205,27 @@ class ImagingManifestStudy(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Endpoint"],
         },
     )
 
-    imagingStudy: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    imagingStudy: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="imagingStudy",
         title="Reference to ImagingStudy",
         description="Reference to the Imaging Study in FHIR form.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["ImagingStudy"],
         },
     )
 
-    series: typing.List[fhirtypes.ImagingManifestStudySeriesType] = Field(  # type: ignore
-        ...,
+    series: typing.List[fhirtypes.ImagingManifestStudySeriesType] = Field(
+        default=...,
         alias="series",
         title="Series identity of the selected instances",
         description=(
@@ -206,28 +234,30 @@ class ImagingManifestStudy(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    uid: fhirtypes.OidType | None = Field(  # type: ignore
-        None,
+    uid: fhirtypes.OidType | None = Field(
+        default=None,
         alias="uid",
         title="Study instance UID",
         description="Study instance UID of the SOP instances in the selection.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    uid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_uid", title="Extension field for ``uid``."
+    uid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_uid", title="Extension field for ``uid``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ImagingManifestStudy`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ImagingManifestStudy`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -238,6 +268,13 @@ class ImagingManifestStudy(backboneelement.BackboneElement):
             "endpoint",
             "series",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ImagingManifestStudy`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "uid", "imagingStudy", "endpoint", "series"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
@@ -263,8 +300,8 @@ class ImagingManifestStudySeries(backboneelement.BackboneElement):
 
     __resource_type__ = "ImagingManifestStudySeries"
 
-    endpoint: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    endpoint: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="endpoint",
         title="Series access endpoint",
         description=(
@@ -275,42 +312,52 @@ class ImagingManifestStudySeries(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Endpoint"],
         },
     )
 
-    instance: typing.List[fhirtypes.ImagingManifestStudySeriesInstanceType] = Field(  # type: ignore
-        ...,
+    instance: typing.List[fhirtypes.ImagingManifestStudySeriesInstanceType] = Field(
+        default=...,
         alias="instance",
         title="The selected instance",
         description="Identity and locating information of the selected DICOM SOP instances.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    uid: fhirtypes.OidType | None = Field(  # type: ignore
-        None,
+    uid: fhirtypes.OidType | None = Field(
+        default=None,
         alias="uid",
         title="Series instance UID",
         description="Series instance UID of the SOP instances in the selection.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    uid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_uid", title="Extension field for ``uid``."
+    uid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_uid", title="Extension field for ``uid``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ImagingManifestStudySeries`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ImagingManifestStudySeries`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "uid", "endpoint", "instance"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ImagingManifestStudySeries`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "uid", "endpoint", "instance"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case
@@ -335,41 +382,50 @@ class ImagingManifestStudySeriesInstance(backboneelement.BackboneElement):
 
     __resource_type__ = "ImagingManifestStudySeriesInstance"
 
-    sopClass: fhirtypes.OidType | None = Field(  # type: ignore
-        None,
+    sopClass: fhirtypes.OidType | None = Field(
+        default=None,
         alias="sopClass",
         title="SOP class UID of instance",
         description="SOP class UID of the selected instance.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    sopClass__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_sopClass", title="Extension field for ``sopClass``."
+    sopClass__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_sopClass", title="Extension field for ``sopClass``."
     )
 
-    uid: fhirtypes.OidType | None = Field(  # type: ignore
-        None,
+    uid: fhirtypes.OidType | None = Field(
+        default=None,
         alias="uid",
         title="Selected instance UID",
         description="SOP Instance UID of the selected instance.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             "element_required": True,
         },
     )
-    uid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_uid", title="Extension field for ``uid``."
+    uid__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_uid", title="Extension field for ``uid``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ImagingManifestStudySeriesInstance`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ImagingManifestStudySeriesInstance`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "sopClass", "uid"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ImagingManifestStudySeriesInstance`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "sopClass", "uid"]
 
     def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
         """https://www.hl7.org/fhir/extensibility.html#Special-Case

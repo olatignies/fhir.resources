@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Medication
 Release: R5
@@ -7,6 +5,9 @@ Version: 5.0.0
 Build ID: 2aecd53
 Last updated: 2023-03-26T15:21:02.749+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -28,8 +29,8 @@ class Medication(domainresource.DomainResource):
 
     __resource_type__ = "Medication"
 
-    batch: fhirtypes.MedicationBatchType | None = Field(  # type: ignore
-        None,
+    batch: fhirtypes.MedicationBatchType | None = Field(
+        default=None,
         alias="batch",
         title="Details about packaged medications",
         description="Information that only applies to packages (not products).",
@@ -38,8 +39,8 @@ class Medication(domainresource.DomainResource):
         },
     )
 
-    code: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    code: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="code",
         title="Codes that identify this medication",
         description=(
@@ -51,11 +52,12 @@ class Medication(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    definition: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    definition: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="definition",
         title="Knowledge about this medication",
         description=(
@@ -69,8 +71,8 @@ class Medication(domainresource.DomainResource):
         },
     )
 
-    doseForm: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    doseForm: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="doseForm",
         title="powder | tablets | capsule +",
         description="Describes the form of the item.  Powder; tablets; capsule.",
@@ -79,18 +81,19 @@ class Medication(domainresource.DomainResource):
         },
     )
 
-    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(  # type: ignore
-        None,
+    identifier: typing.List[fhirtypes.IdentifierType] | None = Field(
+        default=None,
         alias="identifier",
         title="Business identifier for this medication",
         description=None,
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    ingredient: typing.List[fhirtypes.MedicationIngredientType] | None = Field(  # type: ignore
-        None,
+    ingredient: typing.List[fhirtypes.MedicationIngredientType] | None = Field(
+        default=None,
         alias="ingredient",
         title="Active or inactive ingredient",
         description="Identifies a particular constituent of interest in the product.",
@@ -99,8 +102,8 @@ class Medication(domainresource.DomainResource):
         },
     )
 
-    marketingAuthorizationHolder: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    marketingAuthorizationHolder: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="marketingAuthorizationHolder",
         title="Organization that has authorization to market medication",
         description=(
@@ -112,29 +115,31 @@ class Medication(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Organization"],
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title="active | inactive | entered-in-error",
         description="A code to indicate if the medication is in active use.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": ["active", "inactive", "entered-in-error"],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    totalVolume: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    totalVolume: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="totalVolume",
         title=(
             "When the specified product code does not infer a package size, this is"
@@ -150,14 +155,15 @@ class Medication(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Medication`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Medication`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -179,6 +185,23 @@ class Medication(domainresource.DomainResource):
             "definition",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Medication`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "modifierExtension",
+            "identifier",
+            "code",
+            "status",
+            "marketingAuthorizationHolder",
+            "totalVolume",
+        ]
+
 
 class MedicationBatch(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -191,8 +214,8 @@ class MedicationBatch(backboneelement.BackboneElement):
 
     __resource_type__ = "MedicationBatch"
 
-    expirationDate: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    expirationDate: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="expirationDate",
         title="When batch will expire",
         description="When this specific batch of product will expire.",
@@ -200,12 +223,14 @@ class MedicationBatch(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    expirationDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_expirationDate", title="Extension field for ``expirationDate``."
+    expirationDate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_expirationDate",
+        title="Extension field for ``expirationDate``.",
     )
 
-    lotNumber: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    lotNumber: fhirtypes.StringType | None = Field(
+        default=None,
         alias="lotNumber",
         title="Identifier assigned to batch",
         description="The assigned lot number of a batch of the specified product.",
@@ -213,17 +238,24 @@ class MedicationBatch(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    lotNumber__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_lotNumber", title="Extension field for ``lotNumber``."
+    lotNumber__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_lotNumber", title="Extension field for ``lotNumber``."
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``MedicationBatch`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``MedicationBatch`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "lotNumber", "expirationDate"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``MedicationBatch`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class MedicationIngredient(backboneelement.BackboneElement):
@@ -237,8 +269,8 @@ class MedicationIngredient(backboneelement.BackboneElement):
 
     __resource_type__ = "MedicationIngredient"
 
-    isActive: bool | None = Field(  # type: ignore
-        None,
+    isActive: bool | None = Field(
+        default=None,
         alias="isActive",
         title="Active ingredient indicator",
         description=(
@@ -249,12 +281,12 @@ class MedicationIngredient(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    isActive__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_isActive", title="Extension field for ``isActive``."
+    isActive__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_isActive", title="Extension field for ``isActive``."
     )
 
-    item: fhirtypes.CodeableReferenceType = Field(  # type: ignore
-        ...,
+    item: fhirtypes.CodeableReferenceType = Field(
+        default=...,
         alias="item",
         title=(
             "The ingredient (substance or medication) that the ingredient.strength "
@@ -272,8 +304,8 @@ class MedicationIngredient(backboneelement.BackboneElement):
         },
     )
 
-    strengthCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    strengthCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="strengthCodeableConcept",
         title="Quantity of ingredient present",
         description=(
@@ -291,8 +323,8 @@ class MedicationIngredient(backboneelement.BackboneElement):
         },
     )
 
-    strengthQuantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    strengthQuantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="strengthQuantity",
         title="Quantity of ingredient present",
         description=(
@@ -310,8 +342,8 @@ class MedicationIngredient(backboneelement.BackboneElement):
         },
     )
 
-    strengthRatio: fhirtypes.RatioType | None = Field(  # type: ignore
-        None,
+    strengthRatio: fhirtypes.RatioType | None = Field(
+        default=None,
         alias="strengthRatio",
         title="Quantity of ingredient present",
         description=(
@@ -330,10 +362,10 @@ class MedicationIngredient(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``MedicationIngredient`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``MedicationIngredient`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -345,6 +377,13 @@ class MedicationIngredient(backboneelement.BackboneElement):
             "strengthCodeableConcept",
             "strengthQuantity",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``MedicationIngredient`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice

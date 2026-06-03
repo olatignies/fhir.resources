@@ -1,5 +1,3 @@
-from __future__ import annotations as _annotations
-
 """
 Profile: http://hl7.org/fhir/StructureDefinition/Contract
 Release: STU3
@@ -7,6 +5,9 @@ Version: 3.0.2
 Revision: 11917
 Last updated: 2019-10-24T11:53:00+11:00
 """
+
+from __future__ import annotations as _annotations
+
 import typing
 
 from pydantic import Field
@@ -26,8 +27,8 @@ class Contract(domainresource.DomainResource):
 
     __resource_type__ = "Contract"
 
-    action: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    action: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="action",
         title="Action stipulated by this Contract",
         description=None,
@@ -36,8 +37,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    actionReason: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    actionReason: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="actionReason",
         title="Rationale for the stiplulated action",
         description="Reason for action stipulated by this Contract.",
@@ -46,8 +47,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    agent: typing.List[fhirtypes.ContractAgentType] | None = Field(  # type: ignore
-        None,
+    agent: typing.List[fhirtypes.ContractAgentType] | None = Field(
+        default=None,
         alias="agent",
         title="Entity being ascribed responsibility",
         description=(
@@ -59,18 +60,19 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    applies: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    applies: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="applies",
         title="Effective time",
         description="Relevant time or time-period when this Contract is applicable.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    authority: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    authority: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="authority",
         title="Authority under which this Contract has standing",
         description=(
@@ -86,8 +88,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    bindingAttachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    bindingAttachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="bindingAttachment",
         title="Binding Contract",
         description=(
@@ -104,8 +106,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    bindingReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    bindingReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="bindingReference",
         title="Binding Contract",
         description=(
@@ -128,8 +130,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    contentDerivative: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    contentDerivative: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="contentDerivative",
         title="Content derived from the basal information",
         description=(
@@ -141,8 +143,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    decisionType: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    decisionType: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="decisionType",
         title="Decision by Grantor",
         description=(
@@ -154,8 +156,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    domain: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    domain: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="domain",
         title="Domain in which this Contract applies",
         description=(
@@ -171,8 +173,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    friendly: typing.List[fhirtypes.ContractFriendlyType] | None = Field(  # type: ignore
-        None,
+    friendly: typing.List[fhirtypes.ContractFriendlyType] | None = Field(
+        default=None,
         alias="friendly",
         title="Contract Friendly Language",
         description=(
@@ -189,31 +191,33 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Contract number",
         description="Unique identifier for this Contract.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    issued: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    issued: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="issued",
         title="When this Contract was issued",
         description="When this  Contract was issued.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    issued__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_issued", title="Extension field for ``issued``."
+    issued__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_issued", title="Extension field for ``issued``."
     )
 
-    legal: typing.List[fhirtypes.ContractLegalType] | None = Field(  # type: ignore
-        None,
+    legal: typing.List[fhirtypes.ContractLegalType] | None = Field(
+        default=None,
         alias="legal",
         title="Contract Legal Language",
         description="List of Legal expressions or representations of this Contract.",
@@ -222,8 +226,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    rule: typing.List[fhirtypes.ContractRuleType] | None = Field(  # type: ignore
-        None,
+    rule: typing.List[fhirtypes.ContractRuleType] | None = Field(
+        default=None,
         alias="rule",
         title="Computable Contract Language",
         description=(
@@ -235,8 +239,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    securityLabel: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    securityLabel: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="securityLabel",
         title="Security Labels that define affected resources",
         description=(
@@ -246,11 +250,12 @@ class Contract(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    signer: typing.List[fhirtypes.ContractSignerType] | None = Field(  # type: ignore
-        None,
+    signer: typing.List[fhirtypes.ContractSignerType] | None = Field(
+        default=None,
         alias="signer",
         title="Contract Signatory",
         description=(
@@ -264,8 +269,8 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    status: fhirtypes.CodeType | None = Field(  # type: ignore
-        None,
+    status: fhirtypes.CodeType | None = Field(
+        default=None,
         alias="status",
         title=(
             "amended | appended | cancelled | disputed | entered-in-error | "
@@ -275,6 +280,7 @@ class Contract(domainresource.DomainResource):
         description="The status of the resource instance.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Enum values can be used in validation,
             # but use in your own responsibilities, read official FHIR documentation.
             "enum_values": [
@@ -296,12 +302,12 @@ class Contract(domainresource.DomainResource):
             ],
         },
     )
-    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_status", title="Extension field for ``status``."
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_status", title="Extension field for ``status``."
     )
 
-    subType: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    subType: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="subType",
         title="Subtype within the context of type",
         description=(
@@ -311,11 +317,12 @@ class Contract(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    subject: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    subject: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="subject",
         title="Contract Target Entity",
         description=(
@@ -324,13 +331,14 @@ class Contract(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    term: typing.List[fhirtypes.ContractTermType] | None = Field(  # type: ignore
-        None,
+    term: typing.List[fhirtypes.ContractTermType] | None = Field(
+        default=None,
         alias="term",
         title="Contract Term List",
         description=(
@@ -342,20 +350,21 @@ class Contract(domainresource.DomainResource):
         },
     )
 
-    topic: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    topic: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="topic",
         title="Context of the Contract",
         description="The matter of concern in the context of this agreement.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Type or form",
         description=(
@@ -365,11 +374,12 @@ class Contract(domainresource.DomainResource):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    valuedItem: typing.List[fhirtypes.ContractValuedItemType] | None = Field(  # type: ignore
-        None,
+    valuedItem: typing.List[fhirtypes.ContractValuedItemType] | None = Field(
+        default=None,
         alias="valuedItem",
         title="Contract Valued Item List",
         description=None,
@@ -379,10 +389,10 @@ class Contract(domainresource.DomainResource):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``Contract`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``Contract`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -421,6 +431,26 @@ class Contract(domainresource.DomainResource):
             "rule",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``Contract`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "status",
+            "issued",
+            "applies",
+            "subject",
+            "topic",
+            "type",
+            "subType",
+            "securityLabel",
+        ]
+
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
         A few elements have a choice of more than one data type for their content.
@@ -450,8 +480,8 @@ class ContractAgent(backboneelement.BackboneElement):
 
     __resource_type__ = "ContractAgent"
 
-    actor: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    actor: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="actor",
         title="Contract Agent Type",
         description="Who or what parties are assigned roles in this Contract.",
@@ -472,8 +502,8 @@ class ContractAgent(backboneelement.BackboneElement):
         },
     )
 
-    role: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    role: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="role",
         title="Role type of the agent",
         description="Role type of agent assigned roles in this Contract.",
@@ -483,12 +513,19 @@ class ContractAgent(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ContractAgent`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ContractAgent`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "actor", "role"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ContractAgent`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class ContractFriendly(backboneelement.BackboneElement):
@@ -508,8 +545,8 @@ class ContractFriendly(backboneelement.BackboneElement):
 
     __resource_type__ = "ContractFriendly"
 
-    contentAttachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    contentAttachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="contentAttachment",
         title="Easily comprehended representation of this Contract",
         description=(
@@ -525,8 +562,8 @@ class ContractFriendly(backboneelement.BackboneElement):
         },
     )
 
-    contentReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    contentReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="contentReference",
         title="Easily comprehended representation of this Contract",
         description=(
@@ -549,10 +586,10 @@ class ContractFriendly(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ContractFriendly`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ContractFriendly`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -563,6 +600,13 @@ class ContractFriendly(backboneelement.BackboneElement):
             "contentReference",
             "contentReference",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ContractFriendly`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -592,8 +636,8 @@ class ContractLegal(backboneelement.BackboneElement):
 
     __resource_type__ = "ContractLegal"
 
-    contentAttachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    contentAttachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="contentAttachment",
         title="Contract Legal Text",
         description="Contract legal text in human renderable form.",
@@ -605,8 +649,8 @@ class ContractLegal(backboneelement.BackboneElement):
         },
     )
 
-    contentReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    contentReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="contentReference",
         title="Contract Legal Text",
         description="Contract legal text in human renderable form.",
@@ -625,10 +669,10 @@ class ContractLegal(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ContractLegal`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ContractLegal`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -639,6 +683,13 @@ class ContractLegal(backboneelement.BackboneElement):
             "contentReference",
             "contentReference",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ContractLegal`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -668,8 +719,8 @@ class ContractRule(backboneelement.BackboneElement):
 
     __resource_type__ = "ContractRule"
 
-    contentAttachment: fhirtypes.AttachmentType | None = Field(  # type: ignore
-        None,
+    contentAttachment: fhirtypes.AttachmentType | None = Field(
+        default=None,
         alias="contentAttachment",
         title="Computable Contract Rules",
         description=(
@@ -684,8 +735,8 @@ class ContractRule(backboneelement.BackboneElement):
         },
     )
 
-    contentReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    contentReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="contentReference",
         title="Computable Contract Rules",
         description=(
@@ -703,10 +754,10 @@ class ContractRule(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ContractRule`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ContractRule`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -715,6 +766,13 @@ class ContractRule(backboneelement.BackboneElement):
             "contentAttachment",
             "contentReference",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ContractRule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -747,8 +805,8 @@ class ContractSigner(backboneelement.BackboneElement):
 
     __resource_type__ = "ContractSigner"
 
-    party: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    party: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="party",
         title="Contract Signatory Party",
         description="Party which is a signator to this Contract.",
@@ -764,8 +822,8 @@ class ContractSigner(backboneelement.BackboneElement):
         },
     )
 
-    signature: typing.List[fhirtypes.SignatureType] = Field(  # type: ignore
-        ...,
+    signature: typing.List[fhirtypes.SignatureType] = Field(
+        default=...,
         alias="signature",
         title="Contract Documentation Signature",
         description="Legally binding Contract DSIG signature contents in Base64.",
@@ -774,8 +832,8 @@ class ContractSigner(backboneelement.BackboneElement):
         },
     )
 
-    type: fhirtypes.CodingType = Field(  # type: ignore
-        ...,
+    type: fhirtypes.CodingType = Field(
+        default=...,
         alias="type",
         title="Contract Signatory Role",
         description="Role of this Contract signer, e.g. notary, grantee.",
@@ -785,12 +843,19 @@ class ContractSigner(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ContractSigner`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ContractSigner`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "type", "party", "signature"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ContractSigner`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class ContractTerm(backboneelement.BackboneElement):
@@ -805,8 +870,8 @@ class ContractTerm(backboneelement.BackboneElement):
 
     __resource_type__ = "ContractTerm"
 
-    action: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    action: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="action",
         title="Contract Term Activity",
         description="Action stipulated by this Contract Provision.",
@@ -815,8 +880,8 @@ class ContractTerm(backboneelement.BackboneElement):
         },
     )
 
-    actionReason: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    actionReason: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="actionReason",
         title="Purpose for the Contract Term Action",
         description=(
@@ -827,8 +892,8 @@ class ContractTerm(backboneelement.BackboneElement):
         },
     )
 
-    agent: typing.List[fhirtypes.ContractTermAgentType] | None = Field(  # type: ignore
-        None,
+    agent: typing.List[fhirtypes.ContractTermAgentType] | None = Field(
+        default=None,
         alias="agent",
         title="Contract Term Agent List",
         description=(
@@ -840,8 +905,8 @@ class ContractTerm(backboneelement.BackboneElement):
         },
     )
 
-    applies: fhirtypes.PeriodType | None = Field(  # type: ignore
-        None,
+    applies: fhirtypes.PeriodType | None = Field(
+        default=None,
         alias="applies",
         title="Contract Term Effective Time",
         description=(
@@ -850,11 +915,12 @@ class ContractTerm(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    group: typing.List[fhirtypes.ContractTermType] | None = Field(  # type: ignore
-        None,
+    group: typing.List[fhirtypes.ContractTermType] | None = Field(
+        default=None,
         alias="group",
         title="Nested Contract Term Group",
         description="Nested group of Contract Provisions.",
@@ -863,31 +929,33 @@ class ContractTerm(backboneelement.BackboneElement):
         },
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Contract Term Number",
         description="Unique identifier for this particular Contract Provision.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    issued: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    issued: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="issued",
         title="Contract Term Issue Date Time",
         description="When this Contract Provision was issued.",
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
-    issued__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_issued", title="Extension field for ``issued``."
+    issued__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_issued", title="Extension field for ``issued``."
     )
 
-    securityLabel: typing.List[fhirtypes.CodingType] | None = Field(  # type: ignore
-        None,
+    securityLabel: typing.List[fhirtypes.CodingType] | None = Field(
+        default=None,
         alias="securityLabel",
         title="Security Labels that define affected terms",
         description=(
@@ -896,11 +964,12 @@ class ContractTerm(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
         },
     )
 
-    subType: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    subType: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="subType",
         title="Contract Term Type specific classification",
         description=(
@@ -912,8 +981,8 @@ class ContractTerm(backboneelement.BackboneElement):
         },
     )
 
-    text: fhirtypes.StringType | None = Field(  # type: ignore
-        None,
+    text: fhirtypes.StringType | None = Field(
+        default=None,
         alias="text",
         title="Human readable Contract term text",
         description="Human readable form of this Contract Provision.",
@@ -921,12 +990,12 @@ class ContractTerm(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    text__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_text", title="Extension field for ``text``."
+    text__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_text", title="Extension field for ``text``."
     )
 
-    topic: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
-        None,
+    topic: typing.List[fhirtypes.ReferenceType] | None = Field(
+        default=None,
         alias="topic",
         title="Context of the Contract term",
         description=(
@@ -934,13 +1003,14 @@ class ContractTerm(backboneelement.BackboneElement):
         ),
         json_schema_extra={
             "element_property": True,
+            "summary_element_property": True,
             # note: Listed Resource Type(s) should be allowed as Reference.
             "enum_reference_types": ["Resource"],
         },
     )
 
-    type: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    type: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="type",
         title="Contract Term Type or Form",
         description=(
@@ -952,8 +1022,8 @@ class ContractTerm(backboneelement.BackboneElement):
         },
     )
 
-    valuedItem: typing.List[fhirtypes.ContractTermValuedItemType] | None = Field(  # type: ignore
-        None,
+    valuedItem: typing.List[fhirtypes.ContractTermValuedItemType] | None = Field(
+        default=None,
         alias="valuedItem",
         title="Contract Term Valued Item List",
         description="Contract Provision Valued Item List.",
@@ -963,10 +1033,10 @@ class ContractTerm(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ContractTerm`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ContractTerm`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -987,6 +1057,20 @@ class ContractTerm(backboneelement.BackboneElement):
             "group",
         ]
 
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ContractTerm`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "modifierExtension",
+            "identifier",
+            "issued",
+            "applies",
+            "topic",
+            "securityLabel",
+        ]
+
 
 class ContractTermAgent(backboneelement.BackboneElement):
     """Disclaimer: Any field name ends with ``__ext`` doesn't part of
@@ -1000,8 +1084,8 @@ class ContractTermAgent(backboneelement.BackboneElement):
 
     __resource_type__ = "ContractTermAgent"
 
-    actor: fhirtypes.ReferenceType = Field(  # type: ignore
-        ...,
+    actor: fhirtypes.ReferenceType = Field(
+        default=...,
         alias="actor",
         title="Contract Term Agent Subject",
         description="The agent assigned a role in this Contract Provision.",
@@ -1022,8 +1106,8 @@ class ContractTermAgent(backboneelement.BackboneElement):
         },
     )
 
-    role: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
-        None,
+    role: typing.List[fhirtypes.CodeableConceptType] | None = Field(
+        default=None,
         alias="role",
         title="Type of the Contract Term Agent",
         description=(
@@ -1036,12 +1120,19 @@ class ContractTermAgent(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ContractTermAgent`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ContractTermAgent`` according to specification,
+        with preserving the original sequence order.
         """
         return ["id", "extension", "modifierExtension", "actor", "role"]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ContractTermAgent`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
 
 class ContractTermValuedItem(backboneelement.BackboneElement):
@@ -1055,8 +1146,8 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
 
     __resource_type__ = "ContractTermValuedItem"
 
-    effectiveTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    effectiveTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="effectiveTime",
         title="Contract Term Valued Item Effective Tiem",
         description=(
@@ -1067,12 +1158,14 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    effectiveTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_effectiveTime", title="Extension field for ``effectiveTime``."
+    effectiveTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_effectiveTime",
+        title="Extension field for ``effectiveTime``.",
     )
 
-    entityCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    entityCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="entityCodeableConcept",
         title="Contract Term Valued Item Type",
         description="Specific type of Contract Provision Valued Item that may be priced.",
@@ -1084,8 +1177,8 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
         },
     )
 
-    entityReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    entityReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="entityReference",
         title="Contract Term Valued Item Type",
         description="Specific type of Contract Provision Valued Item that may be priced.",
@@ -1099,8 +1192,8 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
         },
     )
 
-    factor: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    factor: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="factor",
         title="Contract Term Valued Item Price Scaling Factor",
         description=(
@@ -1113,12 +1206,12 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    factor__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_factor", title="Extension field for ``factor``."
+    factor__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_factor", title="Extension field for ``factor``."
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Contract Term Valued Item Number",
         description="Identifies a Contract Provision Valued Item instance.",
@@ -1127,8 +1220,8 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
         },
     )
 
-    net: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    net: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="net",
         title="Total Contract Term Valued Item Value",
         description=(
@@ -1143,8 +1236,8 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
         },
     )
 
-    points: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    points: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="points",
         title="Contract Term Valued Item Difficulty Scaling Factor",
         description=(
@@ -1158,12 +1251,12 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    points__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_points", title="Extension field for ``points``."
+    points__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_points", title="Extension field for ``points``."
     )
 
-    quantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    quantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="quantity",
         title="Contract Term Valued Item Count",
         description=(
@@ -1176,8 +1269,8 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
         },
     )
 
-    unitPrice: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    unitPrice: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="unitPrice",
         title="Contract Term Valued Item fee, charge, or cost",
         description="A Contract Provision Valued Item unit valuation measure.",
@@ -1187,10 +1280,10 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ContractTermValuedItem`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ContractTermValuedItem`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -1206,6 +1299,13 @@ class ContractTermValuedItem(backboneelement.BackboneElement):
             "points",
             "net",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ContractTermValuedItem`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
@@ -1234,8 +1334,8 @@ class ContractValuedItem(backboneelement.BackboneElement):
 
     __resource_type__ = "ContractValuedItem"
 
-    effectiveTime: fhirtypes.DateTimeType | None = Field(  # type: ignore
-        None,
+    effectiveTime: fhirtypes.DateTimeType | None = Field(
+        default=None,
         alias="effectiveTime",
         title="Contract Valued Item Effective Tiem",
         description=(
@@ -1246,12 +1346,14 @@ class ContractValuedItem(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    effectiveTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_effectiveTime", title="Extension field for ``effectiveTime``."
+    effectiveTime__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None,
+        alias="_effectiveTime",
+        title="Extension field for ``effectiveTime``.",
     )
 
-    entityCodeableConcept: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
-        None,
+    entityCodeableConcept: fhirtypes.CodeableConceptType | None = Field(
+        default=None,
         alias="entityCodeableConcept",
         title="Contract Valued Item Type",
         description="Specific type of Contract Valued Item that may be priced.",
@@ -1263,8 +1365,8 @@ class ContractValuedItem(backboneelement.BackboneElement):
         },
     )
 
-    entityReference: fhirtypes.ReferenceType | None = Field(  # type: ignore
-        None,
+    entityReference: fhirtypes.ReferenceType | None = Field(
+        default=None,
         alias="entityReference",
         title="Contract Valued Item Type",
         description="Specific type of Contract Valued Item that may be priced.",
@@ -1278,8 +1380,8 @@ class ContractValuedItem(backboneelement.BackboneElement):
         },
     )
 
-    factor: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    factor: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="factor",
         title="Contract Valued Item Price Scaling Factor",
         description=(
@@ -1292,12 +1394,12 @@ class ContractValuedItem(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    factor__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_factor", title="Extension field for ``factor``."
+    factor__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_factor", title="Extension field for ``factor``."
     )
 
-    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
-        None,
+    identifier: fhirtypes.IdentifierType | None = Field(
+        default=None,
         alias="identifier",
         title="Contract Valued Item Number",
         description="Identifies a Contract Valued Item instance.",
@@ -1306,8 +1408,8 @@ class ContractValuedItem(backboneelement.BackboneElement):
         },
     )
 
-    net: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    net: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="net",
         title="Total Contract Valued Item Value",
         description=(
@@ -1321,8 +1423,8 @@ class ContractValuedItem(backboneelement.BackboneElement):
         },
     )
 
-    points: fhirtypes.DecimalType | None = Field(  # type: ignore
-        None,
+    points: fhirtypes.DecimalType | None = Field(
+        default=None,
         alias="points",
         title="Contract Valued Item Difficulty Scaling Factor",
         description=(
@@ -1336,12 +1438,12 @@ class ContractValuedItem(backboneelement.BackboneElement):
             "element_property": True,
         },
     )
-    points__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
-        None, alias="_points", title="Extension field for ``points``."
+    points__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(
+        default=None, alias="_points", title="Extension field for ``points``."
     )
 
-    quantity: fhirtypes.QuantityType | None = Field(  # type: ignore
-        None,
+    quantity: fhirtypes.QuantityType | None = Field(
+        default=None,
         alias="quantity",
         title="Count of Contract Valued Items",
         description=(
@@ -1354,8 +1456,8 @@ class ContractValuedItem(backboneelement.BackboneElement):
         },
     )
 
-    unitPrice: fhirtypes.MoneyType | None = Field(  # type: ignore
-        None,
+    unitPrice: fhirtypes.MoneyType | None = Field(
+        default=None,
         alias="unitPrice",
         title="Contract Valued Item fee, charge, or cost",
         description="A Contract Valued Item unit valuation measure.",
@@ -1365,10 +1467,10 @@ class ContractValuedItem(backboneelement.BackboneElement):
     )
 
     @classmethod
-    def elements_sequence(cls):
-        """returning all elements names from
-        ``ContractValuedItem`` according specification,
-        with preserving original sequence order.
+    def elements_sequence(cls) -> typing.List[str]:
+        """returning all element names from
+        ``ContractValuedItem`` according to specification,
+        with preserving the original sequence order.
         """
         return [
             "id",
@@ -1384,6 +1486,13 @@ class ContractValuedItem(backboneelement.BackboneElement):
             "points",
             "net",
         ]
+
+    @classmethod
+    def summary_elements_sequence(cls) -> typing.List[str]:
+        """returning all element names (those have summary mode are enabled) from ``ContractValuedItem`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
 
     def get_one_of_many_fields(self) -> typing.Dict[str, typing.List[str]]:
         """https://www.hl7.org/fhir/formats.html#choice
